@@ -1,0 +1,122 @@
+html, body {
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size);
+    /*color: var()*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--display-font-family);
+}
+
+h1, .h1, .display-xxl {
+    color: var(--colors-text-text-primary-900, #101828);
+    font-family: Arvo;
+    font-size: 4.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 5.625rem; /* 125% */
+    letter-spacing: -0.09rem;
+}
+
+h2, h2, .display-xl {
+    color: var(--colors-text-text-primary-900, #101828);
+    /* Display xl/Regular */
+    font-family: Arvo;
+    font-size: 3.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 4.5rem; /* 120% */
+    letter-spacing: -0.075rem;
+}
+
+h3, .h3, .display-lg {
+    color: var(--colors-text-text-primary-900, #101828);
+    /* Display lg/Regular */
+    font-family: Arvo;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.75rem; /* 125% */
+    letter-spacing: -0.06rem;
+}
+
+h4, .h4, .diplay-md {
+    color: var(--colors-text-text-primary-900, #101828);
+    /* Display md/Regular */
+    font-family: Arvo;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem; /* 122.222% */
+    letter-spacing: -0.045rem;
+}
+
+h5, .h5, .diplay-sm {
+    color: var(--colors-text-text-primary-900, #101828);
+    /* Display sm/Regular */
+    font-family: Arvo;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.375rem; /* 126.667% */
+}
+
+h6, .h6, .display-xs {
+    color: var(--colors-text-text-primary-900, #101828);
+    /* Display xs/Regular */
+    font-family: Arvo;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem; /* 133.333% */
+}
+
+.text-xl {
+    color: var(--colors-text-text-primary-900, #101828);
+    /* Text xl/Regular */
+    font-family: Roboto;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.875rem; /* 150% */
+}
+
+.text-lg {
+    color: var(--colors-text-text-primary-900, #101828);
+    /* Text lg/Regular */
+    font-family: Roboto;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem; /* 155.556% */
+}
+
+.text-md {
+    color: var(--colors-text-text-primary-900, #101828);
+    /* Text md/Regular */
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 150% */
+}
+
+.text-sm {
+    color: var(--colors-text-text-primary-900, #101828);
+    /* Text sm/Regular */
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem; /* 142.857% */
+}
+
+.text-xs {
+    color: var(--colors-text-text-primary-900, #101828);
+    /* Text xs/Regular */
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem; /* 150% */
+}
