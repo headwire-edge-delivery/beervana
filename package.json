@@ -8,7 +8,7 @@
     "lint:css": "stylelint blocks/**/*.css styles/*.css",
     "lint": "npm run lint:js && npm run lint:css",
     "semantic-release": "semantic-release --debug",
-    "start": "aem up"
+    "start": "aem up --addr 0.0.0.0"
   },
   "repository": {
     "type": "git",
