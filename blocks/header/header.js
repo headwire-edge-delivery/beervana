@@ -1,8 +1,8 @@
 import { getMetadata, decorateIcons, readBlockConfig } from '../../scripts/aem.js';
-import { decorateSectionsWithClasses, fetchDocumentAndReplaceBlock, runDecorator } from '../../scripts/utils.js';
+import { decorateSectionsWithClasses, fetchDocumentAndReplaceBlock, runDecorators } from '../../scripts/utils.js';
 import { decorateNavigation } from './header-decorators.js';
 
-export default async function decorate(block) {
+export default async function decorate(input) {
   const opts = {
     path: 'nav',
     sectionClasses: ['header-brand', 'header-nav', 'header-search'],
@@ -15,9 +15,9 @@ export default async function decorate(block) {
     dropdownNestedItemClass: 'header-nav-dropdown-item',
   };
 
-  fetchDocumentAndReplaceBlock([block, opts])
-    .runDecorators([
-      decorateSectionsWithClasses,
-      decorateNavigation,
-    ]);
+  fetchDocumentAndReplaceBlock({ input, opts });
+  runDecorators({ input, opts }, [
+    decorateSectionsWithClasses,
+    decorateNavigation,
+  ]);
 }

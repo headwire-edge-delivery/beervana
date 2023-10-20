@@ -1,6 +1,6 @@
 import { setupNestedNavigationListeners } from './header-interactions.js';
 
-export function decorateNestedNavigationItem([input, opts]) {
+export function decorateNestedNavigationItem({ input, opts }) {
   const navItem = document.createElement('li');
   const icon = input.querySelector('.icon');
   const link = input.querySelector('a');
@@ -17,10 +17,10 @@ export function decorateNestedNavigationItem([input, opts]) {
 
   input.parentElement.appendChild(navItem);
 
-  return [input, opts];
+  return input;
 }
 
-export function decorateNestedNavigation([input, opts]) {
+export function decorateNestedNavigation({ input, opts }) {
   const ul = input.querySelector('ul');
   if (ul) { 
     const nestedToggle = document.createElement('button');
@@ -29,8 +29,8 @@ export function decorateNestedNavigation([input, opts]) {
     setupNestedNavigationListeners(nestedToggle);
 
     const nestedUL = document.createElement('ul');
-    ul.querySelectorAll('li')?.listItems?.forEach((li) => {
-      decorateNestedNavigationItem(li, opts);
+    ul.querySelectorAll('li')?.childNodes?.forEach((li) => {
+      decorateNestedNavigationItem({ li, opts });
     });
     ul.remove();
 
@@ -43,22 +43,22 @@ export function decorateNestedNavigation([input, opts]) {
     input.appendChild(nestedNav);
     input.classList.add(opts.dropdownParentClass);
 
-    return [input, opts];
+    return input;
   }
 }
 
-export function decorateNavigation([input, opts]) {
+export function decorateNavigation({ input, opts }) {
   const navSection = input.querySelector('.header-nav');
   if (navSection) {
     const navHTML = document.createElement('nav');
     const ul = input.querySelector('ul');
 
-    ul.children?.forEach(li, index) => decorateNestedNavigation(li, opts));
+    ul.childNodes?.forEach((li, index) => decorateNestedNavigation({ li, opts }));
 
     navHTML.appendChild(ul);
     navSection.innerHTML = '';
     navSection.appendChild(navHTML);
 
-    return [input, opts];
+    return input;
   }
 }

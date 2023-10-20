@@ -3,7 +3,7 @@ import { getMetadata, decorateIcons, readBlockConfig } from './aem.js';
 export async function fetchDocument(opts) {
   const meta = getMetadata(opts.path);
   const path = meta ? new URL(meta).pathname : `/${opts.path}`;
-  const resp = await fetch(`${navPath}.plain.html`);
+  const resp = await fetch(`${path}.plain.html`);
 
   if (resp.ok) {
     const html = await resp.text();
@@ -13,21 +13,19 @@ export async function fetchDocument(opts) {
   return undefined;
 }
 
-export async function fetchDocumentAndReplaceBlock(props) {
-  const [input, opts] = props;
-  const document = await fetchDocument(opts);
-  if (document) {
-    block.innerHTML = document;
-    return [block, opts];
+export async function fetchDocumentAndReplaceBlock({ input, opts }) {
+  const doc = await fetchDocument(opts);
+  if (doc) {
+    input.innerHTML = doc;
+    return { input, opts };
   }
   return undefined;
 }
 
 export function runDecorator(props, decorator) {
-  const [input, opts] = props;
-  if (input) {
+  if (props.input) {
     const output = decorator(props);
-    return [output, opts];
+    return { input: output, opts: props.opts };
   }
 
   return undefined;
@@ -37,11 +35,10 @@ export function runDecorators(props, decorators) {
   decorators.forEach(decorator => runDecorator(props, decorator));
 }
 
-export function decorateSectionsWithClasses(props) {
-  const [input, opts] = props;
+export function decorateSectionsWithClasses({ input, opts }) {
   if (input) {
-    input.children?.forEach((section, index) => section.classList.add(opts.sectionClasses[index]));
-    return [input, opts];
+    input?.childNodes?.forEach((section, index) => section.classList.add(opts.sectionClasses[index]));
+    return input;
   }
 }
 

@@ -2,7 +2,7 @@ export function setupNestedNavigationListeners(input) {
   input.addEventListener('click', nestedNavigationToggleListener);
 }
 
-export function headerNavDropdownListener(e) {
+export function nestedNavigationToggleListener(e) {
 	console.log("headerNavDropdownListener", e);
 	const navItem = e.target.parentElement;
 	console.log('navItem', navItem);
