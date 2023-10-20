@@ -100,3 +100,7 @@ h6, .h6, .display-xs {
     font-weight: 400;
     line-height: 1.125rem; /* 150% */
 }
+
+a {
+  color: var(--component-colors-components-buttons-tertiary-color-button-tertiary-color-fg, #581301);
+}

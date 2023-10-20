@@ -13,9 +13,10 @@ export default async function decorate(input) {
     dropdownParentClass: 'header-nav-dropdown-parent',
     dropdownToggleClass: 'header-nav-dropdown-toggle',
     dropdownNestedItemClass: 'header-nav-dropdown-item',
+    dropdownNestedItemLinkSubtitleClass: 'header-nav-dropdown-item-link-subtitle',
   };
 
-  fetchDocumentAndReplaceBlock({ input, opts });
+  await fetchDocumentAndReplaceBlock({ input, opts });
   runDecorators({ input, opts }, [
     decorateSectionsWithClasses,
     decorateNavigation,

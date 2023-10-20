@@ -23,21 +23,22 @@ export async function fetchDocumentAndReplaceBlock({ input, opts }) {
 }
 
 export function runDecorator(props, decorator) {
-  if (props.input) {
-    const output = decorator(props);
-    return { input: output, opts: props.opts };
-  }
+  if (props.input) return decorator(props);
 
   return undefined;
 }
 
 export function runDecorators(props, decorators) {
-  decorators.forEach(decorator => runDecorator(props, decorator));
+  let { input, opts } = props;
+  decorators.forEach(decorator => {
+    input = runDecorator({ input, opts }, decorator)
+  });
 }
 
 export function decorateSectionsWithClasses({ input, opts }) {
+  console.log("decorateSectionsWithClasses", input.childNodes, opts)
   if (input) {
-    input?.childNodes?.forEach((section, index) => section.classList.add(opts.sectionClasses[index]));
+    input.querySelectorAll("div").forEach((section, index) => section.classList.add(opts.sectionClasses[index]));
     return input;
   }
 }

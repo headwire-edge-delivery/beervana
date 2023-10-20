@@ -2,6 +2,7 @@ import { setupNestedNavigationListeners } from './header-interactions.js';
 
 export function decorateNestedNavigationItem({ input, opts }) {
   const navItem = document.createElement('li');
+  const linkSubtitleContainer = document.createElement('div');
   const icon = input.querySelector('.icon');
   const link = input.querySelector('a');
   const subtitle = document.createElement('span')
@@ -12,12 +13,12 @@ export function decorateNestedNavigationItem({ input, opts }) {
 
   navItem.classList.add(opts.dropdownNestedItemClass);
   navItem.appendChild(icon);
-  navItem.appendChild(link);
-  navItem.appendChild(subtitle);
+  linkSubtitleContainer.classList.add(opts.dropdownNestedItemLinkSubtitleClass);
+  linkSubtitleContainer.appendChild(link);
+  linkSubtitleContainer.appendChild(subtitle);
+  navItem.appendChild(linkSubtitleContainer);
 
-  input.parentElement.appendChild(navItem);
-
-  return input;
+  return navItem;
 }
 
 export function decorateNestedNavigation({ input, opts }) {
@@ -29,17 +30,17 @@ export function decorateNestedNavigation({ input, opts }) {
     setupNestedNavigationListeners(nestedToggle);
 
     const nestedUL = document.createElement('ul');
-    ul.querySelectorAll('li')?.childNodes?.forEach((li) => {
-      decorateNestedNavigationItem({ li, opts });
+    ul.querySelectorAll('li').forEach((li) => {
+      nestedUL.appendChild(decorateNestedNavigationItem({ input: li, opts }));
     });
     ul.remove();
 
-    const nestedNav = document.createElement('div');
+    const nestedNav = document.createElement('dialog');
     nestedNav.classList.add(opts.dropdownClass);
     nestedNav.setAttribute('aria-expanded',  false);
     nestedNav.appendChild(nestedUL)
 
-    input.appendChild(nestedNavToggle);
+    input.appendChild(nestedToggle);
     input.appendChild(nestedNav);
     input.classList.add(opts.dropdownParentClass);
 
@@ -51,9 +52,9 @@ export function decorateNavigation({ input, opts }) {
   const navSection = input.querySelector('.header-nav');
   if (navSection) {
     const navHTML = document.createElement('nav');
-    const ul = input.querySelector('ul');
+    const ul = navSection.querySelector('ul');
 
-    ul.childNodes?.forEach((li, index) => decorateNestedNavigation({ li, opts }));
+    ul.querySelectorAll("li").forEach((li, index) => decorateNestedNavigation({ input: li, opts }));
 
     navHTML.appendChild(ul);
     navSection.innerHTML = '';
