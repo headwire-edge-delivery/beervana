@@ -108,6 +108,7 @@
         --colors-text-text-tertiary-on-brand: var(--colors-gray-400, #94969c);
         --colors-text-text-warning-primary: var(--colors-warning-400, #fdb022);
         --colors-text-text-white: var(--colors-base-white, #ffffff);
+	--colors-text-text-display: var(--colors-gray-50);
         --component-colors-alpha-alpha-black-10: #ffffff1a;
         --component-colors-alpha-alpha-black-100: #ffffff;
         --component-colors-alpha-alpha-black-20: #ffffff33;
