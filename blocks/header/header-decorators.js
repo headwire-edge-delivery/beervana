@@ -77,8 +77,8 @@ export function decorateMobileButton({ input, opts }) {
       input,
       opts: {
         ...opts,
-        buttonClasses: opts.mobileButton,
-        buttonIcon: "icon-hamburger",
+        buttonClasses: [opts.mobileButton, "button-hamburger"],
+        buttonIcon: ["icon-hamburger"],
         buttonInteractions: hamburgerMenuInteractions,
       },
     }),
@@ -91,8 +91,8 @@ export function decorateMobileDialogButton({ input, opts }) {
       input,
       opts: {
         ...opts,
-        buttonClasses: opts.mobileButton,
-        buttonIcon: "icon-close",
+        buttonClasses: [opts.mobileButton, "button-close"],
+        buttonIcon: ["icon-close"],
         buttonInteractions: dialogCloseInteractions,
       },
     }),
@@ -101,22 +101,25 @@ export function decorateMobileDialogButton({ input, opts }) {
 
 export function decorateMobileDialog({ input, opts }) {
   const headerBlock = input.parentNode;
+  console.log("headerBlock", headerBlock.classList.toString());
   const dialogHTML = document.createElement("dialog");
-  const ul = input.querySelector("ul");
+  //const ul = input.querySelector("ul");
 
   decorateMobileDialogButton({ input: dialogHTML, opts });
 
+  /*
   ul.querySelectorAll("li").forEach((li) => {
     const liHTML = document.createElement("li");
     const link = li.querySelector("a");
     liHTML.appendChild(link);
     dialogHTML.appendChild(liHTML);
   });
+  */
 
   dialogHTML.classList.add(opts.dropdownClass);
-  dialogHTML.setAttribute("aria-expanded", false);
-  headerBlock.appendChild(dialogHTML);
+  //dialogHTML.setAttribute("aria-expanded", false);
   dialogHTML.appendChild(input);
+  headerBlock.appendChild(dialogHTML);
 }
 
 export function decorateMobileNavigation({ input, opts }) {

@@ -37,7 +37,6 @@ export function runDecorators(props, decorators) {
 }
 
 export function decorateSectionsWithClasses({ input, opts }) {
-  console.log("decorateSectionsWithClasses", input.childNodes, opts);
   if (input) {
     input
       .querySelectorAll(":scope > div")
@@ -46,7 +45,6 @@ export function decorateSectionsWithClasses({ input, opts }) {
       );
     return input;
   }
-  return;
 }
 
 export function runLoop(input, callback) {
@@ -68,10 +66,12 @@ export function decorateByMediaQuery(
 
 export function setupButton({ input, opts }) {
   const button = document.createElement("button");
-  if (opts.buttonClasses) button.classList.add(opts.buttonClasses);
+  if (opts.buttonClasses) {
+    button.classList.add(...opts.buttonClasses);
+  }
   if (opts.buttonIcon) {
     const icon = document.createElement("span");
-    icon.classList.add("icon", opts.buttonIcon);
+    icon.classList.add(...["icon", ...opts.buttonIcon]);
     button.appendChild(icon);
   }
   if (opts.buttonText) {

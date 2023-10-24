@@ -1,6 +1,10 @@
 @import url("variables/index.css");
 @import url("text.css");
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
