@@ -18,3 +18,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.section {
+  padding: var(--spacing-4);
+}

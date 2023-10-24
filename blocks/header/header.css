@@ -12,6 +12,13 @@
       padding: 0;
       margin: 0;
     }
+
+    & .icon-logo {
+      width: 6rem;
+      height: 1.5rem;
+      background: var(--colors-brand-primary, red);
+      display: flex;
+    }
   }
 
   & .header-nav {

@@ -15,7 +15,6 @@ import {
 } from "./header-decorators.js";
 
 export default async function decorate(block) {
-  const input = block;
   const opts = {
     path: "nav",
     sectionClasses: ["header-brand", "header-nav", "header-search"],
@@ -34,11 +33,14 @@ export default async function decorate(block) {
     mediaQueryListener: window.matchMedia("(min-width: 800px)"),
   };
 
-  await fetchDocumentAndReplaceBlock({ input: block, opts });
+  const { input } = await fetchDocumentAndReplaceBlock({ input: block, opts });
+  console.log("input", input);
+  const blockHTML = input.innerHTML;
 
   const handleMQChange = (matches) => {
+    block.innerHTML = blockHTML;
     decorateByMediaQuery(
-      { input, opts },
+      { input: block, opts },
       matches,
       opts.desktopDecorators,
       opts.mobileDecorators,
