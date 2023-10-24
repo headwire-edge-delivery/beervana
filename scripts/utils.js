@@ -3,7 +3,8 @@ import { getMetadata, decorateIcons, readBlockConfig } from './aem.js';
 export async function fetchDocument(opts) {
   const meta = getMetadata(opts.path);
   const path = meta ? new URL(meta).pathname : `/${opts.path}`;
-  const resp = await fetch(`${path}.plain.html`);
+  const options = opts.fetchOptions || {};
+  const resp = await fetch(`${path}.plain.html`, options);
 
   if (resp.ok) {
     const html = await resp.text();
@@ -38,7 +39,7 @@ export function runDecorators(props, decorators) {
 export function decorateSectionsWithClasses({ input, opts }) {
   console.log("decorateSectionsWithClasses", input.childNodes, opts)
   if (input) {
-    input.querySelectorAll("div").forEach((section, index) => section.classList.add(opts.sectionClasses[index]));
+    input.querySelectorAll(":scope > div").forEach((section, index) => section.classList.add(opts.sectionClasses[index]));
     return input;
   }
 }
@@ -51,3 +52,6 @@ export function runLoop(input, callback) {
   }
 }
 
+export function decorateByMediaQuery(props, matches, matchedDecorators, unmatchedDecorators) {
+  runDecorators(props, matches ? matchedDecorators : unmatchedDecorators);
+}

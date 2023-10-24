@@ -1,4 +1,4 @@
-import { setupNestedNavigationListeners } from './header-interactions.js';
+import { setupMobileNavigationInteractions, setupNestedNavigationInteractions } from './header-interactions.js';
 
 export function decorateNestedNavigationItem({ input, opts }) {
   const navItem = document.createElement('li');
@@ -27,7 +27,7 @@ export function decorateNestedNavigation({ input, opts }) {
     const nestedToggle = document.createElement('button');
     nestedToggle.innerText = "v"; // TODO remove after icon styling
     nestedToggle.classList.add(opts.dropdownToggleClass);
-    setupNestedNavigationListeners(nestedToggle);
+    setupNestedNavigationInteractions(nestedToggle);
 
     const nestedUL = document.createElement('ul');
     ul.querySelectorAll('li').forEach((li) => {
@@ -61,5 +61,21 @@ export function decorateNavigation({ input, opts }) {
     navSection.appendChild(navHTML);
 
     return input;
+  }
+}
+
+export function decorateMobileNavigation({ input, opts }) {
+  console.log("decorateMobileNavigation", input, opts);
+  const navSection = input.querySelector('.header-nav');
+  if (navSection) {
+    const buttonHTML = document.createElement('button');
+    const buttonIcon = document.createElement('span');
+
+    buttonIcon.classList.add('icon', 'icon-hamburger');
+
+    buttonHTML.appendChild(buttonIcon);
+    buttonHTML.classList.add(opts.mobileButton);
+    setupMobileNavigationInteractions(buttonHTML);
+    navSection.parentNode.appendChild(buttonHTML);
   }
 }

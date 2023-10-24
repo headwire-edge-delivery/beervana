@@ -1,4 +1,4 @@
-export function setupNestedNavigationListeners(input) {
+export function setupNestedNavigationInteractions(input) {
   input.addEventListener('click', nestedNavigationToggleListener);
 }
 
@@ -10,4 +10,8 @@ export function nestedNavigationToggleListener(e) {
 	} else {
 		dropdown.showModal();
   }
+}
+
+export function setupMobileNavigationInteractions(e) {
+  console.log("setupMobileNavigationListeners", e);
 }
