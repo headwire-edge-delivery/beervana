@@ -17,6 +17,7 @@ import {
 export default async function decorate(block) {
   const opts = {
     path: "nav",
+    blockClass: "header",
     sectionClasses: ["header-brand", "header-nav", "header-search"],
     brandClass: "header-brand",
     navClass: "header-nav",

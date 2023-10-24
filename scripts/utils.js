@@ -65,3 +65,24 @@ export function decorateByMediaQuery(
 ) {
   runDecorators(props, matches ? matchedDecorators : unmatchedDecorators);
 }
+
+export function setupButton({ input, opts }) {
+  const button = document.createElement("button");
+  if (opts.buttonClasses) button.classList.add(opts.buttonClasses);
+  if (opts.buttonIcon) {
+    const icon = document.createElement("span");
+    icon.classList.add("icon", opts.buttonIcon);
+    button.appendChild(icon);
+  }
+  if (opts.buttonText) {
+    const text = document.createElement("span");
+    text.classList.add("text");
+    text.innerHTML = opts.buttonText;
+    button.appendChild(text);
+  }
+  if (opts.buttonInteractions) {
+    opts.buttonInteractions(button, opts);
+  }
+
+  return button;
+}
