@@ -1,5 +1,5 @@
 export default async function decorate(block) {
-  console.log("form decorate", block);
+  console.log("form-newsletter decorate", block);
   const input = block;
   const opts = {
     path: "form",

@@ -1,9 +1,20 @@
 @import url("variables/index.css");
 @import url("text.css");
 
-html, body { 
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background-color: var(--colors-background-bg-primary);
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--colors-background-bg-primary);
+  width: 100vw;
+  max-width: 100%;
+}
+
+picture,
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
