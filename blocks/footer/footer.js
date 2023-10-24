@@ -28,16 +28,19 @@ export default async function decorate(block) {
     mediaQueryListener: window.matchMedia("(min-width: 800px)"),
   };
 
-  await fetchDocumentAndReplaceBlock({ input: block, opts });
-  decorateBlocks(block);
+  await fetchDocumentAndReplaceBlock({ input, opts });
+  decorateBlocks(input);
 
   // Decorate and setup breakpoint decorator listener
-  decorateByMediaQuery(
-    { input, opts },
-    opts.mediaQueryListener.matches,
-    opts.desktopDecorators,
-    opts.mobileDecorators,
-  );
-  opts.mediaQueryListener.onchange = (e) => decorateByMediaQuery(e.matches);
+  const handleMQChange = (matches) => {
+    decorateByMediaQuery(
+      { input, opts },
+      matches,
+      opts.desktopDecorators,
+      opts.mobileDecorators,
+    );
+  };
+  handleMQChange(opts.mediaQueryListener.matches);
+  opts.mediaQueryListener.onchange = (e) => handleMQChange(e.matches);
   decorateIcons(block);
 }

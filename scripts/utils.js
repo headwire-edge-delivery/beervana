@@ -1,4 +1,4 @@
-import { getMetadata, decorateIcons, readBlockConfig } from './aem.js';
+import { getMetadata, decorateIcons, readBlockConfig } from "./aem.js";
 
 export async function fetchDocument(opts) {
   const meta = getMetadata(opts.path);
@@ -31,17 +31,22 @@ export function runDecorator(props, decorator) {
 
 export function runDecorators(props, decorators) {
   let { input, opts } = props;
-  decorators.forEach(decorator => {
-    input = runDecorator({ input, opts }, decorator)
+  decorators.forEach((decorator) => {
+    input = runDecorator({ input, opts }, decorator);
   });
 }
 
 export function decorateSectionsWithClasses({ input, opts }) {
-  console.log("decorateSectionsWithClasses", input.childNodes, opts)
+  console.log("decorateSectionsWithClasses", input.childNodes, opts);
   if (input) {
-    input.querySelectorAll(":scope > div").forEach((section, index) => section.classList.add(opts.sectionClasses[index]));
+    input
+      .querySelectorAll(":scope > div")
+      .forEach((section, index) =>
+        section.classList.add(opts.sectionClasses[index]),
+      );
     return input;
   }
+  return;
 }
 
 export function runLoop(input, callback) {
@@ -52,6 +57,11 @@ export function runLoop(input, callback) {
   }
 }
 
-export function decorateByMediaQuery(props, matches, matchedDecorators, unmatchedDecorators) {
+export function decorateByMediaQuery(
+  props,
+  matches,
+  matchedDecorators,
+  unmatchedDecorators,
+) {
   runDecorators(props, matches ? matchedDecorators : unmatchedDecorators);
 }

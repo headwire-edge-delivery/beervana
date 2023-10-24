@@ -28,10 +28,11 @@
     list-style: none;
     display: flex;
 
-
     & a {
       text-decoration: none;
-      color: var(--component-colors-components-buttons-secondary-color-button-secondary-color-fg);
+      color: var(
+        --component-colors-components-buttons-secondary-color-button-secondary-color-fg
+      );
       font-size: var(--font-sizes-text-md, 1rem);
       font-weight: var(--font-weights-text-bold, 700);
       display: flex;
@@ -43,33 +44,46 @@
       border: 1px solid transparent;
 
       &:hover {
-        color: var(--component-colors-components-buttons-primary-button-primary-fg);
-        border: 1px solid var(--component-colors-components-buttons-primary-button-primary-border, #B02602);
-        background: var(--component-colors-components-buttons-primary-button-primary-bg, #B02602);
+        color: var(
+          --component-colors-components-buttons-primary-button-primary-fg
+        );
+        border: 1px solid
+          var(
+            --component-colors-components-buttons-primary-button-primary-border,
+            #b02602
+          );
+        background: var(
+          --component-colors-components-buttons-primary-button-primary-bg,
+          #b02602
+        );
         box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
       }
     }
   }
 
-    & li.header-nav-dropdown-parent {
-	    display: flex;
-	    gap: .5rem;
-      position: relative;
+  & li.header-nav-dropdown-parent {
+    display: flex;
+    gap: 0.5rem;
+    position: relative;
 
-	    & button {
-		    background: transparent;
-		    border: none;
-		    color: var(--component-colors-components-buttons-secondary-color-button-secondary-color-fg);
+    & button {
+      background: transparent;
+      border: none;
+      color: var(
+        --component-colors-components-buttons-secondary-color-button-secondary-color-fg
+      );
 
-		    &:hover {
-        color: var(--component-colors-components-buttons-primary-button-primary-fg);
-		    }
-		}
+      &:hover {
+        color: var(
+          --component-colors-components-buttons-primary-button-primary-fg
+        );
+      }
+    }
   }
 
   & .header-nav-dropdown {
-	  &[open] {
-	    display: block;
+    &[open] {
+      display: block;
       position: absolute;
       top: 3rem;
       left: 0;
@@ -80,8 +94,9 @@
       border: none;
       padding: 0;
       background: var(--colors-background-bg-primary);
-      box-shadow: 0 12px 16px -4px #10182808,
-                  0 4px 6px -2px #10182802;
+      box-shadow:
+        0 12px 16px -4px #10182808,
+        0 4px 6px -2px #10182802;
     }
 
     &[open]::backdrop {
@@ -103,7 +118,11 @@
         display: flex;
         flex-basis: 3rem;
         height: 3rem;
-        border: 1px solid var(--component-colors-components-buttons-primary-button-secondary, blue);
+        border: 1px solid
+          var(
+            --component-colors-components-buttons-primary-button-secondary,
+            blue
+          );
         border-radius: 5px;
         flex: 1;
       }
@@ -116,16 +135,16 @@
       align-items: flex-start;
     }
   }
-
 }
 
-& @media (min-width: 800px) {
-  .header-nav {
-    & nav {
+@media (min-width: 800px) {
+  .header.block {
+    .header-nav {
       display: flex;
-    }
-    .header-nav-mobile {
-      display: none;
+
+      .header-nav-mobile {
+        display: none;
+      }
     }
   }
 }
