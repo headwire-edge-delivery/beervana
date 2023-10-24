@@ -11,7 +11,6 @@ import {
 
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
-  const input = block;
   const opts = {
     path: cfg.footer || "footer",
     fetchOptions: window.location.pathname.endsWith("/footer")
@@ -28,19 +27,21 @@ export default async function decorate(block) {
     mediaQueryListener: window.matchMedia("(min-width: 800px)"),
   };
 
-  await fetchDocumentAndReplaceBlock({ input, opts });
+  const { input } = await fetchDocumentAndReplaceBlock({ input: block, opts });
+  const inputHTML = input.innerHTML;
   decorateBlocks(input);
 
   // Decorate and setup breakpoint decorator listener
   const handleMQChange = (matches) => {
+    block.innerHTML = inputHTML;
     decorateByMediaQuery(
-      { input, opts },
+      { input: block, opts },
       matches,
       opts.desktopDecorators,
       opts.mobileDecorators,
     );
+    decorateIcons(block);
   };
   handleMQChange(opts.mediaQueryListener.matches);
   opts.mediaQueryListener.onchange = (e) => handleMQChange(e.matches);
-  decorateIcons(block);
 }

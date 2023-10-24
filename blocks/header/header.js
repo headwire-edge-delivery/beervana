@@ -34,19 +34,18 @@ export default async function decorate(block) {
   };
 
   const { input } = await fetchDocumentAndReplaceBlock({ input: block, opts });
-  console.log("input", input);
-  const blockHTML = input.innerHTML;
+  const inputHTML = input.innerHTML;
 
   const handleMQChange = (matches) => {
-    block.innerHTML = blockHTML;
+    block.innerHTML = inputHTML;
     decorateByMediaQuery(
       { input: block, opts },
       matches,
       opts.desktopDecorators,
       opts.mobileDecorators,
     );
+    decorateIcons(input);
   };
   handleMQChange(opts.mediaQueryListener.matches);
   opts.mediaQueryListener.onchange = (e) => handleMQChange(e.matches);
-  decorateIcons(input);
 }
