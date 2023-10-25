@@ -111,5 +111,5 @@
   --spacing-480: 120rem;
 
   --header-min-height: 3rem;
-  --layout-max-width: 64rem;
+  --layout-max-width: var(--spacing-320);
 }
