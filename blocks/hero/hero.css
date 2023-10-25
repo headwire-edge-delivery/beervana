@@ -1,5 +1,5 @@
 .hero-container {
-  background: var(--colors-background-bg-primary);
+  background: var(--colors-background-bg-brand-section);
   position: relative;
   top: calc(var(--header-min-height) * -1);
   padding-top: var(--header-min-height);
