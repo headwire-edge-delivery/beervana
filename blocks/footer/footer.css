@@ -20,6 +20,10 @@
       color: var(--colors-component-footers-footer-button-fg-hover);
     }
   }
+
+  & ul a {
+    text-transform: capitalize;
+  }
 }
 
 .footer-brand {
@@ -53,7 +57,7 @@
   margin: var(--spacing-8) 0;
 }
 
-& .footer-tnc {
+.footer-tnc {
   border-top: 1px solid var(--colors-border-border-brand-solid-alt);
   padding: var(--spacing-6) 0 var(--spacing-2);;
 
