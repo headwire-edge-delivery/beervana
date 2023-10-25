@@ -1,3 +1,9 @@
 :root {
 	--colors-text-text-brand-primary: var(--colors-gray-900);
+	--text-size-display-xxl: 4.5rem;
+	--text-size-display-xl: 3.75rem;
+	--text-size-display-lg: 3rem;
+	--text-size-display-md: 2.25rem;
+	--text-size-display-sm: 1.875rem;
+	--text-size-display-xs: 1.5rem;
 }
