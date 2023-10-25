@@ -1,12 +1,12 @@
 .header.block {
-  --header-min-height: 3rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-4xl, 2rem);
   padding: var(--spacing-0, 0rem);
   min-height: var(--header-min-height);
+  z-index: 1000;
+  position: relative;
 
   & .header-brand {
     padding: var(--spacing-3) var(--spacing-4);

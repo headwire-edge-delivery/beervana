@@ -139,929 +139,558 @@
     --colors-text-text-warning-primary: var(--colors-warning-400, #fdb022);
     --colors-text-text-white: var(--colors-base-white, #ffffff);
     --colors-text-text-display: var(--colors-gray-50);
-    --component-colors-alpha-alpha-black-10: #ffffff1a;
-    --component-colors-alpha-alpha-black-100: #ffffff;
-    --component-colors-alpha-alpha-black-20: #ffffff33;
-    --component-colors-alpha-alpha-black-30: #ffffff4d;
-    --component-colors-alpha-alpha-black-40: #ffffff66;
-    --component-colors-alpha-alpha-black-50: #ffffff80;
-    --component-colors-alpha-alpha-black-60: #ffffff99;
-    --component-colors-alpha-alpha-black-70: #ffffffb2;
-    --component-colors-alpha-alpha-black-80: #ffffffcc;
-    --component-colors-alpha-alpha-black-90: #ffffffe5;
-    --component-colors-alpha-alpha-brand-10: #0c111d1a;
-    --component-colors-alpha-alpha-brand-100: var(--colors-gray-950, #0c111d);
-    --component-colors-alpha-alpha-brand-20: #0c111d33;
-    --component-colors-alpha-alpha-brand-30: #0c111d4d;
-    --component-colors-alpha-alpha-brand-40: #0c111d66;
-    --component-colors-alpha-alpha-brand-50: #0c111d80;
-    --component-colors-alpha-alpha-brand-60: #0c111d99;
-    --component-colors-alpha-alpha-brand-70: #0c111db2;
-    --component-colors-alpha-alpha-brand-80: #0c111dcc;
-    --component-colors-alpha-alpha-brand-90: #0c111de5;
-    --component-colors-alpha-alpha-white-10: #0c111d1a;
-    --component-colors-alpha-alpha-white-100: var(--colors-gray-950, #0c111d);
-    --component-colors-alpha-alpha-white-20: #0c111d33;
-    --component-colors-alpha-alpha-white-30: #0c111d4d;
-    --component-colors-alpha-alpha-white-40: #0c111d66;
-    --component-colors-alpha-alpha-white-50: #0c111d80;
-    --component-colors-alpha-alpha-white-60: #0c111d99;
-    --component-colors-alpha-alpha-white-70: #0c111db2;
-    --component-colors-alpha-alpha-white-80: #0c111dcc;
-    --component-colors-alpha-alpha-white-90: #0c111de5;
-    --component-colors-components-app-store-badges-app-store-badge-border: var(
+    --colors-component-alpha-alpha-black-10: #ffffff1a;
+    --colors-component-alpha-alpha-black-100: #ffffff;
+    --colors-component-alpha-alpha-black-20: #ffffff33;
+    --colors-component-alpha-alpha-black-30: #ffffff4d;
+    --colors-component-alpha-alpha-black-40: #ffffff66;
+    --colors-component-alpha-alpha-black-50: #ffffff80;
+    --colors-component-alpha-alpha-black-60: #ffffff99;
+    --colors-component-alpha-alpha-black-70: #ffffffb2;
+    --colors-component-alpha-alpha-black-80: #ffffffcc;
+    --colors-component-alpha-alpha-black-90: #ffffffe5;
+    --colors-component-alpha-alpha-brand-10: #0c111d1a;
+    --colors-component-alpha-alpha-brand-100: var(--colors-gray-950, #0c111d);
+    --colors-component-alpha-alpha-brand-20: #0c111d33;
+    --colors-component-alpha-alpha-brand-30: #0c111d4d;
+    --colors-component-alpha-alpha-brand-40: #0c111d66;
+    --colors-component-alpha-alpha-brand-50: #0c111d80;
+    --colors-component-alpha-alpha-brand-60: #0c111d99;
+    --colors-component-alpha-alpha-brand-70: #0c111db2;
+    --colors-component-alpha-alpha-brand-80: #0c111dcc;
+    --colors-component-alpha-alpha-brand-90: #0c111de5;
+    --colors-component-alpha-alpha-white-10: #0c111d1a;
+    --colors-component-alpha-alpha-white-100: var(--colors-gray-950, #0c111d);
+    --colors-component-alpha-alpha-white-20: #0c111d33;
+    --colors-component-alpha-alpha-white-30: #0c111d4d;
+    --colors-component-alpha-alpha-white-40: #0c111d66;
+    --colors-component-alpha-alpha-white-50: #0c111d80;
+    --colors-component-alpha-alpha-white-60: #0c111d99;
+    --colors-component-alpha-alpha-white-70: #0c111db2;
+    --colors-component-alpha-alpha-white-80: #0c111dcc;
+    --colors-component-alpha-alpha-white-90: #0c111de5;
+    --colors-component-app-store-badges-app-store-badge-border: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-application-navigation-nav-item-button-icon-fg: var(
+    --colors-component-application-navigation-nav-item-button-icon-fg: var(
       --colors-gray-400,
       #94969c
     );
-    --component-colors-components-application-navigation-nav-item-button-icon-fg-active: var(
+    --colors-component-application-navigation-nav-item-button-icon-fg-active: var(
       --colors-gray-200,
       #ececed
     );
-    --component-colors-components-application-navigation-nav-item-icon-fg: var(
+    --colors-component-application-navigation-nav-item-icon-fg: var(
       --colors-gray-400,
       #94969c
     );
-    --component-colors-components-application-navigation-nav-item-icon-fg-active: var(
+    --colors-component-application-navigation-nav-item-icon-fg-active: var(
       --colors-gray-200,
       #ececed
     );
-    --component-colors-components-avatars-avatar-bg: var(
-      --colors-gray-800,
-      #1f242f
-    );
-    --component-colors-components-avatars-avatar-contrast-border: #ffffff1f;
-    --component-colors-components-avatars-avatar-focus-border: #98a2b324;
-    --component-colors-components-avatars-avatar-profile-photo-border: var(
+    --colors-component-avatars-avatar-bg: var(--colors-gray-800, #1f242f);
+    --colors-component-avatars-avatar-contrast-border: #ffffff1f;
+    --colors-component-avatars-avatar-focus-border: #98a2b324;
+    --colors-component-avatars-avatar-profile-photo-border: var(
       --colors-gray-950,
       #0c111d
     );
-    --component-colors-components-breadcrumbs-breadcrumb-bg-hover: var(
+    --colors-component-breadcrumbs-breadcrumb-bg-hover: var(
       --colors-gray-800,
       #1f242f
     );
-    --component-colors-components-breadcrumbs-breadcrumb-brand-bg-hover: var(
+    --colors-component-breadcrumbs-breadcrumb-brand-bg-hover: var(
       --colors-gray-800,
       #1f242f
     );
-    --component-colors-components-breadcrumbs-breadcrumb-brand-fg-hover: var(
+    --colors-component-breadcrumbs-breadcrumb-brand-fg-hover: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-breadcrumbs-breadcrumb-brand-icon-fg-hover: var(
+    --colors-component-breadcrumbs-breadcrumb-brand-icon-fg-hover: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-breadcrumbs-breadcrumb-fg: var(
+    --colors-component-breadcrumbs-breadcrumb-fg: var(
       --colors-gray-300,
       #cecfd2
     );
-    --component-colors-components-breadcrumbs-breadcrumb-fg-hover: var(
+    --colors-component-breadcrumbs-breadcrumb-fg-hover: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-breadcrumbs-breadcrumb-icon-fg: var(
+    --colors-component-breadcrumbs-breadcrumb-icon-fg: var(
       --colors-gray-400,
       #94969c
     );
-    --component-colors-components-breadcrumbs-breadcrumb-icon-fg-hover: var(
+    --colors-component-breadcrumbs-breadcrumb-icon-fg-hover: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-buttons-primary-button-primary-bg: var(
+    --colors-component-buttons-primary-button-primary-bg: var(
       --colors-brand-600,
       #b02602
     );
-    --component-colors-components-buttons-primary-button-primary-bg-hover: var(
+    --colors-component-buttons-primary-button-primary-bg-hover: var(
       --colors-brand-700,
       #581301
     );
-    --component-colors-components-buttons-primary-button-primary-border: var(
+    --colors-component-buttons-primary-button-primary-border: var(
       --colors-brand-600,
       #b02602
     );
-    --component-colors-components-buttons-primary-button-primary-border-hover: var(
+    --colors-component-buttons-primary-button-primary-border-hover: var(
       --colors-brand-700,
       #581301
     );
-    --component-colors-components-buttons-primary-button-primary-fg: var(
+    --colors-component-buttons-primary-button-primary-fg: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-buttons-primary-button-primary-fg-hover: var(
+    --colors-component-buttons-primary-button-primary-fg-hover: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-buttons-primary-error-button-primary-error-bg: var(
+    --colors-component-buttons-primary-error-button-primary-error-bg: var(
       --colors-error-600,
       #d92d20
     );
-    --component-colors-components-buttons-primary-error-button-primary-error-bg-hover: var(
+    --colors-component-buttons-primary-error-button-primary-error-bg-hover: var(
       --colors-error-700,
       #b42318
     );
-    --component-colors-components-buttons-primary-error-button-primary-error-border: var(
+    --colors-component-buttons-primary-error-button-primary-error-border: var(
       --colors-error-600,
       #d92d20
     );
-    --component-colors-components-buttons-primary-error-button-primary-error-border-hover: var(
+    --colors-component-buttons-primary-error-button-primary-error-border-hover: var(
       --colors-error-700,
       #b42318
     );
-    --component-colors-components-buttons-primary-error-button-primary-error-fg: var(
+    --colors-component-buttons-primary-error-button-primary-error-fg: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-buttons-primary-error-button-primary-error-fg-hover: var(
+    --colors-component-buttons-primary-error-button-primary-error-fg-hover: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-buttons-secondary-button-secondary-bg: var(
+    --colors-component-buttons-secondary-button-secondary-bg: var(
       --colors-gray-900,
       #161b26
     );
-    --component-colors-components-buttons-secondary-button-secondary-bg-hover: var(
+    --colors-component-buttons-secondary-button-secondary-bg-hover: var(
       --colors-gray-800,
       #1f242f
     );
-    --component-colors-components-buttons-secondary-button-secondary-border: var(
+    --colors-component-buttons-secondary-button-secondary-border: var(
       --colors-gray-700,
       #333741
     );
-    --component-colors-components-buttons-secondary-button-secondary-border-hover: var(
+    --colors-component-buttons-secondary-button-secondary-border-hover: var(
       --colors-gray-700,
       #333741
     );
-    --component-colors-components-buttons-secondary-button-secondary-fg: var(
+    --colors-component-buttons-secondary-button-secondary-fg: var(
       --colors-gray-300,
       #cecfd2
     );
-    --component-colors-components-buttons-secondary-button-secondary-fg-hover: var(
+    --colors-component-buttons-secondary-button-secondary-fg-hover: var(
       --colors-gray-100,
       #f0f1f1
     );
-    --component-colors-components-buttons-secondary-color-button-secondary-color-bg: var(
+    --colors-component-buttons-secondary-color-button-secondary-color-bg: var(
       --colors-gray-900,
       #161b26
     );
-    --component-colors-components-buttons-secondary-color-button-secondary-color-bg-hover: var(
+    --colors-component-buttons-secondary-color-button-secondary-color-bg-hover: var(
       --colors-gray-800,
       #1f242f
     );
-    --component-colors-components-buttons-secondary-color-button-secondary-color-border: var(
+    --colors-component-buttons-secondary-color-button-secondary-color-border: var(
       --colors-gray-700,
       #333741
     );
-    --component-colors-components-buttons-secondary-color-button-secondary-color-border-hover: var(
+    --colors-component-buttons-secondary-color-button-secondary-color-border-hover: var(
       --colors-gray-700,
       #333741
     );
-    --component-colors-components-buttons-secondary-color-button-secondary-color-fg: var(
+    --colors-component-buttons-secondary-color-button-secondary-color-fg: var(
       --colors-gray-300,
       #cecfd2
     );
-    --component-colors-components-buttons-secondary-color-button-secondary-color-fg-hover: var(
+    --colors-component-buttons-secondary-color-button-secondary-color-fg-hover: var(
       --colors-gray-100,
       #f0f1f1
     );
-    --component-colors-components-buttons-secondary-error-button-secondary-error-bg: var(
+    --colors-component-buttons-secondary-error-button-secondary-error-bg: var(
       --colors-error-950,
       #55160c
     );
-    --component-colors-components-buttons-secondary-error-button-secondary-error-bg-hover: var(
+    --colors-component-buttons-secondary-error-button-secondary-error-bg-hover: var(
       --colors-error-900,
       #7a271a
     );
-    --component-colors-components-buttons-secondary-error-button-secondary-error-border: var(
+    --colors-component-buttons-secondary-error-button-secondary-error-border: var(
       --colors-error-800,
       #912018
     );
-    --component-colors-components-buttons-secondary-error-button-secondary-error-border-hover: var(
+    --colors-component-buttons-secondary-error-button-secondary-error-border-hover: var(
       --colors-error-700,
       #b42318
     );
-    --component-colors-components-buttons-secondary-error-button-secondary-error-fg: var(
+    --colors-component-buttons-secondary-error-button-secondary-error-fg: var(
       --colors-error-200,
       #fecdca
     );
-    --component-colors-components-buttons-secondary-error-button-secondary-error-fg-hover: var(
+    --colors-component-buttons-secondary-error-button-secondary-error-fg-hover: var(
       --colors-error-100,
       #fee4e2
     );
-    --component-colors-components-buttons-tertiary-button-tertiary-bg-hover: var(
+    --colors-component-buttons-tertiary-button-tertiary-bg-hover: var(
       --colors-gray-800,
       #1f242f
     );
-    --component-colors-components-buttons-tertiary-button-tertiary-fg: var(
+    --colors-component-buttons-tertiary-button-tertiary-fg: var(
       --colors-gray-400,
       #94969c
     );
-    --component-colors-components-buttons-tertiary-button-tertiary-fg-hover: var(
+    --colors-component-buttons-tertiary-button-tertiary-fg-hover: var(
       --colors-gray-200,
       #ececed
     );
-    --component-colors-components-buttons-tertiary-color-button-tertiary-color-bg-hover: var(
+    --colors-component-buttons-tertiary-color-button-tertiary-color-bg-hover: var(
       --colors-gray-800,
       #1f242f
     );
-    --component-colors-components-buttons-tertiary-color-button-tertiary-color-fg: var(
+    --colors-component-buttons-tertiary-color-button-tertiary-color-fg: var(
       --colors-gray-300,
       #cecfd2
     );
-    --component-colors-components-buttons-tertiary-color-button-tertiary-color-fg-hover: var(
+    --colors-component-buttons-tertiary-color-button-tertiary-color-fg-hover: var(
       --colors-gray-100,
       #f0f1f1
     );
-    --component-colors-components-buttons-tertiary-error-button-tertiary-error-bg-hover: var(
+    --colors-component-buttons-tertiary-error-button-tertiary-error-bg-hover: var(
       --colors-error-900,
       #7a271a
     );
-    --component-colors-components-buttons-tertiary-error-button-tertiary-error-fg: var(
+    --colors-component-buttons-tertiary-error-button-tertiary-error-fg: var(
       --colors-error-300,
       #fda29b
     );
-    --component-colors-components-buttons-tertiary-error-button-tertiary-error-fg-hover: var(
+    --colors-component-buttons-tertiary-error-button-tertiary-error-fg-hover: var(
       --colors-error-200,
       #fecdca
     );
-    --component-colors-components-footers-footer-badge-bg: #ffffff1a;
-    --component-colors-components-footers-footer-badge-border: #ffffff4d;
-    --component-colors-components-footers-footer-badge-fg: var(
+    --colors-component-footers-footer-badge-bg: #ffffff1a;
+    --colors-component-footers-footer-badge-border: #ffffff4d;
+    --colors-component-footers-footer-badge-fg: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-footers-footer-button-fg: var(
+    --colors-component-footers-footer-button-fg: var(
       --colors-gray-300,
       #cecfd2
     );
-    --component-colors-components-footers-footer-button-fg-hover: var(
+    --colors-component-footers-footer-button-fg-hover: var(
       --colors-gray-100,
       #f0f1f1
     );
-    --component-colors-components-header-sections-header-abstract-100-bg: var(
+    --colors-component-header-sections-header-abstract-100-bg: var(
       --colors-gray-800,
       #1f242f
     );
-    --component-colors-components-header-sections-header-abstract-200-bg: var(
+    --colors-component-header-sections-header-abstract-200-bg: var(
       --colors-gray-700,
       #333741
     );
-    --component-colors-components-header-sections-header-abstract-300-bg: var(
+    --colors-component-header-sections-header-abstract-300-bg: var(
       --colors-gray-600,
       #61646c
     );
-    --component-colors-components-header-sections-header-abstract-50-bg: var(
+    --colors-component-header-sections-header-abstract-50-bg: var(
       --colors-gray-900,
       #161b26
     );
-    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-brand: var(
+    --colors-component-icons-featured-icons-dark-featured-icon-dark-fg-brand: var(
       --colors-brand-200,
       #ee9781
     );
-    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-error: var(
+    --colors-component-icons-featured-icons-dark-featured-icon-dark-fg-error: var(
       --colors-error-200,
       #fecdca
     );
-    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-gray: var(
+    --colors-component-icons-featured-icons-dark-featured-icon-dark-fg-gray: var(
       --colors-gray-200,
       #ececed
     );
-    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-success: var(
+    --colors-component-icons-featured-icons-dark-featured-icon-dark-fg-success: var(
       --colors-success-200,
       #abefc6
     );
-    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-warning: var(
+    --colors-component-icons-featured-icons-dark-featured-icon-dark-fg-warning: var(
       --colors-warning-200,
       #fedf89
     );
-    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-brand: var(
+    --colors-component-icons-featured-icons-light-featured-icon-light-fg-brand: var(
       --colors-brand-200,
       #ee9781
     );
-    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-error: var(
+    --colors-component-icons-featured-icons-light-featured-icon-light-fg-error: var(
       --colors-error-200,
       #fecdca
     );
-    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-gray: var(
+    --colors-component-icons-featured-icons-light-featured-icon-light-fg-gray: var(
       --colors-gray-200,
       #ececed
     );
-    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-success: var(
+    --colors-component-icons-featured-icons-light-featured-icon-light-fg-success: var(
       --colors-success-200,
       #abefc6
     );
-    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-warning: var(
+    --colors-component-icons-featured-icons-light-featured-icon-light-fg-warning: var(
       --colors-warning-200,
       #fedf89
     );
-    --component-colors-components-icons-featured-icons-modern-featured-icon-modern-border: var(
+    --colors-component-icons-featured-icons-modern-featured-icon-modern-border: var(
       --colors-gray-700,
       #333741
     );
-    --component-colors-components-icons-icons-icon-fg-brand: var(
+    --colors-component-icons-icons-icon-fg-brand: var(
       --colors-gray-400,
       #94969c
     );
-    --component-colors-components-icons-icons-icon-fg-brand-on-brand: var(
+    --colors-component-icons-icons-icon-fg-brand-on-brand: var(
       --colors-gray-400,
       #94969c
     );
-    --component-colors-components-icons-social-icons-social-icon-fg-angellist: var(
+    --colors-component-icons-social-icons-social-icon-fg-angellist: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-icons-social-icons-social-icon-fg-apple: var(
+    --colors-component-icons-social-icons-social-icon-fg-apple: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-icons-social-icons-social-icon-fg-github: var(
+    --colors-component-icons-social-icons-social-icon-fg-github: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-icons-social-icons-social-icon-fg-instagram: var(
+    --colors-component-icons-social-icons-social-icon-fg-instagram: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-icons-social-icons-social-icon-fg-tumblr: var(
+    --colors-component-icons-social-icons-social-icon-fg-tumblr: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-icons-social-icons-social-icon-fg-x: var(
+    --colors-component-icons-social-icons-social-icon-fg-x: var(
       --colors-base-white,
       #ffffff
     );
-    --component-colors-components-mockups-screen-mockup-border: var(
+    --colors-component-mockups-screen-mockup-border: var(
       --colors-gray-700,
       #333741
     );
-    --component-colors-components-sliders-slider-handle-bg: var(
+    --colors-component-sliders-slider-handle-bg: var(
       --colors-foreground-fg-brand-primary-(600),
       #b02602
     );
-    --component-colors-components-sliders-slider-handle-border: var(
+    --colors-component-sliders-slider-handle-border: var(
       --colors-background-bg-primary,
       #ffffff
     );
-    --component-colors-components-thumbnail-thumbnail-badge-brand-fg: var(
+    --colors-component-thumbnail-thumbnail-badge-brand-fg: var(
       --colors-gray-300,
       #cecfd2
     );
-    --component-colors-components-thumbnail-thumbnail-badge-success-fg: var(
+    --colors-component-thumbnail-thumbnail-badge-success-fg: var(
       --colors-gray-300,
       #cecfd2
     );
-    --component-colors-components-toggles-toggle-button-fg-disabled: var(
+    --colors-component-toggles-toggle-button-fg-disabled: var(
       --colors-gray-600,
       #61646c
     );
-    --component-colors-components-tooltips-tooltip-supporting-text: var(
+    --colors-component-tooltips-tooltip-supporting-text: var(
       --colors-gray-300,
       #cecfd2
     );
-    --component-colors-components-wysiwyg-editor-wysiwyg-editor-icon-fg: var(
-      --colors-gray-400,
-      #94969c
-    );
-    --component-colors-components-wysiwyg-editor-wysiwyg-editor-icon-fg-active: var(
-      --colors-base-white,
-      #ffffff
-    );
-    --component-colors-utility-blue-utility-blue-100: var(
-      --colors-blue-900,
-      #194185
-    );
-    --component-colors-utility-blue-utility-blue-200: var(
-      --colors-blue-800,
-      #1849a9
-    );
-    --component-colors-utility-blue-utility-blue-300: var(
-      --colors-blue-700,
-      #175cd3
-    );
-    --component-colors-utility-blue-utility-blue-400: var(
-      --colors-blue-600,
-      #1570ef
-    );
-    --component-colors-utility-blue-utility-blue-50: var(
-      --colors-blue-950,
-      #102a56
-    );
-    --component-colors-utility-blue-utility-blue-500: var(
-      --colors-blue-500,
-      #2e90fa
-    );
-    --component-colors-utility-blue-utility-blue-600: var(
-      --colors-blue-400,
-      #53b1fd
-    );
-    --component-colors-utility-blue-utility-blue-700: var(
-      --colors-blue-300,
-      #84caff
-    );
-    --component-colors-utility-blue-dark-utility-blue-dark-100: var(
-      --colors-blue-dark-900,
-      #00359e
-    );
-    --component-colors-utility-blue-dark-utility-blue-dark-200: var(
-      --colors-blue-dark-800,
-      #0040c1
-    );
-    --component-colors-utility-blue-dark-utility-blue-dark-300: var(
-      --colors-blue-dark-700,
-      #004eeb
-    );
-    --component-colors-utility-blue-dark-utility-blue-dark-400: var(
-      --colors-blue-dark-600,
-      #155eef
-    );
-    --component-colors-utility-blue-dark-utility-blue-dark-50: var(
-      --colors-blue-dark-950,
-      #002266
-    );
-    --component-colors-utility-blue-dark-utility-blue-dark-500: var(
-      --colors-blue-dark-500,
-      #2970ff
-    );
-    --component-colors-utility-blue-dark-utility-blue-dark-600: var(
-      --colors-blue-dark-400,
-      #528bff
-    );
-    --component-colors-utility-blue-dark-utility-blue-dark-700: var(
-      --colors-blue-dark-300,
-      #84adff
-    );
-    --component-colors-utility-blue-light-utility-blue-light-100: var(
-      --colors-blue-light-900,
-      #0b4a6f
-    );
-    --component-colors-utility-blue-light-utility-blue-light-200: var(
-      --colors-blue-light-800,
-      #065986
-    );
-    --component-colors-utility-blue-light-utility-blue-light-300: var(
-      --colors-blue-light-700,
-      #026aa2
-    );
-    --component-colors-utility-blue-light-utility-blue-light-400: var(
-      --colors-blue-light-600,
-      #0086c9
-    );
-    --component-colors-utility-blue-light-utility-blue-light-50: var(
-      --colors-blue-light-950,
-      #062c41
-    );
-    --component-colors-utility-blue-light-utility-blue-light-500: var(
-      --colors-blue-light-500,
-      #0ba5ec
-    );
-    --component-colors-utility-blue-light-utility-blue-light-600: var(
-      --colors-blue-light-400,
-      #36bffa
-    );
-    --component-colors-utility-blue-light-utility-blue-light-700: var(
-      --colors-blue-light-300,
-      #7cd4fd
-    );
-    --component-colors-utility-brand-utility-brand-100: var(
+    --colors-component-utility-brand-utility-brand-100: var(
       --colors-brand-900,
       #2c0900
     );
-    --component-colors-utility-brand-utility-brand-100-alt: var(
-      --component-colors-utility-gray-utility-gray-100,
+    --colors-component-utility-brand-utility-brand-100-alt: var(
+      --colors-component-utility-gray-utility-gray-100,
       #f2f4f7
     );
-    --component-colors-utility-brand-utility-brand-200: var(
+    --colors-component-utility-brand-utility-brand-200: var(
       --colors-brand-800,
       #420e01
     );
-    --component-colors-utility-brand-utility-brand-200-alt: var(
-      --component-colors-utility-gray-utility-gray-200,
+    --colors-component-utility-brand-utility-brand-200-alt: var(
+      --colors-component-utility-gray-utility-gray-200,
       #eaecf0
     );
-    --component-colors-utility-brand-utility-brand-300: var(
+    --colors-component-utility-brand-utility-brand-300: var(
       --colors-brand-700,
       #581301
     );
-    --component-colors-utility-brand-utility-brand-300-alt: var(
-      --component-colors-utility-gray-utility-gray-300,
+    --colors-component-utility-brand-utility-brand-300-alt: var(
+      --colors-component-utility-gray-utility-gray-300,
       #d0d5dd
     );
-    --component-colors-utility-brand-utility-brand-400: var(
+    --colors-component-utility-brand-utility-brand-400: var(
       --colors-brand-600,
       #b02602
     );
-    --component-colors-utility-brand-utility-brand-400-alt: var(
-      --component-colors-utility-gray-utility-gray-400,
+    --colors-component-utility-brand-utility-brand-400-alt: var(
+      --colors-component-utility-gray-utility-gray-400,
       #98a2b3
     );
-    --component-colors-utility-brand-utility-brand-50: var(
+    --colors-component-utility-brand-utility-brand-50: var(
       --colors-brand-950,
       #160500
     );
-    --component-colors-utility-brand-utility-brand-500: var(
+    --colors-component-utility-brand-utility-brand-500: var(
       --colors-brand-500,
       #dc2f02
     );
-    --component-colors-utility-brand-utility-brand-500-alt: var(
-      --component-colors-utility-gray-utility-gray-500,
+    --colors-component-utility-brand-utility-brand-500-alt: var(
+      --colors-component-utility-gray-utility-gray-500,
       #667085
     );
-    --component-colors-utility-brand-utility-brand-50-alt: var(
-      --component-colors-utility-gray-utility-gray-50,
+    --colors-component-utility-brand-utility-brand-50-alt: var(
+      --colors-component-utility-gray-utility-gray-50,
       #f9fafb
     );
-    --component-colors-utility-brand-utility-brand-600: var(
+    --colors-component-utility-brand-utility-brand-600: var(
       --colors-brand-400,
       #e0441b
     );
-    --component-colors-utility-brand-utility-brand-600-alt: var(
-      --component-colors-utility-gray-utility-gray-600,
+    --colors-component-utility-brand-utility-brand-600-alt: var(
+      --colors-component-utility-gray-utility-gray-600,
       #475467
     );
-    --component-colors-utility-brand-utility-brand-700: var(
+    --colors-component-utility-brand-utility-brand-700: var(
       --colors-brand-300,
       #ea8267
     );
-    --component-colors-utility-brand-utility-brand-700-alt: var(
-      --component-colors-utility-gray-utility-gray-700,
+    --colors-component-utility-brand-utility-brand-700-alt: var(
+      --colors-component-utility-gray-utility-gray-700,
       #344054
     );
-    --component-colors-utility-brand-utility-brand-800: var(
+    --colors-component-utility-brand-utility-brand-800: var(
       --colors-brand-200,
       #ee9781
     );
-    --component-colors-utility-brand-utility-brand-800-alt: var(
-      --component-colors-utility-gray-utility-gray-800,
+    --colors-component-utility-brand-utility-brand-800-alt: var(
+      --colors-component-utility-gray-utility-gray-800,
       #182230
     );
-    --component-colors-utility-brand-utility-brand-900: var(
+    --colors-component-utility-brand-utility-brand-900: var(
       --colors-brand-100,
       #f1ac9a
     );
-    --component-colors-utility-brand-utility-brand-900-alt: var(
-      --component-colors-utility-gray-utility-gray-900,
+    --colors-component-utility-brand-utility-brand-900-alt: var(
+      --colors-component-utility-gray-utility-gray-900,
       #101828
     );
-    --component-colors-utility-error-utility-error-100: var(
+    --colors-component-utility-error-utility-error-100: var(
       --colors-error-900,
       #7a271a
     );
-    --component-colors-utility-error-utility-error-200: var(
+    --colors-component-utility-error-utility-error-200: var(
       --colors-error-800,
       #912018
     );
-    --component-colors-utility-error-utility-error-300: var(
+    --colors-component-utility-error-utility-error-300: var(
       --colors-error-700,
       #b42318
     );
-    --component-colors-utility-error-utility-error-400: var(
+    --colors-component-utility-error-utility-error-400: var(
       --colors-error-600,
       #d92d20
     );
-    --component-colors-utility-error-utility-error-50: var(
+    --colors-component-utility-error-utility-error-50: var(
       --colors-error-950,
       #55160c
     );
-    --component-colors-utility-error-utility-error-500: var(
+    --colors-component-utility-error-utility-error-500: var(
       --colors-error-500,
       #f04438
     );
-    --component-colors-utility-error-utility-error-600: var(
+    --colors-component-utility-error-utility-error-600: var(
       --colors-error-400,
       #f97066
     );
-    --component-colors-utility-error-utility-error-700: var(
+    --colors-component-utility-error-utility-error-700: var(
       --colors-error-300,
       #fda29b
     );
-    --component-colors-utility-fuchsia-utility-fuchsia-100: var(
-      --colors-fuchsia-900,
-      #6f1877
-    );
-    --component-colors-utility-fuchsia-utility-fuchsia-200: var(
-      --colors-fuchsia-800,
-      #821890
-    );
-    --component-colors-utility-fuchsia-utility-fuchsia-300: var(
-      --colors-fuchsia-700,
-      #9f1ab1
-    );
-    --component-colors-utility-fuchsia-utility-fuchsia-400: var(
-      --colors-fuchsia-600,
-      #ba24d5
-    );
-    --component-colors-utility-fuchsia-utility-fuchsia-50: var(
-      --colors-fuchsia-950,
-      #47104c
-    );
-    --component-colors-utility-fuchsia-utility-fuchsia-500: var(
-      --colors-fuchsia-500,
-      #d444f1
-    );
-    --component-colors-utility-fuchsia-utility-fuchsia-600: var(
-      --colors-fuchsia-400,
-      #e478fa
-    );
-    --component-colors-utility-fuchsia-utility-fuchsia-700: var(
-      --colors-fuchsia-300,
-      #eeaafd
-    );
-    --component-colors-utility-gray-utility-gray-100: var(
-      --colors-gray-800,
-      #1f242f
-    );
-    --component-colors-utility-gray-utility-gray-200: var(
-      --colors-gray-700,
-      #333741
-    );
-    --component-colors-utility-gray-utility-gray-300: var(
-      --colors-gray-700,
-      #333741
-    );
-    --component-colors-utility-gray-utility-gray-400: var(
-      --colors-gray-600,
-      #61646c
-    );
-    --component-colors-utility-gray-utility-gray-50: var(
-      --colors-gray-900,
-      #161b26
-    );
-    --component-colors-utility-gray-utility-gray-500: var(
-      --colors-gray-500,
-      #85888e
-    );
-    --component-colors-utility-gray-utility-gray-600: var(
-      --colors-gray-400,
-      #94969c
-    );
-    --component-colors-utility-gray-utility-gray-700: var(
-      --colors-gray-300,
-      #cecfd2
-    );
-    --component-colors-utility-gray-utility-gray-800: var(
-      --colors-gray-200,
-      #ececed
-    );
-    --component-colors-utility-gray-utility-gray-900: var(
-      --colors-gray-100,
-      #f0f1f1
-    );
-    --component-colors-utility-gray-blue-utility-gray-blue-100: var(
-      --colors-gray-blue-900,
-      #101323
-    );
-    --component-colors-utility-gray-blue-utility-gray-blue-200: var(
-      --colors-gray-blue-800,
-      #293056
-    );
-    --component-colors-utility-gray-blue-utility-gray-blue-300: var(
-      --colors-gray-blue-700,
-      #363f72
-    );
-    --component-colors-utility-gray-blue-utility-gray-blue-400: var(
-      --colors-gray-blue-600,
-      #3e4784
-    );
-    --component-colors-utility-gray-blue-utility-gray-blue-50: var(
-      --colors-gray-blue-900,
-      #101323
-    );
-    --component-colors-utility-gray-blue-utility-gray-blue-500: var(
-      --colors-gray-blue-500,
-      #4e5ba6
-    );
-    --component-colors-utility-gray-blue-utility-gray-blue-600: var(
-      --colors-gray-blue-400,
-      #717bbc
-    );
-    --component-colors-utility-gray-blue-utility-gray-blue-700: var(
-      --colors-gray-blue-300,
-      #b3b8db
-    );
-    --component-colors-utility-indigo-utility-indigo-100: var(
-      --colors-indigo-900,
-      #2d3282
-    );
-    --component-colors-utility-indigo-utility-indigo-200: var(
-      --colors-indigo-800,
-      #2d31a6
-    );
-    --component-colors-utility-indigo-utility-indigo-300: var(
-      --colors-indigo-700,
-      #3538cd
-    );
-    --component-colors-utility-indigo-utility-indigo-400: var(
-      --colors-indigo-600,
-      #444ce7
-    );
-    --component-colors-utility-indigo-utility-indigo-50: var(
-      --colors-indigo-950,
-      #1f235b
-    );
-    --component-colors-utility-indigo-utility-indigo-500: var(
-      --colors-indigo-500,
-      #6172f3
-    );
-    --component-colors-utility-indigo-utility-indigo-600: var(
-      --colors-indigo-400,
-      #8098f9
-    );
-    --component-colors-utility-indigo-utility-indigo-700: var(
-      --colors-indigo-300,
-      #a4bcfd
-    );
-    --component-colors-utility-orange-utility-orange-100: var(
-      --colors-orange-900,
-      #772917
-    );
-    --component-colors-utility-orange-utility-orange-200: var(
-      --colors-orange-800,
-      #932f19
-    );
-    --component-colors-utility-orange-utility-orange-300: var(
-      --colors-orange-700,
-      #b93815
-    );
-    --component-colors-utility-orange-utility-orange-400: var(
-      --colors-orange-600,
-      #e04f16
-    );
-    --component-colors-utility-orange-utility-orange-50: var(
-      --colors-orange-950,
-      #511c10
-    );
-    --component-colors-utility-orange-utility-orange-500: var(
-      --colors-orange-500,
-      #ef6820
-    );
-    --component-colors-utility-orange-utility-orange-600: var(
-      --colors-orange-400,
-      #f38744
-    );
-    --component-colors-utility-orange-utility-orange-700: var(
-      --colors-orange-300,
-      #f7b27a
-    );
-    --component-colors-utility-orange-dark-utility-orange-dark-100: var(
-      --colors-orange-dark-900,
-      #771a0d
-    );
-    --component-colors-utility-orange-dark-utility-orange-dark-200: var(
-      --colors-orange-dark-800,
-      #97180c
-    );
-    --component-colors-utility-orange-dark-utility-orange-dark-300: var(
-      --colors-orange-dark-700,
-      #bc1b06
-    );
-    --component-colors-utility-orange-dark-utility-orange-dark-400: var(
-      --colors-orange-dark-600,
-      #e62e05
-    );
-    --component-colors-utility-orange-dark-utility-orange-dark-50: var(
-      --colors-orange-dark-950,
-      #57130a
-    );
-    --component-colors-utility-orange-dark-utility-orange-dark-500: var(
-      --colors-orange-dark-500,
-      #ff4405
-    );
-    --component-colors-utility-orange-dark-utility-orange-dark-600: var(
-      --colors-orange-dark-400,
-      #ff692e
-    );
-    --component-colors-utility-orange-dark-utility-orange-dark-700: var(
-      --colors-orange-dark-300,
-      #ff9c66
-    );
-    --component-colors-utility-pink-utility-pink-100: var(
-      --colors-pink-900,
-      #851651
-    );
-    --component-colors-utility-pink-utility-pink-200: var(
-      --colors-pink-800,
-      #9e165f
-    );
-    --component-colors-utility-pink-utility-pink-300: var(
-      --colors-pink-700,
-      #c11574
-    );
-    --component-colors-utility-pink-utility-pink-400: var(
-      --colors-pink-600,
-      #dd2590
-    );
-    --component-colors-utility-pink-utility-pink-50: var(
-      --colors-pink-950,
-      #4e0d30
-    );
-    --component-colors-utility-pink-utility-pink-500: var(
-      --colors-pink-500,
-      #ee46bc
-    );
-    --component-colors-utility-pink-utility-pink-600: var(
-      --colors-pink-400,
-      #f670c7
-    );
-    --component-colors-utility-pink-utility-pink-700: var(
-      --colors-pink-300,
-      #faa7e0
-    );
-    --component-colors-utility-purple-utility-purple-100: var(
-      --colors-purple-900,
-      #3e1c96
-    );
-    --component-colors-utility-purple-utility-purple-200: var(
-      --colors-purple-800,
-      #4a1fb8
-    );
-    --component-colors-utility-purple-utility-purple-300: var(
-      --colors-purple-700,
-      #5925dc
-    );
-    --component-colors-utility-purple-utility-purple-400: var(
-      --colors-purple-600,
-      #6938ef
-    );
-    --component-colors-utility-purple-utility-purple-50: var(
-      --colors-purple-950,
-      #27115f
-    );
-    --component-colors-utility-purple-utility-purple-500: var(
-      --colors-purple-500,
-      #7a5af8
-    );
-    --component-colors-utility-purple-utility-purple-600: var(
-      --colors-purple-400,
-      #9b8afb
-    );
-    --component-colors-utility-purple-utility-purple-700: var(
-      --colors-purple-300,
-      #bdb4fe
-    );
-    --component-colors-utility-success-utility-success-100: var(
+    --colors-component-utility-success-utility-success-100: var(
       --colors-success-900,
       #074d31
     );
-    --component-colors-utility-success-utility-success-200: var(
+    --colors-component-utility-success-utility-success-200: var(
       --colors-success-800,
       #085d3a
     );
-    --component-colors-utility-success-utility-success-300: var(
+    --colors-component-utility-success-utility-success-300: var(
       --colors-success-700,
       #067647
     );
-    --component-colors-utility-success-utility-success-400: var(
+    --colors-component-utility-success-utility-success-400: var(
       --colors-success-600,
       #079455
     );
-    --component-colors-utility-success-utility-success-50: var(
+    --colors-component-utility-success-utility-success-50: var(
       --colors-success-950,
       #053321
     );
-    --component-colors-utility-success-utility-success-500: var(
+    --colors-component-utility-success-utility-success-500: var(
       --colors-success-500,
       #17b26a
     );
-    --component-colors-utility-success-utility-success-600: var(
+    --colors-component-utility-success-utility-success-600: var(
       --colors-success-400,
       #47cd89
     );
-    --component-colors-utility-success-utility-success-700: var(
+    --colors-component-utility-success-utility-success-700: var(
       --colors-success-300,
       #75e0a7
     );
-    --component-colors-utility-warning-utility-warning-100: var(
+    --colors-component-utility-warning-utility-warning-100: var(
       --colors-warning-900,
       #7a2e0e
     );
-    --component-colors-utility-warning-utility-warning-200: var(
+    --colors-component-utility-warning-utility-warning-200: var(
       --colors-warning-800,
       #93370d
     );
-    --component-colors-utility-warning-utility-warning-300: var(
+    --colors-component-utility-warning-utility-warning-300: var(
       --colors-warning-700,
       #b54708
     );
-    --component-colors-utility-warning-utility-warning-400: var(
+    --colors-component-utility-warning-utility-warning-400: var(
       --colors-warning-600,
       #dc6803
     );
-    --component-colors-utility-warning-utility-warning-50: var(
+    --colors-component-utility-warning-utility-warning-50: var(
       --colors-warning-950,
       #4e1d09
     );
-    --component-colors-utility-warning-utility-warning-500: var(
+    --colors-component-utility-warning-utility-warning-500: var(
       --colors-warning-500,
       #f79009
     );
-    --component-colors-utility-warning-utility-warning-600: var(
+    --colors-component-utility-warning-utility-warning-600: var(
       --colors-warning-400,
       #fdb022
     );
-    --component-colors-utility-warning-utility-warning-700: var(
+    --colors-component-utility-warning-utility-warning-700: var(
       --colors-warning-300,
       #fec84b
     );
