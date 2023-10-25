@@ -15,6 +15,15 @@ body {
   max-width: 100%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 picture,
 img {
   display: block;
@@ -25,4 +34,7 @@ img {
 
 .section {
   padding: var(--spacing-4);
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
 }
