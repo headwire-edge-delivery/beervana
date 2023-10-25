@@ -6,6 +6,7 @@
 
 .header.block {
   width: 100%;
+  max-width: var(--layout-max-width);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,6 +15,7 @@
   min-height: var(--header-min-height);
   z-index: 1000;
   position: relative;
+  margin: 0 auto;
 
   & .header-brand {
     padding: var(--spacing-3) var(--spacing-4);
