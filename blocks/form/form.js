@@ -1,4 +1,4 @@
-export default async function decorate(block) {
+export default function decorate(block) {
   console.log("form decorate", block);
   const input = block;
   const opts = {

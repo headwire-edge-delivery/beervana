@@ -1,4 +1,5 @@
 import {
+  decorateBlock,
   decorateBlocks,
   decorateIcons,
   readBlockConfig,
@@ -29,7 +30,6 @@ export default async function decorate(block) {
 
   const { input } = await fetchDocumentAndReplaceBlock({ input: block, opts });
   const inputHTML = input.innerHTML;
-  decorateBlocks(input);
 
   // Decorate and setup breakpoint decorator listener
   const handleMQChange = (matches) => {
@@ -41,6 +41,7 @@ export default async function decorate(block) {
       opts.mobileDecorators,
     );
     decorateIcons(block);
+    decorateBlock(block.querySelector(".form"));
   };
   handleMQChange(opts.mediaQueryListener.matches);
   opts.mediaQueryListener.onchange = (e) => handleMQChange(e.matches);
