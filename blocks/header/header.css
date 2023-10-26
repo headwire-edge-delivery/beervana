@@ -184,8 +184,12 @@ li.header-nav-dropdown-parent {
   align-items: flex-start;
 }
 
-body.has-hero .header-nav a {
-  color: var(--colors-text-text-primary-on-brand);
+body.has-hero .header-nav {
+  background: var(--colors-background-bg-brand-section);
+
+  & a {
+    color: var(--colors-text-text-primary-on-brand);
+  }
 }
 
 @media (min-width: 800px) {
