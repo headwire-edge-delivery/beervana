@@ -74,9 +74,10 @@
 @media (min-width: 768px) {
   .footer.block {
     display: grid;
-    grid-template-areas: "brand newsletter"
-                          "nav newsletter"
-                          "tnc tnc";
+    grid-template-areas: "brand brand newsletter"
+                          "nav nav newsletter"
+                          "tnc tnc tnc";
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .footer-brand {
@@ -98,6 +99,7 @@
 
   .footer-newsletter {
     grid-area: newsletter;
+    color: var(--colors-text-text-primary-on-brand);
   }
 
   .footer-tnc {

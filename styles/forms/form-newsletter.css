@@ -1,0 +1,26 @@
+.form.block {
+  container: newsletter form / inline-size;
+}
+
+form[data-action="/newsletter"] {
+  flex-direction: column;
+
+  & .field-wrapper:first-child {
+    flex: 1;
+  }
+
+  & .field-wrapper:last-child {
+    align-self: flex-end;
+  }
+}
+
+@container newsletter (min-width: 400px) {
+  form[data-action="/newsletter"] {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  
+    & button {
+        width: auto;
+    }
+  }
+}

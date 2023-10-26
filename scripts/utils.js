@@ -1,5 +1,20 @@
 import { getMetadata, decorateIcons, readBlockConfig } from "./aem.js";
 
+export async function fetchJSON(opts) {
+  //const meta = getMetadata(opts.path);
+  //const path = meta ? new URL(meta).pathname : `/${opts.path}`;
+  const options = opts.fetchOptions || {};
+  const resp = await fetch(opts.path, options);
+
+  if (resp.ok) {
+    const json = await resp.json();
+    return json;
+  }
+
+  return undefined;
+}
+
+
 export async function fetchDocument(opts) {
   const meta = getMetadata(opts.path);
   const path = meta ? new URL(meta).pathname : `/${opts.path}`;
