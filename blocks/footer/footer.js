@@ -1,7 +1,7 @@
 import {
   decorateBlock,
-  decorateBlocks,
   decorateIcons,
+  loadBlocks,
   readBlockConfig,
 } from "../../scripts/aem.js";
 import {
@@ -42,6 +42,7 @@ export default async function decorate(block) {
     );
     decorateIcons(block);
     decorateBlock(block.querySelector(".form"));
+    loadBlocks(document.querySelector("footer"));
   };
   handleMQChange(opts.mediaQueryListener.matches);
   opts.mediaQueryListener.onchange = (e) => handleMQChange(e.matches);

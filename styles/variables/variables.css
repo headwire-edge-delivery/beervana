@@ -112,4 +112,10 @@
 
   --header-min-height: 3rem;
   --layout-max-width: var(--spacing-320);
+
+  --border-radius-none: var(--spacing-0);
+  --border-radius-sm: var(--spacing-1);
+  --border-radius-md: var(--spacing-2);
+  --border-radius-lg: var(--spacing-3);
+  --border-radius-xl: var(--spacing-4);
 }

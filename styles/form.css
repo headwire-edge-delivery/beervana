@@ -1,0 +1,23 @@
+input {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 2px solid var(colors-gray-300);
+  border-radius: var(--border-radius-sm);
+  background: var(--colors-gray-100);
+  font-size: var(--text-size-body-md);
+
+  &:focus {
+    outline: none;
+    border-color: var(--colors-brand-secondary-50);
+  }
+}
+
+[type="submit"] {
+  background: var(--colors-background-bg-brand-solid);
+  color: var(--colors-text-text-primary-on-brand);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-3) var(--spacing-4);
+  border: none;
+  font-size: var(--text-size-body-md);
+  font-weight: bold;
+}
