@@ -49,9 +49,7 @@
 
     & a {
       text-decoration: none;
-      color: var(
-        --component-colors-components-buttons-secondary-color-button-secondary-color-fg
-      );
+      color: var(--colors-text-text-primary);
       font-size: var(--font-sizes-text-xl, 1.25rem);
       font-weight: var(--font-weights-text-bold, 700);
       display: flex;
@@ -158,6 +156,10 @@
       align-items: flex-start;
     }
   }
+}
+
+body.has-hero .header-nav a {
+  color: var(--colors-text-text-primary-on-brand);
 }
 
 @media (min-width: 800px) {

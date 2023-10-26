@@ -4,4 +4,5 @@ export default async function decorate(block) {
   const title = block.querySelector("h1");
 
   block.innerHTML = `${title.outerHTML}${image.outerHTML}`;
+  document.body.classList.add("has-hero");
 }
