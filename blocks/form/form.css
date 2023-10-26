@@ -1,0 +1,68 @@
+@import url("form-newsletter.css");
+
+form {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+input {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid var(--colors-border-border-primary);
+  border-radius: var(--border-radius-sm);
+  background: var(--colors-background-bg-primary);
+  font-size: var(--text-size-body-md);
+  color: var(--colors-text-text-primary);
+  box-shadow: 0 1px 2px 0 #10182805;
+
+  &::placeholder {
+    color: var(--colors-text-text-placeholder);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--colors-border-border-brand);
+    box-shadow: var(--focus-ring-box-shadow);
+  }
+
+  &:disabled {
+    background-color: var(--colors-background-bg-disabled_subtle);
+    border-color: var(--colors-border-border-disabled);
+    color: var(--colors-text-text-disabled);
+  }
+}
+
+form button {
+  background: var(--colors-component-buttons-primary-button-primary-bg);
+  color: var(--colors-text-text-primary-on-brand);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid var(--colors-component-buttons-primary-button-primary-border);
+  font-size: var(--text-size-body-md);
+  font-weight: bold;
+  align-self: flex-end;
+
+  &:hover {
+    background-color: var(--colors-component-buttons-primary-button-primary-bg-hover);
+    border-color: var(--colors-component-buttons-primary-button-primary-border-hover);
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: var(--focus-ring-box-shadow);
+    background: var(--colors-component-buttons-primary-button-primary-bg);
+  }
+}
+
+.field-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+
+  & button {
+    width: 100%;
+  }
+}
+
