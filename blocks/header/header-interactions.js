@@ -20,6 +20,7 @@ export function hamburgerMenuInteractions(input, opts) {
     } else {
       dropdown.showModal();
     }
+    document.body.classList.toggle("no-scroll");
   });
 }
 

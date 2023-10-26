@@ -103,4 +103,12 @@ h6, .h6, .display-xs {
 
 a {
   color: var(--component-colors-components-buttons-tertiary-color-button-tertiary-color-fg, #581301);
+  display: inline-flex;
+}
+
+button, a {
+  &:focus {
+    outline: none;
+    box-shadow: var(--focus-ring-box-shadow);
+  }
 }

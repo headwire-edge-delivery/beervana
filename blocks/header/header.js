@@ -14,6 +14,19 @@ import {
   decorateMobileNavigation,
 } from "./header-decorators.js";
 
+const INVERSE_ICONS = ["icon-logo", "icon-hamburger", "icon-close", "icon-search"];
+function handleInvertedLinksAndIcons(block) {
+  if (document.querySelector(".hero")) {
+    block.querySelectorAll(".icon")?.forEach((icon) => {
+      if (INVERSE_ICONS.includes(icon.classList[1])) {
+        const iconName = icon.classList[1];
+        icon.classList.remove(iconName);
+        icon.classList.add(`${iconName}-inverse`);
+      }
+    });
+  }
+}
+
 export default async function decorate(block) {
   const opts = {
     path: "nav",
@@ -45,6 +58,7 @@ export default async function decorate(block) {
       opts.desktopDecorators,
       opts.mobileDecorators,
     );
+    handleInvertedLinksAndIcons(input);
     decorateIcons(input);
   };
   handleMQChange(opts.mediaQueryListener.matches);

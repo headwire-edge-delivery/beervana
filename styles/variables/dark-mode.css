@@ -1,5 +1,6 @@
 @media (prefers-color-scheme: dark) {
   :root {
+    --focus-ring-box-shadow: 0 0 0 4px #98A2B340;
     --colors-gray-25-alpha: #fffffffa;
     --colors-gray-50-alpha: #fffffff5;
     --colors-gray-100-alpha: #fffffff0;

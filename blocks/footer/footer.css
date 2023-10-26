@@ -85,7 +85,7 @@
     grid-template-areas: "brand brand newsletter"
                           "nav nav newsletter"
                           "tnc tnc tnc";
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1.5fr .5fr 1.5fr;
   }
 
   .footer-brand {
