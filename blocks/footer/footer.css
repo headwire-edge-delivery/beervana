@@ -28,7 +28,15 @@
 }
 
 .footer-brand {
-  padding: var(--spacing-4) 0;
+  & .icon {
+    padding: var(--spacing-4) 0;
+    width: var(--spacing-40);
+    display: flex;
+  }
+
+  & p {
+    margin: 0
+  }
 }
 
 .footer-nav ul {
@@ -100,6 +108,8 @@
   .footer-newsletter {
     grid-area: newsletter;
     color: var(--colors-text-text-primary-on-brand);
+    margin: 0;
+    align-self: center;
   }
 
   .footer-tnc {
