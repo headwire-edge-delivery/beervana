@@ -140,4 +140,12 @@ input[type="checkbox"] {
   display: grid;
   grid-template-columns: var(--spacing-4) auto;
   gap: var(--spacing-2);
+
+  & label {
+    color: var(--colors-text-text-brand-secondary);
+
+    &:hover {
+      color: var(--colors-text-text-primary)
+    }
+  }
 }

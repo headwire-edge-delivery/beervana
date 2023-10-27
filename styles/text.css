@@ -16,6 +16,7 @@ h1, .h1, .display-xxl {
     font-weight: 400;
     line-height: 5.625rem; /* 125% */
     letter-spacing: -0.09rem;
+    margin-block: var(--spacing-2);
 }
 
 h2, h2, .display-xl {
@@ -25,6 +26,7 @@ h2, h2, .display-xl {
     font-weight: 400;
     line-height: 4.5rem; /* 120% */
     letter-spacing: -0.075rem;
+    margin-block: var(--spacing-2);
 }
 
 h3, .h3, .display-lg {
@@ -34,6 +36,7 @@ h3, .h3, .display-lg {
     font-weight: 400;
     line-height: 3.75rem; /* 125% */
     letter-spacing: -0.06rem;
+    margin-block: var(--spacing-2);
 }
 
 h4, .h4, .diplay-md {
@@ -43,6 +46,7 @@ h4, .h4, .diplay-md {
     font-weight: 400;
     line-height: 2.75rem; /* 122.222% */
     letter-spacing: -0.045rem;
+    margin-block: var(--spacing-2);
 }
 
 h5, .h5, .diplay-sm {
@@ -51,6 +55,7 @@ h5, .h5, .diplay-sm {
     font-style: normal;
     font-weight: 400;
     line-height: 2.375rem; /* 126.667% */
+    margin-block: var(--spacing-2);
 }
 
 h6, .h6, .display-xs {
@@ -59,6 +64,7 @@ h6, .h6, .display-xs {
     font-style: normal;
     font-weight: 400;
     line-height: 2rem; /* 133.333% */
+    margin-block: var(--spacing-2);
 }
 
 .text-xl {

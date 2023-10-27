@@ -1,6 +1,7 @@
 @import url("variables/index.css");
 @import url("text.css");
 @import url("form.css");
+@import url("pages/contact.css");
 
 * {
   box-sizing: border-box;
