@@ -154,6 +154,12 @@ li.header-nav-dropdown-parent {
   &::backdrop {
     background: transparent;
   }
+
+  & ul {
+    & ul {
+      display: flex;
+    }
+  }
 }
 
 .header-nav-dropdown-item {
