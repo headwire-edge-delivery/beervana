@@ -4,6 +4,7 @@ import {
   setupNestedNavigationInteractions,
 } from "./header-interactions.js";
 import { setupButton } from "../../scripts/utils.js";
+import { decorateIcons } from "../../scripts/aem.js";
 
 export function decorateNestedNavigationItem({ input, opts }) {
   const navItem = document.createElement("li");
@@ -30,7 +31,9 @@ export function decorateNestedNavigation({ input, opts }) {
   const ul = input.querySelector("ul");
   if (ul) {
     const nestedToggle = document.createElement("button");
-    nestedToggle.innerText = "v"; // TODO remove after icon styling
+    const nestedToggleIcon = document.createElement("span");
+    nestedToggleIcon.classList.add("icon", "icon-toggle-inverse");
+    nestedToggle.appendChild(nestedToggleIcon);
     nestedToggle.classList.add(opts.dropdownToggleClass);
     setupNestedNavigationInteractions(nestedToggle);
 
@@ -42,7 +45,7 @@ export function decorateNestedNavigation({ input, opts }) {
 
     const nestedNav = document.createElement("dialog");
     nestedNav.classList.add(opts.dropdownClass);
-    nestedNav.setAttribute("aria-expanded", false);
+    //nestedNav.setAttribute("aria-expanded", false);
     nestedNav.appendChild(nestedUL);
 
     input.appendChild(nestedToggle);
@@ -100,24 +103,17 @@ export function decorateMobileDialogButton({ input, opts }) {
 }
 
 export function decorateMobileDialog({ input, opts }) {
+  console.log("input", input);
   const headerBlock = input.parentNode;
   console.log("headerBlock", headerBlock.classList.toString());
   const dialogHTML = document.createElement("dialog");
-  //const ul = input.querySelector("ul");
-
   decorateMobileDialogButton({ input: dialogHTML, opts });
 
-  /*
-  ul.querySelectorAll("li").forEach((li) => {
-    const liHTML = document.createElement("li");
-    const link = li.querySelector("a");
-    liHTML.appendChild(link);
-    dialogHTML.appendChild(liHTML);
+  input.querySelectorAll("ul > li").forEach((li) => {
+    decorateNestedNavigation({ input: li, opts });
   });
-  */
 
   dialogHTML.classList.add(opts.dropdownClass);
-  //dialogHTML.setAttribute("aria-expanded", false);
   dialogHTML.appendChild(input);
   headerBlock.appendChild(dialogHTML);
 }
@@ -125,7 +121,8 @@ export function decorateMobileDialog({ input, opts }) {
 export function decorateMobileNavigation({ input, opts }) {
   const navSection = input.querySelector(".header-nav");
   if (navSection) {
-    decorateMobileDialog({ input: navSection, opts });
     decorateMobileButton({ input, opts });
+    decorateMobileDialog({ input: navSection, opts });
+    //decorateIcons(navSection);
   }
 }

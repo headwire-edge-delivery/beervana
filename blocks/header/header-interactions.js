@@ -18,6 +18,7 @@ export function hamburgerMenuInteractions(input, opts) {
     if (dropdown.hasAttribute("open")) {
       dropdown.close();
     } else {
+      input.classList.add("hide");
       dropdown.showModal();
     }
     document.body.classList.toggle("no-scroll");
@@ -29,6 +30,7 @@ export function dialogCloseInteractions(input, opts) {
     const dropdown = input.parentNode;
     if (dropdown.hasAttribute("open")) {
       dropdown.close();
+      dropdown.parentNode.querySelector(`.${opts.mobileButton}`).classList.remove("hide");
     }
   });
 }

@@ -63,7 +63,7 @@ h6, .h6, .display-xs {
 
 .text-xl {
     font-family: Roboto;
-    font-size: 1.25rem;
+    font-size: var(--text-size-display-xl);
     font-style: normal;
     font-weight: 400;
     line-height: 1.875rem; /* 150% */
@@ -71,7 +71,7 @@ h6, .h6, .display-xs {
 
 .text-lg {
     font-family: Roboto;
-    font-size: 1.125rem;
+    font-size: var(--text-size-display-lg);
     font-style: normal;
     font-weight: 400;
     line-height: 1.75rem; /* 155.556% */
@@ -79,7 +79,7 @@ h6, .h6, .display-xs {
 
 .text-md {
     font-family: Roboto;
-    font-size: 1rem;
+    font-size: var(--text-size-display-md);
     font-style: normal;
     font-weight: 400;
     line-height: 1.5rem; /* 150% */
@@ -87,7 +87,7 @@ h6, .h6, .display-xs {
 
 .text-sm {
     font-family: Roboto;
-    font-size: 0.875rem;
+    font-size: var(--text-size-display-sm);
     font-style: normal;
     font-weight: 400;
     line-height: 1.25rem; /* 142.857% */
@@ -95,15 +95,21 @@ h6, .h6, .display-xs {
 
 .text-xs {
     font-family: Roboto;
-    font-size: 0.75rem;
+    font-size: var(--text-size-display-xs);
     font-style: normal;
     font-weight: 400;
     line-height: 1.125rem; /* 150% */
 }
 
 a {
-  color: var(--component-colors-components-buttons-tertiary-color-button-tertiary-color-fg, #581301);
+  color: var(--colors-component-buttons-tertiary-button-tertiary-fg);
   display: inline-flex;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--colors-component-buttons-tertiary-button-tertiary-fg-hover);
+    text-decoration: underline;
+  }
 }
 
 button, a {
