@@ -1,22 +1,29 @@
 @import url("form-newsletter.css");
+@import url("form-contact.css");
 
 form {
   display: flex;
   gap: var(--spacing-4);
+  flex-direction: column;
 }
 
-input {
+input, textarea {
   width: 100%;
   padding: var(--spacing-3) var(--spacing-4);
   border: 1px solid var(--colors-border-border-primary);
   border-radius: var(--border-radius-sm);
   background: var(--colors-background-bg-primary);
+  font-family: var(--text-font-family-text);
   font-size: var(--text-size-body-md);
   color: var(--colors-text-text-primary);
   box-shadow: 0 1px 2px 0 #10182805;
 
   &::placeholder {
     color: var(--colors-text-text-placeholder);
+  }
+
+  &:hover {
+    border-color: var(--colors-border-border-secondary);
   }
 
   &:focus {
@@ -30,6 +37,10 @@ input {
     border-color: var(--colors-border-border-disabled);
     color: var(--colors-text-text-disabled);
   }
+}
+
+textarea {
+  min-height: var(--spacing-32)
 }
 
 form button {
@@ -55,6 +66,65 @@ form button {
   }
 }
 
+input[type="checkbox"] {
+  border: 1px solid var(--colors-border-border-primary);
+  width: var(--spacing-4);
+  height: var(--spacing-4);
+  border-radius: var(--border-radius-xs);
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  padding: 0;
+  display: grid;
+  grid-template-areas: checkbox;
+  place-content: center;
+
+  &:hover {
+    border-color: var(--colors-border-border-secondary);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--colors-border-border-brand);
+    box-shadow: var(--focus-ring-box-shadow);
+  }
+
+  &::before {
+    content: "";
+    width: var(--spacing-2);
+    height: var(--spacing-2);
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--colors-background-bg-brand-primary);
+    border-radius: var(--border-radius-xxs);
+    grid-area: checkbox;
+  }
+
+  &::after {
+    content: "";
+    grid-area: checkbox;
+    background: url("/icons/check.svg") no-repeat center center;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    width: var(--spacing-2);
+    height: var(--spacing-2);
+    display: block;
+    z-index: 1;
+  }
+
+  &:checked {
+    &::before {
+      transform: scale(2);
+    }
+    &::after {
+      transform: scale(1);
+    }
+  }
+}
+
 .field-wrapper {
   width: 100%;
   display: flex;
@@ -66,3 +136,8 @@ form button {
   }
 }
 
+.form-checkbox-wrapper {
+  display: grid;
+  grid-template-columns: var(--spacing-4) auto;
+  gap: var(--spacing-2);
+}
