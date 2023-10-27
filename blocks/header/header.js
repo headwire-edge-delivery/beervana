@@ -9,10 +9,8 @@ import {
   fetchDocumentAndReplaceBlock,
   runDecorators,
 } from "../../scripts/utils.js";
-import {
-  decorateNavigation,
-  decorateMobileNavigation,
-} from "./header-decorators.js";
+import { decorateNavigation } from "./desktop/decorators.js"; 
+import { decorateMobileNavigation } from "./mobile/decorators.js";
 
 const INVERSE_ICONS = ["icon-logo", "icon-hamburger", "icon-close", "icon-search"];
 function handleInvertedLinksAndIcons(block) {
