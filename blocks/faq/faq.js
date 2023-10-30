@@ -6,6 +6,5 @@ export default async function decorate(block) {
     if (!faqMarkup.querySelector("p")) {
       el.remove();
     }
-    console.log("faq els", el);
   });
 }
