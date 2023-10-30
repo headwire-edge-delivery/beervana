@@ -1,0 +1,50 @@
+.section.fragment-container.team-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-12);
+  padding-block: var(--spacing-12);
+
+  & .default-content-wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: "title text button primary-button";
+    row-gap: var(--spacing-4);
+
+    & .button-container {
+      margin: 0;
+    }
+
+    & .button:not(.primary) {
+      grid-area: button;
+    }
+
+    & .button.primary {
+      grid-area: primary-button;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .section.fragment-container.team-container {
+    & .default-content-wrapper {
+      gap: var(--spacing-6) var(--spacing-4);
+      grid-template-areas: "title button primary-button" "description button primary-button";
+      grid-template-columns: fit-content auto auto;
+      grid-template-rows: auto auto;
+    
+      & p:not(.button-container) {
+        grid-area: description;
+        margin-top: 0;
+
+        & + p:not(.button-container) {
+          margin-top: var(--spacing-4);
+        }
+      }
+
+      & .button-container {
+        align-self: center;
+      }
+    }
+  }
+
+}

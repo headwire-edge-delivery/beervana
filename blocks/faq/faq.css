@@ -1,6 +1,12 @@
 .faq-container {
   background: var(--colors-background-bg-secondary);
   padding-block: var(--spacing-16);
+  max-width: unset;
+}
+
+.faq-wrapper {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
 }
 
 .faq {
