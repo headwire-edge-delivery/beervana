@@ -29,12 +29,13 @@
     & .default-content-wrapper {
       gap: var(--spacing-6) var(--spacing-4);
       grid-template-areas: "title button primary-button" "description button primary-button";
-      grid-template-columns: fit-content auto auto;
+      grid-template-columns: 1fr auto auto;
       grid-template-rows: auto auto;
     
       & p:not(.button-container) {
         grid-area: description;
         margin-top: 0;
+        max-width: 85ch;
 
         & + p:not(.button-container) {
           margin-top: var(--spacing-4);

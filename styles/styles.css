@@ -3,7 +3,6 @@
 @import url("form.css");
 @import url("pages/contact.css");
 @import url("elements/button.css");
-@import url("fragments/team.css");
 
 * {
   box-sizing: border-box;

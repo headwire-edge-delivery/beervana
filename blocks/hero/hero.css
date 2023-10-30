@@ -1,18 +1,34 @@
+@import url("hero-centered-with-pretitle.css");
+
 .hero-container {
-  background: var(--colors-background-bg-brand-section);
   display: flex;
-  padding-block: 0;
+  padding: 0;
   max-width: unset;
+  justify-content: center;
 }
 
 .hero-wrapper {
+  flex: 1;
+}
+
+.hero {
+  background: var(--colors-background-bg-brand-section);
   width: 100%;
-  max-width: var(--layout-max-width);
-  margin: var(--header-min-height) auto;
+  padding-block: var(--header-min-height); 
+
+  & .hero-content {
+    max-width: var(--layout-max-width);
+    margin-inline: auto;
+  }
 
   & h1 {
-    color: var(--colors-text-text-brand-primary-on-brand, white);
     padding: var(--spacing-12) 0 var(--spacing-8);
+  
+    & + h3 {
+      font-size: var(--text-size-text-xl);
+      font-family: var(--text-font-family-text);
+      color: var(--colors-text-text-tertiary);
+    }
   }
 
   & img {
