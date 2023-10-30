@@ -35,7 +35,7 @@ img {
 }
 
 .section {
-  padding: var(--spacing-4);
+  padding: var(--spacing-16) var(--spacing-4);
   width: 100%;
   max-width: var(--layout-max-width);
   margin: 0 auto;
@@ -43,4 +43,8 @@ img {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.section:empty {
+  display: none;
 }
