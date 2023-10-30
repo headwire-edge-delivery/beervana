@@ -24,3 +24,31 @@ form[data-action="/newsletter"] {
     }
   }
 }
+
+.section.form-container.fragment-container {
+  background: var(--colors-background-bg-secondary);
+  padding-block: var(--spacing-16);
+  max-width: unset;
+
+  & .default-content-wrapper,
+  & .form-wrapper {
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+    text-align: center;
+
+    & form {
+      display: grid;
+      max-width: var(--spacing-120);
+      margin-inline: auto;
+      text-align: left;
+
+      & .field-wrapper {
+        margin-top: var(--spacing-4);
+      }
+
+      & label {
+        display: none;
+      }
+    }
+  }
+}
