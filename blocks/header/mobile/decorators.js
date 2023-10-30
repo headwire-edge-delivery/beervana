@@ -5,7 +5,6 @@ import { dialogCloseInteractions, hamburgerMenuInteractions } from "../header-in
 export function decorateMobileButton({ input, opts }) {
   input.appendChild(
     setupButton({
-      input,
       opts: {
         ...opts,
         buttonClasses: [opts.mobileButton, "button-hamburger"],
@@ -19,7 +18,6 @@ export function decorateMobileButton({ input, opts }) {
 export function decorateMobileDialogButton({ input, opts }) {
   input.appendChild(
     setupButton({
-      input,
       opts: {
         ...opts,
         buttonClasses: [opts.mobileButton, "button-close"],

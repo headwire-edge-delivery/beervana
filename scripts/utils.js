@@ -80,21 +80,21 @@ export function decorateByMediaQuery(
 
 export function setupButton({ opts }) {
   const button = document.createElement("button");
-  if (opts.buttonClasses) {
+  if (opts?.buttonClasses) {
     button.classList.add(...opts.buttonClasses);
   }
-  if (opts.buttonIcon) {
+  if (opts?.buttonIcon) {
     const icon = document.createElement("span");
     icon.classList.add(...["icon", ...opts.buttonIcon]);
     button.appendChild(icon);
   }
-  if (opts.buttonText) {
+  if (opts?.buttonText) {
     const text = document.createElement("span");
     text.classList.add("text");
     text.innerHTML = opts.buttonText;
     button.appendChild(text);
   }
-  if (opts.buttonInteractions) {
+  if (opts?.buttonInteractions) {
     opts.buttonInteractions(button, opts);
   }
 

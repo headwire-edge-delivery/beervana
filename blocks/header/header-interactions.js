@@ -3,24 +3,15 @@ export function setupNestedNavigationInteractions(input) {
 }
 
 export function nestedNavigationToggleListener(e) {
-  const navItem = e.target.parentElement;
-  const dropdown = navItem.querySelector(".header-nav-dropdown");
-  if (dropdown.hasAttribute("open")) {
-    dropdown.close();
-  } else {
-    dropdown.showModal();
-  }
+  const navItem = e.target.closest(".header-nav-dropdown-parent");
+  navItem.querySelector(".header-nav-dropdown")?.showModal();
 }
 
 export function hamburgerMenuInteractions(input, opts) {
   input.addEventListener("click", () => {
     const dropdown = input.parentNode.querySelector(`.${opts.dropdownClass}`);
-    if (dropdown.hasAttribute("open")) {
-      dropdown.close();
-    } else {
-      input.classList.add("hide");
-      dropdown.showModal();
-    }
+    input.classList.add("hide");
+    dropdown.show();
     document.body.classList.toggle("no-scroll");
   });
 }

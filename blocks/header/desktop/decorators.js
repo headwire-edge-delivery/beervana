@@ -38,9 +38,12 @@ export function decorateNestedNavigation({ input, opts }) {
   if (ul) {
     // refactor to use setupButton, and to use CSS for the icon to account for dark/light/inverse modes
     const nestedToggle = setupButton({
-      buttonClasses: opts.dropdownToggleClass,
-      buttonIcon: "icon-toggle-inverse",
-      buttonInteractions: setupNestedNavigationInteractions,
+      opts: {
+        ...opts,
+        buttonClasses: [opts.dropdownToggleClass],
+        buttonIcon: ["icon-toggle-inverse"],
+        buttonInteractions: setupNestedNavigationInteractions,
+      }
     });
     /*
     const nestedToggle = document.createElement("button");
@@ -61,9 +64,12 @@ export function decorateNestedNavigation({ input, opts }) {
 
     const nestedNav = document.createElement("dialog");
     const nestedDialogToggle = setupButton({
-      buttonClasses: opts.dropdownToggleClass,
-      buttonIcon: "icon-toggle-inverse",
-      buttonInteractions: dialogCloseInteractions,
+      opts: {
+        ...opts,
+        buttonClasses: [opts.dropdownToggleClass],
+        buttonIcon: ["icon-toggle-inverse"],
+        buttonInteractions: dialogCloseInteractions,
+      }
     });
     nestedNav.classList.add(opts.dropdownClass);
     nestedNav.appendChild(nestedDialogToggle);
