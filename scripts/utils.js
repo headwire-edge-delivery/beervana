@@ -14,7 +14,6 @@ export async function fetchJSON(opts) {
   return undefined;
 }
 
-
 export async function fetchDocument(opts) {
   const meta = getMetadata(opts.path);
   const path = meta ? new URL(meta).pathname : `/${opts.path}`;
@@ -79,7 +78,7 @@ export function decorateByMediaQuery(
   runDecorators(props, matches ? matchedDecorators : unmatchedDecorators);
 }
 
-export function setupButton({ input, opts }) {
+export function setupButton({ opts }) {
   const button = document.createElement("button");
   if (opts.buttonClasses) {
     button.classList.add(...opts.buttonClasses);

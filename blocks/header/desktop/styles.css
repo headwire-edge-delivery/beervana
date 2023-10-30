@@ -1,58 +1,78 @@
 @media (min-width: 800px) {
-   .header-nav {
-      background: var(--colors-background-bg-primary);
-      flex: 1;
-      height: 100%;
+  .header-nav {
+    background: var(--colors-background-bg-primary);
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    padding: var(--spacing-4);
+
+    & ul {
+      display: flex;
       width: 100%;
-      padding: var(--spacing-4);
+      max-width: var(--layout-max-width);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      gap: var(--spacing-4);
+    }
 
-      & ul {
-         display: flex;
-         width: 100%;
-         max-width: var(--layout-max-width);
-         margin: 0;
-         padding: 0;
-         list-style: none;
-         gap: var(--spacing-4);
+    & a:not(.header-nav-dropdown a) {
+      font-size: var(--text-sizes-text-md);
+      font-weight: 700;
+      padding: var(--spacing-2) var(--spacing-4);
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-4);
+      border-radius: var(--border-radius-md);
+      border: 1px solid transparent;
+
+      &:hover {
+        color: var(--colors-component-buttons-primary-button-primary-fg);
+        border: 1px solid
+          var(--colors-component-buttons-primary-button-primary-border);
+        background: var(--colors-component-buttons-primary-button-primary-bg);
+        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+        text-decoration: none;
       }
+    }
 
-      & a {
-         font-size: var(--text-sizes-text-md);
-         font-weight: 700;
-         padding: var(--spacing-2) var(--spacing-4);
-         justify-content: center;
-         align-items: center;
-         gap: var(--spacing-4);
-         border-radius: var(--border-radius-md);
-         border: 1px solid transparent;
+    & li.header-nav-dropdown-parent {
+      display: flex;
+      gap: 0.5rem;
+      position: relative;
 
-         &:hover {
-            color: var(--colors-component-buttons-primary-button-primary-fg);
-            border: 1px solid var(--colors-component-buttons-primary-button-primary-border);
-            background: var(--colors-component-buttons-primary-button-primary-bg);
-            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-            text-decoration: none;
-         }
+      & button {
+        background: transparent;
+        border: none;
+        color: var(
+          --component-colors-components-buttons-secondary-color-button-secondary-color-fg
+        );
+
+        &:hover {
+          color: var(
+            --component-colors-components-buttons-primary-button-primary-fg
+          );
+        }
       }
+    }
+  }
 
-      & li.header-nav-dropdown-parent {
-         display: flex;
-         gap: 0.5rem;
-         position: relative;
+  body.has-hero .header-nav {
+    background-color: var(--colors-background-bg-brand-section);
+  }
 
-         & button {
-            background: transparent;
-            border: none;
-            color: var(--component-colors-components-buttons-secondary-color-button-secondary-color-fg);
+  .header-nav-dropdown {
+    min-width: 100%;
+    height: fit-content;
+    background: var(--colors-background-bg-primary);
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
 
-            &:hover {
-               color: var(--component-colors-components-buttons-primary-button-primary-fg);
-            }
-         }
-      }
-   }
-
-   body.has-hero .header-nav {
-      background-color: var(--colors-background-bg-brand-section);
-   }
+    &::backdrop {
+      background: transparent;
+    }
+  }
 }

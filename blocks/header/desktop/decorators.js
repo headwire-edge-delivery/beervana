@@ -21,7 +21,9 @@ export function decorateNestedNavigationItem({ input, opts }) {
     subtitle.innerText = input.innerText.trim();
 
     navItem.classList.add(opts.dropdownNestedItemClass);
-    linkSubtitleContainer.classList.add(opts.dropdownNestedItemLinkSubtitleClass);
+    linkSubtitleContainer.classList.add(
+      opts.dropdownNestedItemLinkSubtitleClass,
+    );
     linkSubtitleContainer.appendChild(link);
     linkSubtitleContainer.appendChild(subtitle);
     navItem.appendChild(linkSubtitleContainer);
@@ -34,12 +36,21 @@ export function decorateNestedNavigationItem({ input, opts }) {
 export function decorateNestedNavigation({ input, opts }) {
   const ul = input.querySelector("ul");
   if (ul) {
+    // refactor to use setupButton, and to use CSS for the icon to account for dark/light/inverse modes
+    const nestedToggle = setupButton({
+      buttonClasses: opts.dropdownToggleClass,
+      buttonIcon: "icon-toggle-inverse",
+      buttonInteractions: setupNestedNavigationInteractions,
+    });
+    /*
     const nestedToggle = document.createElement("button");
     const nestedToggleIcon = document.createElement("span");
+    
     nestedToggleIcon.classList.add("icon", "icon-toggle-inverse");
     nestedToggle.appendChild(nestedToggleIcon);
     nestedToggle.classList.add(opts.dropdownToggleClass);
     setupNestedNavigationInteractions(nestedToggle);
+    */
 
     const nestedUL = document.createElement("ul");
     ul.querySelectorAll("li").forEach((li) => {
@@ -49,8 +60,13 @@ export function decorateNestedNavigation({ input, opts }) {
     ul.remove();
 
     const nestedNav = document.createElement("dialog");
+    const nestedDialogToggle = setupButton({
+      buttonClasses: opts.dropdownToggleClass,
+      buttonIcon: "icon-toggle-inverse",
+      buttonInteractions: dialogCloseInteractions,
+    });
     nestedNav.classList.add(opts.dropdownClass);
-    //nestedNav.setAttribute("aria-expanded", false);
+    nestedNav.appendChild(nestedDialogToggle);
     nestedNav.appendChild(nestedUL);
 
     input.appendChild(nestedToggle);
