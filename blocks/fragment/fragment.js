@@ -35,11 +35,23 @@ export default async function decorate(block) {
   const link = block.querySelector('a');
   const path = link ? link.getAttribute('href') : block.textContent.trim();
   const fragment = await loadFragment(path);
-  if (fragment) {
-    const fragmentSection = fragment.querySelector(':scope .section');
-    if (fragmentSection) {
-      block.closest('.section').classList.add(...fragmentSection.classList);
-      block.closest('.fragment-wrapper').replaceWith(...fragmentSection.childNodes);
+  if (fragment?.childNodes?.length) {
+    const fragmentSections = fragment.querySelectorAll(':scope .section');
+    block.innerHTML = "";
+    if (fragmentSections) {
+      block.closest('.fragment-container').classList.add(...block.classList);
+      fragmentSections.forEach((section) => {
+        const defaultContent = section.querySelector(':scope > div');
+        const pic = defaultContent.querySelector('picture');
+        if (pic) {
+          const picWrapper = pic.closest('div');
+          if (picWrapper && picWrapper.children.length === 1) {
+            // picture is only content in column
+            picWrapper.classList.add('image-content');
+          }
+        }
+        block.append(defaultContent);
+      });
     }
   }
 }

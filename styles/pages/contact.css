@@ -62,7 +62,7 @@
       max-width: unset;
       grid-template-areas: "sidebar content map map"
                           "sidebar form map map";
-      grid-template-columns: 1fr calc(var(--layout-max-width) / 2) calc(var(--layout-max-width) / 2) 1fr;
+      grid-template-columns: var(--layout-grid-template-columns-full-bleed-two-columns);
       gap: 0;
     
       & .default-content-wrapper {
