@@ -12,6 +12,7 @@
     grid-template-areas: "full-bleed" "column";
     grid-template-rows: auto auto;
 
+    & .form-wrapper,
     & .default-content-wrapper:not(.image-content) {
       grid-area: column;
       padding: var(--spacing-8);
@@ -55,7 +56,7 @@
       gap: var(--spacing-10) 0;
 
       & .fragment-wrapper:nth-child(even) .fragment.full-bleed.block {
-        grid-template-areas: "column full-bleed";
+        grid-template-areas: "full-bleed column";
 
         & .default-content-wrapper:not(.image-content) {
           padding-inline: var(--spacing-10);
@@ -63,20 +64,21 @@
 
         & .image-content {
           grid-area: full-bleed;
-          padding-inline-start: var(--spacing-10);
+          padding-inline-end: var(--spacing-10);
         }
       }
 
       & .fragment-wrapper:nth-child(odd) .fragment.full-bleed.block {
-        grid-template-areas: "full-bleed column";
+        grid-template-areas: "column full-bleed";
 
+        & .form-wrapper,
         & .default-content-wrapper:not(.image-content) {
-          padding-inline-start: var(--spacing-10);
+          padding-inline-end: var(--spacing-10);
         }
 
         & .image-content {
           grid-area: full-bleed;
-          padding-inline-end: var(--spacing-10);
+          padding-inline-start: var(--spacing-10);
         }
       }
     }
@@ -86,8 +88,9 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
 
+      & .form-wrapper,
       & .default-content-wrapper:not(.image-content) {
-        padding: var(--spacing-20) 0;
+        padding-block: var(--spacing-20);
 
         & h2 {
           font-size: var(--text-size-display-sm);
@@ -111,18 +114,20 @@
       gap: var(--spacing-20) 0;
 
       & .fragment-wrapper:nth-child(even) .fragment.full-bleed.block {
-        grid-template-areas: "sidebar column full-bleed full-bleed";
+        grid-template-areas: "full-bleed full-bleed column sidebar";
+
+        & .form-wrapper,
         & .default-content-wrapper:not(.image-content) {
           padding-inline-end: 0;
         }
-
       }
 
       & .fragment-wrapper:nth-child(odd) .fragment.full-bleed.block {
-        grid-template-areas: "full-bleed full-bleed column sidebar";
+        grid-template-areas: "sidebar column full-bleed full-bleed";
 
+        & .form-wrapper,
         & .default-content-wrapper:not(.image-content) {
-          padding-inline-end: 0;
+          padding-inline-start: 0;
         }
 
         & .image-content {
