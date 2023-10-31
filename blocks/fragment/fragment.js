@@ -35,12 +35,14 @@ export default async function decorate(block) {
   const link = block.querySelector('a');
   const path = link ? link.getAttribute('href') : block.textContent.trim();
   const fragment = await loadFragment(path);
-  if (fragment?.childNodes?.length) {
+
+  if (fragment) {
     const fragmentSections = fragment.querySelectorAll(':scope .section');
     block.innerHTML = "";
     if (fragmentSections) {
       block.closest('.fragment-container').classList.add(...block.classList);
       fragmentSections.forEach((section) => {
+        block.closest('.section').classList.add(...section.classList);
         const defaultContent = section.querySelector(':scope > div');
         const pic = defaultContent.querySelector('picture');
         if (pic) {
@@ -51,6 +53,7 @@ export default async function decorate(block) {
           }
         }
         block.append(defaultContent);
+        block.append(...section.childNodes);
       });
     }
   }
