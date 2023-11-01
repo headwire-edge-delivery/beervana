@@ -49,3 +49,9 @@ img {
 .section:empty {
   display: none;
 }
+
+@media (prefers-color-scheme: dark) {
+  .icon:not(.icon-logo-inverse):not(.icon-logo) img {
+    filter: invert(1);
+  }
+}
