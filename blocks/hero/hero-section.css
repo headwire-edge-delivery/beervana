@@ -1,0 +1,20 @@
+.hero.section-hero .hero-content {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: calc(var(--header-min-height) * 2) var(--spacing-4) var(--header-min-height);
+
+  & h1 {
+    margin-block-end: var(--spacing-4);
+    padding-block: var(--spacing-4);
+
+    & + p {
+      max-width: 80ch;
+    }
+  }
+
+  & .button-container {
+    display: inline-flex;
+    margin-inline-end: var(--spacing-4);
+    width: fit-content;
+  }
+}

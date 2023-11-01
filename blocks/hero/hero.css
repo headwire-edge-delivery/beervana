@@ -1,4 +1,5 @@
 @import url("hero-centered-with-pretitle.css");
+@import url("hero-section.css");
 
 .hero-container {
   display: flex;
