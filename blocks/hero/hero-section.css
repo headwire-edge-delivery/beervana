@@ -4,9 +4,15 @@
   padding: calc(var(--header-min-height) * 2) var(--spacing-4) var(--header-min-height);
 
   & h1 {
-    margin-block-end: var(--spacing-4);
+    margin-block-end: 0;
     padding-block: var(--spacing-4);
+    line-height: 100%;
 
+    & + h3 {
+      line-height: 140%;
+    }
+
+    & + h3,
     & + p {
       max-width: 80ch;
     }

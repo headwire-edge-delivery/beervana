@@ -76,4 +76,8 @@ img {
     line-height: 1.75rem; /* 155.556% */
     color: var(--colors-text-text-tertiary);
   }
+
+  & picture {
+    margin-block: var(--spacing-8);
+  }
 }
