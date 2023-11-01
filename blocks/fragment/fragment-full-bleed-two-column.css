@@ -32,6 +32,32 @@
         margin-block: var(--spacing-1);
         color: var(--colors-text-text-tertiary);
       }
+
+      & ul {
+        margin: var(--spacing-4) 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-2);
+
+        & li {
+          padding-inline-start: var(--spacing-2);
+          display: flex;
+          gap: var(--spacing-2);
+          color: var(--colors-text-text-tertiary);
+        }
+
+        & .icon {
+          width: var(--spacing-4);
+          height: var(--spacing-4);
+          display: inline-flex;
+
+          &:not(.icon-map-pin) {
+            align-self: center;
+          }
+        }
+      }
     }
 
     & .default-content-wrapper.image-content {
@@ -43,6 +69,7 @@
         height: 100%;
         max-width: unset;
         object-fit: cover;
+        max-height: 100vh;
       }
     }
 
