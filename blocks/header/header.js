@@ -18,6 +18,22 @@ export default async function decorate(block) {
         nestedNavParent.classList.add("header-nav-nested");
         nestedNav.before(nestedNavParent);
         nestedNavParent.append(nestedNav);
+        nestedNav.querySelectorAll(':scope > li')?.forEach((li) => {
+          const subNavItem = document.createElement("li");
+          const icon = li.querySelector('.icon');
+          const link = li.querySelector('a');
+          if (icon && link) {
+            subNavItem.classList.add('header-nav-nested-item');
+            subNavItem.append(icon);
+            subNavItem.append(link);
+            const text = document.createElement("span");
+            text.classList.add('header-nav-nested-item-text');
+            text.innerText = li.innerText;
+            subNavItem.append(text);
+
+            li.replaceWith(subNavItem);
+          }
+        })
       }
     });
     decorateButtons(block);
