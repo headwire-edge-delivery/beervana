@@ -17,4 +17,8 @@
     margin-inline-end: var(--spacing-4);
     width: fit-content;
   }
+
+  & picture {
+    margin-block-start: var(--spacing-8);
+  }
 }
