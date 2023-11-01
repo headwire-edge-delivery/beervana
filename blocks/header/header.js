@@ -1,50 +1,26 @@
-import {
-  getMetadata,
-  decorateIcons,
-  readBlockConfig,
-} from "../../scripts/aem.js";
-import {
-  decorateByMediaQuery,
-  decorateSectionsWithClasses,
-  fetchDocumentAndReplaceBlock,
-  runDecorators,
-} from "../../scripts/utils.js";
-import { decorateNavigation } from "./desktop/decorators.js"; 
-import { decorateMobileNavigation } from "./mobile/decorators.js";
+import { decorateButtons, decorateIcons } from "../../scripts/aem.js";
+import { fetchDocument } from "../../scripts/utils.js";
 
 export default async function decorate(block) {
-  const opts = {
-    path: "nav",
-    blockClass: "header",
-    sectionClasses: ["header-brand", "header-nav", "header-search"],
-    brandClass: "header-brand",
-    navClass: "header-nav",
-    searchClass: "search",
-    mobileButton: "header-nav-mobile",
-    dropdownClass: "header-nav-dropdown",
-    dropdownParentClass: "header-nav-dropdown-parent",
-    dropdownToggleClass: "header-nav-dropdown-toggle",
-    dropdownNestedItemClass: "header-nav-dropdown-item",
-    dropdownNestedItemLinkSubtitleClass:
-      "header-nav-dropdown-item-link-subtitle",
-    mobileDecorators: [decorateSectionsWithClasses, decorateMobileNavigation],
-    desktopDecorators: [decorateSectionsWithClasses, decorateNavigation],
-    mediaQueryListener: window.matchMedia("(min-width: 800px)"),
-  };
-
-  const { input } = await fetchDocumentAndReplaceBlock({ input: block, opts });
-  const inputHTML = input.innerHTML;
-
-  const handleMQChange = (matches) => {
-    block.innerHTML = inputHTML;
-    decorateByMediaQuery(
-      { input: block, opts },
-      matches,
-      opts.desktopDecorators,
-      opts.mobileDecorators,
-    );
-    decorateIcons(input);
-  };
-  handleMQChange(opts.mediaQueryListener.matches);
-  opts.mediaQueryListener.onchange = (e) => handleMQChange(e.matches);
+  const input = await fetchDocument({ path: "nav" });
+  if (input) {
+    console.log("Hello from blocks/header/header.js block, input", block, input)
+    block.innerHTML = input;
+    const classNames = ["header-brand", "header-nav", "header-cta"];
+    block.querySelectorAll(":scope div")?.forEach((el, index) => {
+      el.classList.add(classNames[index]);
+      if (index === 0 && el.querySelector("p a .icon-logo")) {
+        el.querySelector("p").replaceWith(el.querySelector("p a"));
+      }
+      const nestedNav = el.querySelector("ul ul");
+      if (nestedNav) {
+        const nestedNavParent = document.createElement("nav");
+        nestedNavParent.classList.add("header-nav-nested");
+        nestedNav.before(nestedNavParent);
+        nestedNavParent.append(nestedNav);
+      }
+    });
+    decorateButtons(block);
+    decorateIcons(block);
+  }
 }

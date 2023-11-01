@@ -3,7 +3,9 @@
 
 helix-sidekick {
   min-height: 3rem;
+  /*
   & + header {
     margin-top: 3rem;
   }
+  */
 }
