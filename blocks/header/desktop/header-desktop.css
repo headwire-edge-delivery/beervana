@@ -43,7 +43,8 @@
                     0 12px 16px -4px #10182808,
                     0 4px 8px -2px #10182803;
 
-        &:hover {
+        &:hover,
+        &:focus-within {
           display: grid;
         }
       
@@ -145,6 +146,13 @@
                   background-color: var(--colors-component-buttons-secondary-color-button-secondary-color-fg-hover);
                 }
 
+                & + .header-nav-nested {
+                  display: block;
+                }
+              }
+
+              &:focus,
+              &:focus-within {
                 & + .header-nav-nested {
                   display: block;
                 }
