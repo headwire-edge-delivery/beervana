@@ -1,29 +1,32 @@
-.hero.section-hero .hero-content {
-  max-width: var(--layout-max-width);
-  margin: 0 auto;
+.hero.section-hero { 
+  & .hero-content {
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+    padding-inline: var(--spacing-4);
 
-  & h1 {
-    margin-block-end: 0;
-    padding-block: var(--spacing-4);
-    line-height: 100%;
+    & h1 {
+      margin-block-end: 0;
+      padding-block: var(--spacing-4);
+      line-height: 100%;
 
-    & + h3 {
-      line-height: 140%;
+      & + h3 {
+        line-height: 140%;
+      }
+
+      & + h3,
+      & + p {
+        max-width: 80ch;
+      }
     }
 
-    & + h3,
-    & + p {
-      max-width: 80ch;
+    & .button-container {
+      display: inline-flex;
+      margin-inline-end: var(--spacing-4);
+      width: fit-content;
     }
-  }
 
-  & .button-container {
-    display: inline-flex;
-    margin-inline-end: var(--spacing-4);
-    width: fit-content;
-  }
-
-  & picture {
-    margin-block-start: var(--spacing-8);
+    & picture {
+      margin-block-start: var(--spacing-8);
+    }
   }
 }
