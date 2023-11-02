@@ -3,5 +3,6 @@ export default async function decorate(block) {
   const picture = block.querySelector(":scope picture");
   if (picture) {
     picture.parentNode.replaceWith(picture);
+    document.body.classList.add("has-hero");
   }
 }
