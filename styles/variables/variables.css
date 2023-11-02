@@ -111,7 +111,7 @@
   --spacing-400: 100rem;
   --spacing-480: 120rem;
 
-  --header-min-height: 5rem;
+  --header-min-height: 4rem;
   --layout-max-width: var(--spacing-320);
 
   --border-radius-none: var(--spacing-0);
@@ -125,4 +125,10 @@
   --focus-ring-box-shadow: 0 1px 2px 0 #10182805,
                            0 0 0 4px #DC2f0230;
   --layout-grid-template-columns-full-bleed-two-columns: 1fr calc(var(--layout-max-width) / 2) calc(var(--layout-max-width) / 2) 1fr;
+}
+
+@media (min-width: 60rem) {
+  :root {
+    --header-min-height: 5rem;
+  }
 }

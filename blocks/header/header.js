@@ -1,10 +1,47 @@
 import { decorateButtons, decorateIcons } from "../../scripts/aem.js";
 import { fetchDocument } from "../../scripts/utils.js";
 
+function handleMQChange(matches) {
+  const wrapper = document.querySelector(".header-wrapper");
+  const block = wrapper.querySelector(".header.block");
+  if (matches) {
+    // remove nav and cta from dialog and remove the hamburger menu and its listeners
+  } else {
+    // create dialog and hamburger button
+    // add nav and cta to dialog and remove the hamburger menu and its listeners
+    // add listeners to hamburger button
+    const hamburgerIcon = document.createElement("span");
+    hamburgerIcon.classList.add("icon", "icon-hamburger");
+    const hamburger = document.createElement("button");
+    hamburger.appendChild(hamburgerIcon);
+    hamburger.classList.add("button", "primary", "open");
+    const closeIcon = document.createElement("span");
+    closeIcon.classList.add("icon", "icon-close");
+    const close = document.createElement("button");
+    close.appendChild(closeIcon);
+    close.classList.add("button", "primary", "close");
+    const dialogContent = document.createElement("div");
+    dialogContent.classList.add("header-dialog-content");
+    const dialog = document.createElement("dialog");
+    dialog.classList.add("header-dialog-dropdown");
+    wrapper.querySelector(".header-nav").before(hamburger);
+    dialog.before(wrapper.querySelector(".header-nav"));
+    dialog.appendChild(close);
+    dialog.appendChild(dialogContent);
+    dialogContent.appendChild(wrapper.querySelector(".header-nav"));
+    dialogContent.appendChild(wrapper.querySelector(".header-cta"));
+    block.appendChild(dialog);
+    decorateIcons(hamburger);
+    decorateIcons(close);
+
+    hamburger.addEventListener("click", () => dialog.showModal());
+    close.addEventListener("click", () => dialog.close());
+  }
+}
+
 export default async function decorate(block) {
   const input = await fetchDocument({ path: "nav" });
   if (input) {
-    console.log("Hello from blocks/header/header.js block, input", block, input)
     block.innerHTML = input;
     const classNames = ["header-brand", "header-nav", "header-cta"];
     block.querySelectorAll(":scope div")?.forEach((el, index) => {
@@ -40,5 +77,9 @@ export default async function decorate(block) {
     });
     decorateButtons(block);
     decorateIcons(block);
+
+    const mediaQueryListener = window.matchMedia("(min-width: 60rem)");
+    handleMQChange(mediaQueryListener.matches);
+    mediaQueryListener.onchange = (e) => handleMQChange(e.matches);
   }
 }
