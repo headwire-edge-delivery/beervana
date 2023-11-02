@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--spacing-96), 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(var(--spacing-64), 1fr)); 
   gap: var(--spacing-8) var(--spacing-4);
 }
 
@@ -58,5 +58,11 @@
 
   & .button {
     max-width: fit-content;
+  }
+}
+
+@media (min-width: 50rem) {
+  .cards > ul {
+    grid-template-columns: repeat(auto-fill, minmax(var(--spacing-96), 1fr)); 
   }
 }
