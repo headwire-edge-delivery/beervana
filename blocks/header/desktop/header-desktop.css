@@ -212,5 +212,14 @@
       }
     } 
 
+    & .header-nav-nested-item {
+      & a {
+        color: var(--colors-text-text-primary-on-brand);
+      }
+
+      & span {
+        color: var(--colors-text-text-tertiary-on-brand);
+      }
+    }
   }
 }
