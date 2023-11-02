@@ -12,28 +12,30 @@ export default async function decorate(block) {
       if (index === 0 && el.querySelector("p a .icon-logo")) {
         el.querySelector("p").replaceWith(el.querySelector("p a"));
       }
-      const nestedNav = el.querySelector("ul ul");
+      const nestedNav = el.querySelectorAll("ul ul");
       if (nestedNav) {
-        const nestedNavParent = document.createElement("nav");
-        nestedNavParent.classList.add("header-nav-nested");
-        nestedNav.before(nestedNavParent);
-        nestedNavParent.append(nestedNav);
-        nestedNav.querySelectorAll(':scope > li')?.forEach((li) => {
-          const subNavItem = document.createElement("li");
-          const icon = li.querySelector('.icon');
-          const link = li.querySelector('a');
-          if (icon && link) {
-            subNavItem.classList.add('header-nav-nested-item');
-            subNavItem.append(icon);
-            subNavItem.append(link);
-            const text = document.createElement("span");
-            text.classList.add('header-nav-nested-item-text');
-            text.innerText = li.innerText;
-            subNavItem.append(text);
+        nestedNav.forEach((nav) => {
+          const nestedNavParent = document.createElement("nav");
+          nestedNavParent.classList.add("header-nav-nested");
+          nav.before(nestedNavParent);
+          nestedNavParent.append(nav);
+          nav.querySelectorAll(':scope > li')?.forEach((li) => {
+            const subNavItem = document.createElement("li");
+            const icon = li.querySelector('.icon');
+            const link = li.querySelector('a');
+            if (icon && link) {
+              subNavItem.classList.add('header-nav-nested-item');
+              subNavItem.append(icon);
+              subNavItem.append(link);
+              const text = document.createElement("span");
+              text.classList.add('header-nav-nested-item-text');
+              text.innerText = li.innerText;
+              subNavItem.append(text);
 
-            li.replaceWith(subNavItem);
-          }
-        })
+              li.replaceWith(subNavItem);
+            }
+          })
+        });
       }
     });
     decorateButtons(block);
