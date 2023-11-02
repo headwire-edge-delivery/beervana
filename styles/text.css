@@ -124,3 +124,10 @@ button, a {
     box-shadow: var(--focus-ring-box-shadow);
   }
 }
+
+.default-content-wrapper p:not(.button-container):not(:has(picture)) {
+    max-width: 90ch;
+    color: var(--colors-text-text-tertiary);
+    font-size: var(--text-size-text-lg);
+    line-height: 1.4rem;
+}
