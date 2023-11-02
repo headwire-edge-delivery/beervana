@@ -35,9 +35,10 @@
     & h3 {
       grid-area: title;
       font-size: var(--text-size-display-sm);
+      font-weight: 700;
+      line-height: 120%;
       margin: 0;
       padding: 0;
-      line-height: 120%;
       align-self: center;
     }
 
