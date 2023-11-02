@@ -4,7 +4,8 @@
     margin: 0 auto;
     padding-inline: var(--spacing-4);
 
-    & h1 {
+    & h1,
+    & h2 {
       margin-block-end: 0;
       padding-block: var(--spacing-4);
       line-height: 100%;
