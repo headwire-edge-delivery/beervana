@@ -1,15 +1,34 @@
 import { decorateButtons, decorateIcons } from "../../scripts/aem.js";
 import { fetchDocument } from "../../scripts/utils.js";
 
+function showDialog(e) {
+  e.target.closest(".header.block")
+    ?.querySelector(".header-dialog-dropdown")
+    ?.showModal();
+}
+
+function closeDialog(e) {
+  e.target.closest(".header.block")
+    ?.querySelector(".header-dialog-dropdown")
+    ?.close();
+}
+
 function handleMQChange(matches) {
   const wrapper = document.querySelector(".header-wrapper");
   const block = wrapper.querySelector(".header.block");
   if (matches) {
-    // remove nav and cta from dialog and remove the hamburger menu and its listeners
+    const hamburger = wrapper.querySelector(".header .button.open");
+    const close = wrapper.querySelector(".header .button.close");
+    const dialog = wrapper.querySelector(".header-dialog-dropdown");
+    const dialogContent = wrapper.querySelector(".header-dialog-content");
+    hamburger.removeEventListener("click", showDialog);
+    hamburger.remove();
+    close.removeEventListener("click", closeDialog);
+    close.remove();
+    block.append(...dialogContent.childNodes)
+    dialog.remove();
+
   } else {
-    // create dialog and hamburger button
-    // add nav and cta to dialog and remove the hamburger menu and its listeners
-    // add listeners to hamburger button
     const hamburgerIcon = document.createElement("span");
     hamburgerIcon.classList.add("icon", "icon-hamburger");
     const hamburger = document.createElement("button");
@@ -34,8 +53,8 @@ function handleMQChange(matches) {
     decorateIcons(hamburger);
     decorateIcons(close);
 
-    hamburger.addEventListener("click", () => dialog.showModal());
-    close.addEventListener("click", () => dialog.close());
+    hamburger.addEventListener("click", showDialog);
+    close.addEventListener("click", closeDialog);
   }
 }
 
