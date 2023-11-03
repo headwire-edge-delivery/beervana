@@ -46,6 +46,8 @@
 
     & picture {
       margin-block-start: var(--spacing-8);
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
     }
   }
 }
