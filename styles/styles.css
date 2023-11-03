@@ -1526,6 +1526,17 @@
 	--text-size-text-xs: .75rem;
 }
 
+@media (max-width: 50rem) {
+  :root {
+    --text-size-display-xxl: 3.5rem;
+    --text-size-display-xl: 3.25rem;
+    --text-size-display-lg: 2.75rem;
+    --text-size-display-md: 2.25rem;
+    --text-size-display-sm: 1.875rem;
+    --text-size-display-xs: 1.5rem;
+  }
+}
+
 html, body {
     font-family: var(--body-font-family);
     font-size: var(--body-font-size);
