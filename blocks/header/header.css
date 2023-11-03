@@ -498,6 +498,11 @@ body > header {
         color: var(--colors-text-text-primary-on-brand);
       }
     }
+
+    & .icon-hamburger img, 
+    & .icon-close img {
+      filter: invert(1);
+    }
   }
 
   helix-sidekick + .header-wrapper .header-dialog-dropdown[open] {
