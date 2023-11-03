@@ -1,4 +1,4 @@
-import { decorateButtons, decorateIcons } from "../../scripts/aem.js";
+import { decorateButtons, decorateIcons, getMetadata } from "../../scripts/aem.js";
 
 function showDialog(e) {
   e.target.closest(".header.block")
@@ -68,8 +68,9 @@ function handleMQChange(matches) {
 export default async function decorate(block) {
   const meta = getMetadata("nav");
   const path = meta ? new URL(meta).pathname : `/nav`;
-  const input = await fetch(`${path}.plain.html`);
-  if (input.ok) {
+  const res = await fetch(`${path}.plain.html`);
+  if (res.ok) {
+    const input = await res.text();
     block.innerHTML = input;
     const classNames = ["header-brand", "header-nav", "header-cta"];
     block.querySelectorAll(":scope div")?.forEach((el, index) => {
