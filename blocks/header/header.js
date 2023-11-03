@@ -67,7 +67,7 @@ function handleMQChange(matches) {
 
 export default async function decorate(block) {
   const meta = getMetadata("nav");
-  const path = meta ? new URL(meta).pathname : `/${opts.path}`;
+  const path = meta ? new URL(meta).pathname : `/nav`;
   const input = await fetch(`${path}.plain.html`);
   if (input.ok) {
     block.innerHTML = input;
