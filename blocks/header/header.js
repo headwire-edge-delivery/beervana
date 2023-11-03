@@ -1,6 +1,3 @@
-import { decorateButtons, decorateIcons } from "../../scripts/aem.js";
-import { fetchDocument } from "../../scripts/utils.js";
-
 function showDialog(e) {
   e.target.closest(".header.block")
     ?.querySelector(".header-dialog-dropdown")

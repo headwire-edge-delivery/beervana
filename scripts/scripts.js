@@ -13,6 +13,13 @@ import {
   loadCSS,
 } from './aem.js';
 
+import {
+  fetchDocument,
+  decorateByMediaQuery,
+  decorateSectionsWithClasses,
+  fetchDocumentAndReplaceBlock,
+} from "./utils.js";
+
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
 /**
