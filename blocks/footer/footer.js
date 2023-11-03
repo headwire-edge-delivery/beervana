@@ -1,14 +1,10 @@
 import {
   decorateBlock,
   decorateIcons,
+  getMetadata,
   loadBlocks,
   readBlockConfig,
 } from "../../scripts/aem.js";
-import {
-  decorateByMediaQuery,
-  decorateSectionsWithClasses,
-  fetchDocumentAndReplaceBlock,
-} from "../../scripts/utils.js";
 
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
@@ -23,27 +19,21 @@ export default async function decorate(block) {
       "footer-newsletter",
       "footer-tnc",
     ],
-    mobileDecorators: [decorateSectionsWithClasses],
-    desktopDecorators: [decorateSectionsWithClasses],
-    mediaQueryListener: window.matchMedia("(min-width: 800px)"),
   };
 
-  const { input } = await fetchDocumentAndReplaceBlock({ input: block, opts });
-  const inputHTML = input.innerHTML;
-
-  // Decorate and setup breakpoint decorator listener
-  const handleMQChange = (matches) => {
-    block.innerHTML = inputHTML;
-    decorateByMediaQuery(
-      { input: block, opts },
-      matches,
-      opts.desktopDecorators,
-      opts.mobileDecorators,
-    );
+  const meta = getMetadata("footer");
+  const path = meta ? new URL(meta).pathname : `/footer`;
+  const res = await fetch(`${path}.plain.html`);
+  if (res.ok) {
+    const input = await res.text();
+    block.innerHTML = input;
+    block.querySelectorAll(":scope > div").forEach((section, index) => {
+      section.classList.add(opts.sectionClasses[index])
+    });
     decorateIcons(block);
-    decorateBlock(block.querySelector(".form"));
-    loadBlocks(document.querySelector("footer"));
-  };
-  handleMQChange(opts.mediaQueryListener.matches);
-  opts.mediaQueryListener.onchange = (e) => handleMQChange(e.matches);
+    if (block.querySelector(".form")) {
+      decorateBlock(block.querySelector(".form"));
+      loadBlocks(document.querySelector("footer"));
+    }
+  }
 }
