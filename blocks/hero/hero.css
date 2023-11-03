@@ -1,5 +1,54 @@
-@import url("hero-centered-with-pretitle.css");
-@import url("hero-section.css");
+.hero.centered-with-pretitle {
+  text-align: center;
+  margin-block-start: var(--header-min-height);
+  padding-block: var(--header-min-height);
+  background: var(--colors-background-bg-primary);
+
+  & h1 {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+
+  & p {
+    color: var(--colors-text-text-brand-secondary);
+    max-width: 90ch;
+    margin-inline: auto;
+  }
+}
+.hero.section-hero { 
+  & .hero-content {
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+    padding-inline: var(--spacing-4);
+
+    & h1,
+    & h2 {
+      margin-block-end: 0;
+      padding-block: var(--spacing-4);
+      line-height: 100%;
+
+      & + h3 {
+        line-height: 140%;
+      }
+
+      & + h3,
+      & + p {
+        max-width: 80ch;
+      }
+    }
+
+    & .button-container {
+      display: inline-flex;
+      margin-inline-end: var(--spacing-4);
+      width: fit-content;
+    }
+
+    & picture {
+      margin-block-start: var(--spacing-8);
+    }
+  }
+}
 
 .hero-container {
   display: flex;

@@ -1,5 +1,85 @@
-@import url("form-newsletter.css");
-@import url("form-contact.css");
+.form.block {
+  container: newsletter form / inline-size;
+}
+
+form[data-action="/newsletter"] {
+  flex-direction: column;
+
+  & .field-wrapper:first-child {
+    flex: 1;
+  }
+
+  & .field-wrapper:last-child {
+    align-self: flex-end;
+  }
+}
+
+@container newsletter (min-width: 400px) {
+  form[data-action="/newsletter"] {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  
+    & button {
+        width: auto;
+    }
+  }
+}
+
+.section.form-container.fragment-container {
+  background: var(--colors-background-bg-secondary);
+  padding-block: var(--spacing-16);
+  max-width: unset;
+
+  & .default-content-wrapper,
+  & .form-wrapper {
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+    text-align: center;
+
+    & form {
+      display: grid;
+      max-width: var(--spacing-120);
+      margin-inline: auto;
+      text-align: left;
+
+      & .field-wrapper {
+        margin-top: var(--spacing-4);
+      }
+
+      & label {
+        display: none;
+      }
+    }
+  }
+}
+
+form[data-action="/contact"] {
+  @container form (min-width: 400px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+
+    & .field-wrapper {
+      grid-column: span 4;
+
+      &:first-child,
+      &:nth-child(2) {
+        grid-column: span 2;
+      }
+
+      &:last-child {
+        grid-column: span 2;
+      }
+
+    }
+  }
+
+  @container form (min-width: 600px) {
+    & .field-wrapper:last-child {
+      grid-column: span 1;
+    }
+  }
+}
 
 form {
   display: flex;
