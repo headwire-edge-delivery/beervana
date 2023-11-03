@@ -1,3 +1,5 @@
+import { decorateButtons, decorateIcons } from "../../scripts/aem.js";
+
 function showDialog(e) {
   e.target.closest(".header.block")
     ?.querySelector(".header-dialog-dropdown")
@@ -64,8 +66,10 @@ function handleMQChange(matches) {
 }
 
 export default async function decorate(block) {
-  const input = await fetchDocument({ path: "nav" });
-  if (input) {
+  const meta = getMetadata("nav");
+  const path = meta ? new URL(meta).pathname : `/${opts.path}`;
+  const input = await fetch(`${path}.plain.html`);
+  if (input.ok) {
     block.innerHTML = input;
     const classNames = ["header-brand", "header-nav", "header-cta"];
     block.querySelectorAll(":scope div")?.forEach((el, index) => {

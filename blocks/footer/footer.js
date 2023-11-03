@@ -1,3 +1,15 @@
+import {
+  decorateBlock,
+  decorateIcons,
+  loadBlocks,
+  readBlockConfig,
+} from "../../scripts/aem.js";
+import {
+  decorateByMediaQuery,
+  decorateSectionsWithClasses,
+  fetchDocumentAndReplaceBlock,
+} from "../../scripts/utils.js";
+
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
   const opts = {
