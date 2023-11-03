@@ -45,10 +45,6 @@ form[data-action="/newsletter"] {
       & .field-wrapper {
         margin-top: var(--spacing-4);
       }
-
-      & label {
-        display: none;
-      }
     }
   }
 }

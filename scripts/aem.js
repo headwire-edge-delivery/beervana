@@ -407,6 +407,8 @@ function decorateIcon(span, prefix = '') {
   img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
   img.loading = 'lazy';
   img.setAttribute("alt", iconName);
+  img.setAttribute("width", "16");
+  img.setAttribute("height", "16");
   span.append(img);
 }
 
