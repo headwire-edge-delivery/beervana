@@ -224,6 +224,15 @@ body > header {
         color: var(--colors-text-text-tertiary-on-brand);
       }
     }
+
+    & .button:not(.primary):not(.secondary) {
+      color: var(--colors-text-text-tertiary-on-brand);
+
+      &:hover {
+        color: var(--colors-background-bg-brand-section);
+        background-color: var(--colors-text-text-primary-on-brand);
+      }
+    }
   }
 }
 
@@ -502,6 +511,15 @@ body > header {
     & .icon-hamburger img, 
     & .icon-close img {
       filter: invert(1);
+    }
+
+    & .button:not(.primary):not(.secondary) {
+      color: var(--colors-text-text-tertiary-on-brand);
+
+      &:hover {
+        color: var(--colors-background-bg-brand-section);
+        background-color: var(--colors-text-text-primary-on-brand);
+      }
     }
   }
 
