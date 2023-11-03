@@ -117,3 +117,7 @@ body.has-hero {
     }
   }
 }
+
+main > div:first-child:not(.hero-container) {
+  padding-block: var(--header-min-height);
+}
