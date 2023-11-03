@@ -223,6 +223,10 @@ body > header {
       & span {
         color: var(--colors-text-text-tertiary-on-brand);
       }
+
+      & .icon img {
+        filter: invert(1);
+      }
     }
 
     & .button:not(.primary):not(.secondary) {
