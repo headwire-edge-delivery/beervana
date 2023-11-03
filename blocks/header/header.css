@@ -1,8 +1,11 @@
+body > header {
+  min-height: var(--header-min-height);
+}
+
 @media (min-width: 60rem) {
   .header-wrapper {
     width: 100%;
     background: var(--colors-background-bg-primary);
-    min-height: var(--header-min-height);
   }
 
   .header.block {
