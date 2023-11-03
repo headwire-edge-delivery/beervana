@@ -65,8 +65,8 @@ export function decorateMain(main) {
   decorateButtons(main);
   decorateIcons(main);
   buildAutoBlocks(main);
-  decorateSections(main);
-  decorateBlocks(main);
+  //decorateSections(main);
+  //decorateBlocks(main);
 }
 
 /**

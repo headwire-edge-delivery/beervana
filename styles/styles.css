@@ -1851,6 +1851,13 @@ img {
   height: auto;
 }
 
+.section {
+  padding: var(--spacing-16) var(--spacing-4);
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+}
+
 main > div:not(:first-child),
 .section {
   padding: var(--spacing-16) var(--spacing-4);
@@ -1863,8 +1870,13 @@ main > div:not(:first-child),
   overflow: hidden;
 }
 
+main > div:not(:first-child):empty,
 .section:empty {
   display: none;
+}
+
+main > div:first-child:not(.hero-container) {
+  padding-block: var(--header-min-height);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1896,5 +1908,125 @@ main > div:not(:first-child),
 
   & picture {
     margin-block: var(--spacing-8);
+  }
+}
+
+.hero.centered-with-pretitle {
+  text-align: center;
+  padding-block: var(--header-min-height);
+  background: var(--colors-background-bg-primary);
+
+  & h1 {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+
+  & p {
+    color: var(--colors-text-text-brand-secondary);
+    max-width: 90ch;
+    margin-inline: auto;
+  }
+}
+
+.hero.section-hero { 
+  & .hero-content {
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+    padding-inline: var(--spacing-4);
+  }
+
+  & h1,
+  & h2 {
+    margin-block-end: 0;
+    padding-block: var(--spacing-4);
+    line-height: 100%;
+
+    & + h3 {
+      line-height: 140%;
+    }
+
+    & + h3,
+    & + p {
+      max-width: 80ch;
+    }
+  }
+
+  & .button-container {
+    display: inline-flex;
+    margin-inline-end: var(--spacing-4);
+    width: fit-content;
+  }
+
+  & picture {
+    margin-block-start: var(--spacing-8);
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+  }
+}
+
+.hero-container {
+  display: flex;
+  padding: 0;
+  max-width: unset;
+  justify-content: center;
+}
+
+.hero-wrapper {
+  flex: 1;
+}
+
+.hero {
+  background: var(--colors-background-bg-brand-section);
+  width: 100%;
+  padding-block: var(--header-min-height); 
+
+  & .hero-content {
+    max-width: var(--layout-max-width);
+    margin-inline: auto;
+  }
+
+  & h1,
+  & h2 {
+    padding: var(--spacing-12) 0 var(--spacing-8);
+  
+    & + h2,
+    & + h3 {
+      font-size: var(--text-size-text-xl);
+      font-family: var(--text-font-family-text);
+      line-height: 130%;
+      padding: var(--spacing-4);
+    }
+  }
+
+  & img {
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+  }
+}
+
+body.has-hero {
+  & .hero {
+    & h1,
+    & h2 {
+      color: var(--colors-text-text-primary-on-brand);
+    }
+
+    & h2,
+    & h3 {
+      color: var(--colors-text-text-tertiary-on-brand);
+      & a {
+        color: var(--colors-text-text-tertiary-on-brand);
+      }
+    }
+
+    & .button:not(.primary):not(.secondary) {
+      color: var(--colors-text-text-tertiary-on-brand);
+
+      &:hover {
+        color: var(--colors-background-bg-brand-section);
+        background-color: var(--colors-text-text-primary-on-brand);
+      }
+    }
   }
 }
