@@ -1851,6 +1851,7 @@ img {
   height: auto;
 }
 
+main > div:not(:first-child),
 .section {
   padding: var(--spacing-16) var(--spacing-4);
   width: 100%;
