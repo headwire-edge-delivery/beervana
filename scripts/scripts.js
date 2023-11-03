@@ -13,13 +13,6 @@ import {
   loadCSS,
 } from './aem.js';
 
-import {
-  fetchDocument,
-  decorateByMediaQuery,
-  decorateSectionsWithClasses,
-  fetchDocumentAndReplaceBlock,
-} from "./utils.js";
-
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
 /**
@@ -72,8 +65,8 @@ export function decorateMain(main) {
   decorateButtons(main);
   decorateIcons(main);
   buildAutoBlocks(main);
-  //decorateSections(main);
-  //decorateBlocks(main);
+  decorateSections(main);
+  decorateBlocks(main);
 }
 
 /**
