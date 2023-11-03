@@ -40,11 +40,13 @@ function handleMQChange(matches) {
     const hamburger = document.createElement("button");
     hamburger.appendChild(hamburgerIcon);
     hamburger.classList.add("button", "primary", "open");
+    hamburger.setAttribute("aria-label", "Open menu");
     const closeIcon = document.createElement("span");
     closeIcon.classList.add("icon", "icon-close");
     const close = document.createElement("button");
     close.appendChild(closeIcon);
     close.classList.add("button", "primary", "close");
+    close.setAttribute("aria-label", "Close menu");
     const dialogContent = document.createElement("div");
     dialogContent.classList.add("header-dialog-content");
     const dialog = document.createElement("dialog");
