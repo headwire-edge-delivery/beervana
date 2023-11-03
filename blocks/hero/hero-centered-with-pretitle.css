@@ -12,5 +12,7 @@
 
   & p {
     color: var(--colors-text-text-brand-secondary);
+    max-width: 90ch;
+    margin-inline: auto;
   }
 }

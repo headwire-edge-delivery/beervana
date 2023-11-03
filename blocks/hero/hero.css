@@ -25,11 +25,16 @@
   & h1,
   & h2 {
     padding: var(--spacing-12) 0 var(--spacing-8);
+    color: var(--colors-text-text-primary-on-brand);
   
     & + h3 {
       font-size: var(--text-size-text-xl);
       font-family: var(--text-font-family-text);
-      color: var(--colors-text-text-tertiary);
+      color: var(--colors-text-text-tertiary-on-brand);
+
+      & a {
+        color: var(--colors-text-text-tertiary-on-brand);
+      }
     }
   }
 

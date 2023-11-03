@@ -34,16 +34,17 @@
     font-size: var(--text-size-display-sm);
     line-height: 120%;
     font-weight: 700;
+    color: var(--colors-text-text-primary-on-brand);
 
     & a {
-      color: var(--colors-text-text-primary);
+      color: var(--colors-text-text-primary-on-brand);
     }
   }
 }
 
 .cards .cards-card-body p:not(.button-container) {
-  color: var(--colors-text-text-tertiary);
   margin-block-start: 0;
+  color: var(--colors-text-text-tertiary-on-brand);
 }
 
 .cards > ul > li img {
