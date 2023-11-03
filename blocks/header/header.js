@@ -21,12 +21,18 @@ function handleMQChange(matches) {
     const close = wrapper.querySelector(".header .button.close");
     const dialog = wrapper.querySelector(".header-dialog-dropdown");
     const dialogContent = wrapper.querySelector(".header-dialog-content");
-    hamburger.removeEventListener("click", showDialog);
-    hamburger.remove();
-    close.removeEventListener("click", closeDialog);
-    close.remove();
-    block.append(...dialogContent.childNodes)
-    dialog.remove();
+    if (hamburger) {
+      hamburger.removeEventListener("click", showDialog);
+      hamburger.remove();
+    }
+    if (close) {
+      close.removeEventListener("click", closeDialog);
+      close.remove();
+    }
+    if (dialog) {
+      block.append(...dialogContent.childNodes)
+      dialog.remove();
+    }
 
   } else {
     const hamburgerIcon = document.createElement("span");

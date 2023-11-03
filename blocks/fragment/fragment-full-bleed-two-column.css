@@ -11,6 +11,7 @@
     display: grid;
     grid-template-areas: "full-bleed" "column";
     grid-template-rows: auto auto;
+    overflow: hidden;
 
     & .form-wrapper,
     & .default-content-wrapper:not(.image-content) {
