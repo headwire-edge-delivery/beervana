@@ -1,6 +1,5 @@
 .hero.centered-with-pretitle {
   text-align: center;
-  margin-block-start: var(--header-min-height);
   padding-block: var(--header-min-height);
   background: var(--colors-background-bg-primary);
 
