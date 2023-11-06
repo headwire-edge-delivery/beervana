@@ -2030,3 +2030,7 @@ body.has-hero {
     }
   }
 }
+
+body > header {
+  min-height: var(--header-min-height);
+}
