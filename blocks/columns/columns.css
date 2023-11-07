@@ -108,15 +108,11 @@
 
 .columns.pagination.columns-2-cols {
   & > div > div {
-    background: var(--colors-background-bg-brand-section);
+    background: var(--colors-background-bg-quaternary);
     padding: var(--spacing-4);
     border-radius: var(--border-radius-md);
     display: flex;
     flex-direction: column;
-
-    & h2, h3, h4, h5, h6 {
-      color: var(--colors-text-text-primary-on-brand);
-    }
 
     & .button-container {
       width: auto;
