@@ -2030,3 +2030,17 @@ body.has-hero {
     }
   }
 }
+
+body > header {
+  min-height: var(--header-min-height);
+}
+
+.cards .cards-card-image {
+  aspect-ratio: 4 / 3;
+}
+
+@media (max-width: 50rem) {
+  .fragment.full-bleed.two-columns:not(.section) .default-content-wrapper.image-content {
+    aspect-ratio: 4 / 3;
+  }
+}
