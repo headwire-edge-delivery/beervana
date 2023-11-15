@@ -4,11 +4,10 @@ indices:
   default:
     include:
       - /**
+    exclude:
+      - '/fragments/**'
     target: /query-index.json
     properties:
-      path:
-        select: none
-        path: path
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
