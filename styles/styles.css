@@ -123,7 +123,7 @@
   --border-radius-xl: var(--spacing-4);
 
   --focus-ring-box-shadow: 0 1px 2px 0 #10182805,
-                           0 0 0 4px #DC2f0230;
+                           0 0 0 4px #dc2f0275;
   --layout-grid-template-columns-full-bleed-two-columns: 1fr calc(var(--layout-max-width) / 2) calc(var(--layout-max-width) / 2) 1fr;
 }
 
@@ -809,7 +809,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --focus-ring-box-shadow: 0 0 0 4px #98A2B330;
+    --focus-ring-box-shadow: 0 0 0 4px #dc2f0275;
     --colors-gray-25-alpha: #fffffffa;
     --colors-gray-50-alpha: #fffffff5;
     --colors-gray-100-alpha: #fffffff0;
@@ -1661,6 +1661,8 @@ button, a {
   &:focus {
     outline: none;
     box-shadow: var(--focus-ring-box-shadow);
+    z-index: 2;
+    position: relative;
   }
 }
 
