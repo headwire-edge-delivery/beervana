@@ -1864,14 +1864,6 @@ img {
   margin: 0 auto;
 }
 
-main > div:not(:first-child),
-.section {
-  padding: var(--spacing-16) var(--spacing-4);
-  width: 100%;
-  max-width: var(--layout-max-width);
-  margin: 0 auto;
-}
-
 .no-scroll {
   overflow: hidden;
 }
@@ -2003,6 +1995,7 @@ body.brewery .default-content-wrapper,
       font-family: var(--text-font-family-text);
       line-height: 130%;
       padding: var(--spacing-4);
+      padding-inline-start: 0;
     }
   }
 
