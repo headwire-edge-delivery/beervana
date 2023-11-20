@@ -360,7 +360,7 @@ function decorateTemplateAndTheme() {
  * @param {Element} element container element
  */
 function decorateButtons(element) {
-  element.querySelectorAll('a').forEach((a) => {
+  element.querySelectorAll('a:not(.selling-points a)').forEach((a) => {
     a.title = a.title || a.textContent;
     if (a.href !== a.textContent) {
       const up = a.parentElement;
