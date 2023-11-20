@@ -2064,3 +2064,7 @@ body > header {
     }
   }
 }
+
+#cookie-notification:not(.appear) {
+  display: none !important;
+}
