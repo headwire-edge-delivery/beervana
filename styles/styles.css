@@ -2068,3 +2068,7 @@ body > header {
 #cookie-notification:not(.appear) {
   display: none !important;
 }
+
+.bodyLock:not(.appear):before {
+  content: none !important;
+}
