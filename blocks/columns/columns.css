@@ -86,7 +86,7 @@
   display: block;
 }
 
-@container columns (min-width: 25rem) {
+@container columns (min-width: 35rem) {
   .columns > div {
     flex-direction: row;
     gap: var(--spacing-8);
