@@ -233,7 +233,6 @@ body:has(.header-dialog-dropdown[open]) {
   &[aria-expanded=false]::after {
     background-color: var(--colors-component-buttons-secondary-color-button-secondary-color-fg);
   }
-
 }
 
 
@@ -248,5 +247,17 @@ body:has(.header-dialog-dropdown[open]) {
   .header-nav {
     --ul-l1-direction: row;
     --ul-l1-align-items: center;
+
+    & li:has(.header-nav-nested):hover {
+      & .header-nav-nested-button::after {
+        transform: rotate(180deg);
+        background-color: var(--colors-component-buttons-secondary-color-button-secondary-color-fg-hover);
+        box-shadow: var(--focus-ring-box-shadow);
+      }
+
+      & .header-nav-nested {
+        display: block;
+      }
+    }
   }
 }
