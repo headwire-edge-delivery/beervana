@@ -1,0 +1,108 @@
+.header-wrapper {
+  width: 100%;
+  background: var(--colors-background-bg-primary);
+  min-height: var(--header-min-height);
+}
+
+.header {
+  & .button.primary.open,
+  & .button.primary.close {
+    grid-area: button;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    height: var(--spacing-10);
+    width: var(--spacing-10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-2);
+
+    &:hover,
+    &:focus {
+      background-color: var(--colors-brand-600);
+      border-color: var(--colors-brand-600);
+    }
+
+    & .icon {
+      height: var(--spacing-4);
+      width: var(--spacing-4);
+      display: block;
+    }
+  }
+}
+
+.header.block {
+  display: grid;
+  grid-template-areas: var(--grid-areas);
+  grid-template-columns: var(--grid-columns);
+  grid-template-rows: var(--grid-rows);
+  gap: var(--header-gap);
+  align-items: center;
+  max-width: var(--layout-max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--header-padding);
+  position: var(--header-position);
+}
+
+body.has-hero {
+  & .header-wrapper,
+  & .header-dialog-content {
+    background-color: var(--colors-background-bg-brand-section);
+
+    & li:has(.header-nav-nested) {
+      & span {
+        color: var(--colors-text-text-tertiary-on-brand);
+      }
+
+      & a:after {
+        background-color: var(--colors-text-text-primary-on-brand);
+      }
+    }
+
+    & a {
+      color: var(--colors-text-text-primary-on-brand);
+    }
+  }
+
+  & .icon-hamburger img, 
+  & .icon-close img {
+    filter: invert(1);
+  }
+
+  & .button:not(.primary):not(.secondary) {
+    color: var(--colors-text-text-tertiary-on-brand);
+
+    &:hover {
+      color: var(--colors-background-bg-brand-section);
+      background-color: var(--colors-text-text-primary-on-brand);
+    }
+  }
+}
+
+helix-sidekick + .header-wrapper .header-dialog-dropdown[open] {
+  top: 3rem;
+}
+
+@media (max-width: 60rem) {
+  .header {
+    --grid-areas: "brand button" "dropdown dropdown";
+    --grid-columns: 1fr var(--spacing-12);
+    --grid-rows: var(--spacing-12) auto;
+    --header-gap: 0;
+    --header-padding: var(--spacing-4);
+    --header-position: relative;
+  }
+}
+
+@media (min-width: 60rem) {
+  .header {
+    --grid-areas: "brand nav cta";
+    --grid-columns: var(--spacing-40) 1fr auto;
+    --grid-rows: auto;
+    --header-gap: var(--spacing-8);
+    --header-padding: var(--spacing-1) var(--spacing-4);
+    --header-position: inherit;
+  }
+}
