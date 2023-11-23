@@ -1,4 +1,5 @@
 import { decorateButtons, decorateIcons, getMetadata } from "../../scripts/aem.js";
+import { decorateHeaderSearch } from "./header-search.js";
 
 function showDialog(e) {
   e.target.closest(".header.block")
@@ -108,9 +109,7 @@ export default async function decorate(block) {
     decorateButtons(block);
     decorateIcons(block);
 
-    const searchButton = block.querySelector(".button:has(.icon-search)")
-    searchButton.classList.add("search-button");
-    searchButton.classList.remove("button");
+    decorateHeaderSearch(block);
 
     const mediaQueryListener = window.matchMedia("(min-width: 60rem)");
     handleMQChange(mediaQueryListener.matches);

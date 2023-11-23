@@ -11,7 +11,7 @@ body > header {
   .header.block {
     display: grid;
     grid-template-areas: "brand nav cta";
-    grid-template-columns: var(--spacing-40) 1fr auto;
+    grid-template-columns: var(--spacing-40) 1fr var(--spacing-80);
     grid-template-rows: auto;
     gap: var(--spacing-8);
     align-items: center;
@@ -540,11 +540,46 @@ body > header {
   }
 }
 
-.header-cta .button-container {
-  margin-block: 0;
-  align-self: center;
+.header-cta {
+  display: grid;
+  grid-template-columns: var(--spacing-8) 1fr 1fr;
+
+  & .button-container {
+    margin-block: 0;
+    align-self: center;
+  }
+
+  & .search-button {
+    padding: var(--spacing-2);
+  }
 }
 
-.header-cta .search-button {
-  padding: var(--spacing-2);
+
+.header-search {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1;
+  gap: var(--spacing-4);
+
+  & input {
+    display: none;
+    grid-column: 2 / span 2;
+    transition: all .2s ease-in-out;
+  }
+}
+
+.search-open {
+  & .header-cta {
+    & .button-container {
+      display: none;
+    }
+
+    & .header-search {
+      grid-column: 1 / -1;
+
+      & input {
+        display: flex;
+      }
+    }
+  }
 }
