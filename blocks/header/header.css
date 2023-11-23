@@ -539,3 +539,12 @@ body > header {
     }
   }
 }
+
+.header-cta .button-container {
+  margin-block: 0;
+  align-self: center;
+}
+
+.header-cta .search-button {
+  padding: var(--spacing-2);
+}

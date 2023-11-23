@@ -104,8 +104,13 @@ export default async function decorate(block) {
         });
       }
     });
+    
     decorateButtons(block);
     decorateIcons(block);
+
+    const searchButton = block.querySelector(".button:has(.icon-search)")
+    searchButton.classList.add("search-button");
+    searchButton.classList.remove("button");
 
     const mediaQueryListener = window.matchMedia("(min-width: 60rem)");
     handleMQChange(mediaQueryListener.matches);
