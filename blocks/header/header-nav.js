@@ -16,7 +16,7 @@ export function decorateNav(block) {
 }
 
 function decorateDesktop(block) {
-  teardownListeners(true);
+  teardownListeners(true, block);
   console.log("desktop", block);
   const wrapper = block.closest('.header.block');
   const hamburger = wrapper.querySelector(".header .button.open");
@@ -39,7 +39,7 @@ function decorateDesktop(block) {
 }
 
 function decorateMobile(block) {
-  teardownListeners(false);
+  teardownListeners(false, block);
   console.log("mobile", block);
   const wrapper = block.closest('.header.block');
   const hamburgerIcon = document.createElement("span");
@@ -127,12 +127,12 @@ function toggleSubNav(parentLi, override) {
 function setupListeners(matches, block) {
   block.querySelectorAll('.header-nav-nested-button').forEach(nestedNavButton => {
     !matches && nestedNavButton.addEventListener('click', toggleSubNavEventHandler);
-    nestedNavButton.addEventListener('focusin', toggleSubNavEventHandler);
+    nestedNavButton.addEventListener('focus', toggleSubNavEventHandler);
     nestedNavButton.addEventListener('focusout', toggleSubNavEventHandler);
   });
 }
 
-function teardownListeners(matches) {
+function teardownListeners(matches, block) {
   block.querySelectorAll('.header-nav-nested-button').forEach(nestedNavButton => {
     !matches && nestedNavButton.removeEventListener('click', toggleSubNavEventHandler);
     nestedNavButton.removeEventListener('focusin', toggleSubNavEventHandler);

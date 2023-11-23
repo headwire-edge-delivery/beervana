@@ -4,4 +4,8 @@
   flex-direction: row;
   gap: var(--spacing-4);
   z-index: 1;
+
+  & .button-container {
+    margin-block: 0;
+  }
 }

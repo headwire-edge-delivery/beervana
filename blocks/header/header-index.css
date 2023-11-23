@@ -42,7 +42,7 @@
   max-width: var(--layout-max-width);
   width: 100%;
   margin: 0 auto;
-  padding: var(--header-padding);
+  padding: var(--spacing-4);
   position: var(--header-position);
 }
 
@@ -91,7 +91,6 @@ helix-sidekick + .header-wrapper .header-dialog-dropdown[open] {
     --grid-columns: 1fr var(--spacing-12);
     --grid-rows: var(--spacing-12) auto;
     --header-gap: 0;
-    --header-padding: var(--spacing-4);
     --header-position: relative;
   }
 }
@@ -102,7 +101,6 @@ helix-sidekick + .header-wrapper .header-dialog-dropdown[open] {
     --grid-columns: var(--spacing-40) 1fr auto;
     --grid-rows: auto;
     --header-gap: var(--spacing-8);
-    --header-padding: var(--spacing-1) var(--spacing-4);
     --header-position: inherit;
   }
 }
