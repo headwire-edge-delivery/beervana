@@ -1,4 +1,5 @@
 import { decorateButtons, decorateIcons, getMetadata } from "../../scripts/aem.js";
+import { decorateColorMode } from "./header-color-mode.js";
 import { decorateHeaderSearch } from "./header-search.js";
 
 function showDialog(e) {
@@ -56,7 +57,7 @@ function handleMQChange(matches) {
     dialog.appendChild(close);
     dialog.appendChild(dialogContent);
     dialogContent.appendChild(wrapper.querySelector(".header-nav"));
-    dialogContent.appendChild(wrapper.querySelector(".header-cta"));
+    dialogContent.appendChild(wrapper.querySelector(".header-tools"));
     block.appendChild(dialog);
     decorateIcons(hamburger);
     decorateIcons(close);
@@ -73,36 +74,41 @@ export default async function decorate(block) {
   if (res.ok) {
     const input = await res.text();
     block.innerHTML = input;
-    const classNames = ["header-brand", "header-nav", "header-cta"];
+    const classNames = ["header-brand", "header-nav", "header-tools"];
     block.querySelectorAll(":scope div")?.forEach((el, index) => {
       el.classList.add(classNames[index]);
       if (index === 0 && el.querySelector("p a .icon-logo")) {
         el.querySelector("p").replaceWith(el.querySelector("p a"));
       }
-      const nestedNav = el.querySelectorAll("ul ul");
-      if (nestedNav) {
-        nestedNav.forEach((nav) => {
-          const nestedNavParent = document.createElement("nav");
-          nestedNavParent.classList.add("header-nav-nested");
-          nav.before(nestedNavParent);
-          nestedNavParent.append(nav);
-          nav.querySelectorAll(':scope > li')?.forEach((li) => {
-            const subNavItem = document.createElement("li");
-            const icon = li.querySelector('.icon');
-            const link = li.querySelector('a');
-            if (icon && link) {
-              subNavItem.classList.add('header-nav-nested-item');
-              subNavItem.append(icon);
-              subNavItem.append(link);
-              const text = document.createElement("span");
-              text.classList.add('header-nav-nested-item-text');
-              text.innerText = li.innerText;
-              subNavItem.append(text);
+      if (index === 1) {
+        const nestedNav = el.querySelectorAll("ul ul");
+        if (nestedNav) {
+          nestedNav.forEach((nav) => {
+            const nestedNavParent = document.createElement("nav");
+            nestedNavParent.classList.add("header-nav-nested");
+            nav.before(nestedNavParent);
+            nestedNavParent.append(nav);
+            nav.querySelectorAll(':scope > li')?.forEach((li) => {
+              const subNavItem = document.createElement("li");
+              const icon = li.querySelector('.icon');
+              const link = li.querySelector('a');
+              if (icon && link) {
+                subNavItem.classList.add('header-nav-nested-item');
+                subNavItem.append(icon);
+                subNavItem.append(link);
+                const text = document.createElement("span");
+                text.classList.add('header-nav-nested-item-text');
+                text.innerText = li.innerText;
+                subNavItem.append(text);
 
-              li.replaceWith(subNavItem);
-            }
-          })
-        });
+                li.replaceWith(subNavItem);
+              }
+            })
+          });
+        }
+      }
+      if (index === 2) {
+        decorateColorMode(el);
       }
     });
     
