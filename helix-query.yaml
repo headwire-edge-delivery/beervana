@@ -5,7 +5,12 @@ indices:
     include:
       - /**
     exclude:
+      - '/drafts/**'
       - '/fragments/**'
+      - '/thanks/**'
+      - '/nav'
+      - '/footer'
+      - '/header'
     target: /query-index.json
     properties:
       lastModified:
