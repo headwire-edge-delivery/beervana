@@ -2,6 +2,12 @@ body > header {
   min-height: var(--header-min-height);
 }
 
+.header-wrapper {
+  transition: background .3s ease-in-out;
+  width: 100%;
+  background: var(--colors-background-bg-primary);
+}
+
 .header-tools {
   display: grid;
   grid-template-columns: var(--spacing-8) var(--spacing-8) 1fr 1fr;
@@ -39,8 +45,6 @@ body > header {
 
 @media (min-width: 60rem) {
   .header-wrapper {
-    width: 100%;
-    background: var(--colors-background-bg-primary);
   }
 
   .header.block {
@@ -633,17 +637,64 @@ body > header {
     opacity: 1;
   }
 
-  &.transition {
-    & svg {
+  & svg {
+    position: absolute;
+    overflow: hidden;
+    transform: rotate(40deg);
+    display: block;
+    opacity: 0;
+  }
+}
+
+html:not(.light-mode):not(.dark-mode) .color-mode-toggle,
+html.light-mode .color-mode-toggle {
+  &:not(.transition-in):not(.transition-out) {
+    & #moon {
+      opacity: 1;
+    }
+
+    & #sun {
+      opacity: 0;
+    }
+  }
+
+  &.transition-out {
+    & #moon {
       -webkit-animation: rotate-out-2-bck 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
       animation: rotate-out-2-bck 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
   }
 
-  & svg {
-    position: relative;
-    overflow: hidden;
-    transform: rotate(40deg);
+  &.transition-in {
+    & #sun {
+      -webkit-animation: rotate-in-2-bck 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      animation: rotate-in-2-bck 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+  }
+}
+
+html.dark-mode .color-mode-toggle {
+  &:not(.transition-in):not(.transition-out) {
+    & #sun {
+      opacity: 1;
+    }
+
+    & #moon {
+      opacity: 0;
+    }
+  }
+
+  &.transition-out {
+    & #sun {
+      -webkit-animation: rotate-out-2-bck 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      animation: rotate-out-2-bck 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+  }
+  &.transition-in {
+    & #moon {
+      -webkit-animation: rotate-in-2-bck 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      animation: rotate-in-2-bck 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
   }
 }
 
@@ -681,5 +732,30 @@ body > header {
     -webkit-transform: translateZ(-180px) rotate(-45deg);
             transform: translateZ(-180px) rotate(-45deg);
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes rotate-in-2-bck {
+  0% {
+    -webkit-transform: translateZ(-180px) rotate(-45deg);
+            transform: translateZ(-180px) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) rotate(0);
+            transform: translateZ(0) rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotate-in-2-bck {
+  0% {
+    -webkit-transform: translateZ(-180px) rotate(-45deg);
+            transform: translateZ(-180px) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) rotate(0);
+            transform: translateZ(0) rotate(0);
+    opacity: 1;
   }
 }

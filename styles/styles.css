@@ -133,6 +133,7 @@
   }
 }
 
+:root,
 html.light-mode {
   --colors-gray-100: #f2f4f7;
   --colors-gray-200: #eaecf0;
@@ -1534,9 +1535,9 @@ html.dark-mode {
 }
 
 html, body {
-    font-family: var(--body-font-family);
-    font-size: var(--body-font-size);
-    color: var(--colors-text-text-primary);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  color: var(--colors-text-text-primary);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1836,6 +1837,7 @@ body {
   background-color: var(--colors-background-bg-primary);
   width: 100vw;
   max-width: 100%;
+  transition: background .3s ease-in-out;
 }
 
 body {
@@ -1927,6 +1929,8 @@ body.brewery .default-content-wrapper,
 }
 
 .hero:not(.centered-with-pretitle) { 
+  transition: background .3s ease-in-out;
+
   & .hero-content {
     max-width: var(--layout-max-width);
     margin: 0 auto;
