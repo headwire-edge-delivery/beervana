@@ -5,12 +5,17 @@ indices:
     include:
       - /**
     exclude:
+      - '/admin/**'
+      - '/blog-entries/**'
       - '/drafts/**'
+      - '/events/**'
       - '/fragments/**'
+      - '/stays/**'
       - '/thanks/**'
-      - '/nav'
       - '/footer'
       - '/header'
+      - '/nav'
+      - '/newsletter-signup'
     target: /query-index.json
     properties:
       lastModified:
