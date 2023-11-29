@@ -1,0 +1,23 @@
+.header-search {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 2;
+  gap: var(--spacing-4);
+
+  & input {
+    display: none;
+    grid-column: 3 / span 2;
+    transition: all .2s ease-in-out;
+  }
+
+  & .search-button {
+    padding: var(--spacing-2);
+    align-items: center;
+
+    & .icon {
+      width: var(--spacing-4);
+      max-width: unset;
+      height: var(--spacing-4);
+    }
+  }
+}
