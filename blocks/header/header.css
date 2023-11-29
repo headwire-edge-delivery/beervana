@@ -5,6 +5,15 @@
 @import url("header-color-mode.css");
 
 .header {
+  --gap: clamp(1rem, 6vw, 3rem);
+  --full: minmax(var(--gap), 1fr);
+  --content: min(var(--layout-max-width), 100% - var(--gap) * 2);
+  --header-template-columns: 
+    [full-start] var(--full) 
+    [content-start] var(--spacing-40) minmax(auto, 5fr) var(--spacing-96) [content-end] 
+    var(--full) [full-end];
+
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: var(--header-template-columns);
+  grid-template-rows: var(--header-min-height) var(--header-min-height);
 }
