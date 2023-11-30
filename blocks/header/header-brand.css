@@ -1,0 +1,10 @@
+.header-brand {
+  grid-area: brand;
+}
+
+@media (max-width: 60rem) {
+  .header-brand {
+    display: flex;
+    align-items: center;
+  }
+}
