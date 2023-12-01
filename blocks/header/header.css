@@ -38,7 +38,7 @@ body > header {
 
   & input {
     display: none;
-    grid-column: 3 / span 2;
+    grid-column: 2 / span 2;
     transition: all .2s ease-in-out;
   }
 }
@@ -285,7 +285,7 @@ body > header {
       }
 
       & .header-search {
-        grid-column: 1 / -1;
+        grid-column: 2 / -1;
 
         & input {
           display: flex;
