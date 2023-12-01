@@ -83,9 +83,8 @@ body > header {
           & {
             & > a {
               display: flex;
-              gap: var(--spacing-4);
+              gap: var(--spacing-2);
               align-items: center;
-              /*transition: all .2s ease-in-out;*/
               padding-inline-end: 0;
 
               &::after {
@@ -94,7 +93,7 @@ body > header {
                 padding: var(--spacing-2) var(--spacing-3);
                 -webkit-mask: url("/icons/toggle.svg") no-repeat center center;
                 mask: url("/icons/toggle.svg") no-repeat center center;
-                /*transition: all .2s ease-in-out;*/
+                transition: all .2s ease-in-out;
                 background-color: var(--colors-component-buttons-secondary-color-button-secondary-color-fg);
               }
 
@@ -105,14 +104,18 @@ body > header {
                 }
 
                 & + .header-nav-nested {
-                  display: block;
+                  transform: translateY(0) scale(1);
+      margin-top: 0;
+                  opacity: 1;
                 }
               }
 
               &:focus,
               &:focus-within {
                 & + .header-nav-nested {
-                  display: block;
+                  transform: translateY(0) scale(1);
+      margin-top: 0;
+                  opacity: 1;
                 }
               }
             }
@@ -134,20 +137,28 @@ body > header {
 
   & .header-nav-nested {
     overflow: hidden;
-    display: none;
     position: absolute;
     left: 0;
     right: 0;
     background: var(--colors-background-bg-primary);
     z-index: 1;
     padding-top: calc(var(--header-min-height) / 2);
-    box-shadow: 0 5px 5px 2px #10182810,
+    box-shadow: 0 5px 5px 2px #10182820,
                 0 12px 16px -4px #10182808,
                 0 4px 8px -2px #10182803;
+    transition: opacity .3s ease-in-out, transform .3s ease-in-out, margin-top .3s ease-in-out;
+    transform: scale(0);
+    margin-top: calc(var(--spacing-2) * 1);
+
+    opacity: 0;
+    color: var(--colors-text-text-tertiary-on-brand);
 
     &:hover,
     &:focus-within {
       display: grid;
+      transform: translateY(0) scale(1);
+      margin-top: 0;
+      opacity: 1;
     }
   
     & ul {
@@ -214,6 +225,10 @@ body > header {
     & span {
       grid-area: description;
       color: var(--colors-text-text-tertiary);
+
+      & br {
+        display: none;
+      }
     }
   }
 
