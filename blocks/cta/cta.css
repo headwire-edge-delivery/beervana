@@ -26,11 +26,6 @@
   }
 
   .cta-content {
-    /*
-    grid-template-areas: 'title button' 'description button';
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    */
     grid-template:
       'title button' auto
       'description button' auto
