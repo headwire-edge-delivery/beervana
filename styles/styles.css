@@ -1210,6 +1210,12 @@ body > header {
 .cards .cards-card-image {
   aspect-ratio: 4 / 3;
   line-height: 0;
+
+  & img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 50rem) {
@@ -1294,6 +1300,7 @@ body > header {
   color: var(--colors-text-text-tertiary-on-brand);
 }
 
+/* probably remove */
 .cards > ul > li img {
   width: 100%;
   aspect-ratio: 4 / 3;

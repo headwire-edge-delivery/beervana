@@ -34,7 +34,6 @@
   padding: var(--spacing-4);
   color: var(--colors-text-text-quarterary-on-brand);
 
-  /* stylelint-disable-next-line no-descending-specificity */
   & a {
     text-decoration: none;
     color: var(--colors-component-footers-footer-button-fg);

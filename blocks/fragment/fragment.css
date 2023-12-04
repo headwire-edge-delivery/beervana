@@ -107,7 +107,6 @@
           gap: var(--spacing-2);
           color: var(--colors-text-text-tertiary);
 
-          /* stylelint-disable-next-line no-descending-specificity */
           &:has(a) {
             padding-block: 0;
           }
