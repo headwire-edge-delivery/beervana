@@ -40,7 +40,7 @@
     "stylelint": "15.2.0",
     "stylelint-config-standard": "30.0.1"
   },
-  "precommit": [
+  "pre-commit": [
     "lint"
   ]
 }
