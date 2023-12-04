@@ -38,7 +38,7 @@ export default async function decorate(block) {
 
   if (fragment) {
     const fragmentSections = fragment.querySelectorAll(':scope .section');
-    block.innerHTML = "";
+    block.innerHTML = '';
     if (fragmentSections) {
       block.closest('.fragment-container').classList.add(...block.classList);
       fragmentSections.forEach((section) => {

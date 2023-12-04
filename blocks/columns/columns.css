@@ -2,6 +2,49 @@
   container: columns / inline-size;
 }
 
+
+.columns > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.columns img {
+  width: 100%;
+}
+
+.columns > div > div {
+  order: 1;
+}
+
+.columns > div > .columns-img-col {
+  order: 0;
+}
+
+.columns > div > .columns-img-col img {
+  display: block;
+}
+
+@container columns (min-width: 35rem) {
+  .columns > div {
+    flex-direction: row;
+    gap: var(--spacing-8);
+  }
+
+  .columns > div > div {
+    flex: 1;
+    order: unset;
+  
+    &[data-align='center'] {
+      text-align: center;
+    }
+  }
+
+  .columns.selling-points {
+    padding-block: var(--spacing-20);
+  }
+}
+
 .columns.selling-points {
   padding: var(--spacing-8) var(--spacing-4);
   margin-inline: calc(var(--spacing-4) * -1);
@@ -61,48 +104,6 @@
         margin-block: var(--spacing-1);
       }
     }
-  }
-}
-
-.columns > div {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-8);
-}
-
-.columns img {
-  width: 100%;
-}
-
-.columns > div > div {
-  order: 1;
-}
-
-.columns > div > .columns-img-col {
-  order: 0;
-}
-
-.columns > div > .columns-img-col img {
-  display: block;
-}
-
-@container columns (min-width: 35rem) {
-  .columns > div {
-    flex-direction: row;
-    gap: var(--spacing-8);
-  }
-
-  .columns > div > div {
-    flex: 1;
-    order: unset;
-  
-    &[data-align="center"] {
-      text-align: center;
-    }
-  }
-
-  .columns.selling-points {
-    padding-block: var(--spacing-20);
   }
 }
 

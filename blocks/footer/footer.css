@@ -2,42 +2,6 @@
   background: var(--colors-background-bg-brand-section);
 }
 
-.footer.block {
-  width: 100%;
-  max-width: var(--layout-max-width);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  padding: var(--spacing-4);
-  color: var(--colors-text-text-quarterary-on-brand);
-
-  & a {
-    text-decoration: none;
-    color: var(--colors-component-footers-footer-button-fg);
-
-    &:hover {
-      text-decoration: underline;
-      color: var(--colors-component-footers-footer-button-fg-hover);
-    }
-  }
-
-  & ul a {
-    text-transform: capitalize;
-  }
-}
-
-.footer-brand {
-  & .icon {
-    padding: var(--spacing-4) 0;
-    width: var(--spacing-40);
-    display: flex;
-  }
-
-  & p {
-    margin: 0
-  }
-}
-
 .footer-nav ul {
   margin: 0;
   padding: 0;
@@ -61,6 +25,39 @@
   }
 }
 
+.footer.block {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-4);
+  color: var(--colors-text-text-quarterary-on-brand);
+
+  & a {
+    text-decoration: none;
+    color: var(--colors-component-footers-footer-button-fg);
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--colors-component-footers-footer-button-fg-hover);
+    }
+  }
+}
+
+.footer-brand {
+  & .icon {
+    padding: var(--spacing-4) 0;
+    width: var(--spacing-40);
+    display: flex;
+  }
+
+  & p {
+    margin: 0
+  }
+}
+
+
 .footer-newsletter {
   margin: var(--spacing-8) 0;
 }
@@ -81,9 +78,9 @@
 @media (min-width: 768px) {
   .footer.block {
     display: grid;
-    grid-template-areas: "brand brand newsletter"
-                          "nav nav newsletter"
-                          "tnc tnc tnc";
+    grid-template-areas: 'brand brand newsletter'
+                          'nav nav newsletter'
+                          'tnc tnc tnc';
     grid-template-columns: 1.5fr .5fr 1.5fr;
   }
 
