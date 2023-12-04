@@ -1,8 +1,8 @@
 :root {
   /* stylelint-disable-next-line value-keyword-case */
-  --display-font-family: Arvo, serif;
+  --display-font-family: Arvo;
   /* stylelint-disable-next-line value-keyword-case */
-  --body-font-family: Roboto, sans-serif;
+  --body-font-family: Roboto;
   --colors-base-black: #000;
   --colors-base-transparent: #fff;
   --colors-base-white: #fff;
