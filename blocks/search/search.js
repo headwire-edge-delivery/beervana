@@ -3,8 +3,8 @@ export default async function decorate(block) {
 
   const searchParams = new URLSearchParams(window.location.search);
   block.innerHTML = `
-    <div class="search-container">
-      <div class="search-results cards">
+    <div class='search-container'>
+      <div class='search-results cards'>
         <ul>
         </ul>
       </div>
@@ -20,15 +20,15 @@ export default async function decorate(block) {
     const formPlaceholder = heroBlock.querySelector('#search-form');
     if (formPlaceholder) {
       formPlaceholder.outerHTML = `
-      <form id="search-form">
-        <div class="form-text-field-wrapper field-wrapper">
-          <label for="search" class="required">Search</label>
-          <input type="text-field" id="search" placeholder="${searchParams.get("query")}" value="${searchParams.get("query")}" required="required">
+      <form id='search-form'>
+        <div class='form-text-field-wrapper field-wrapper'>
+          <label for='search' class='required'>Search</label>
+          <input type='text-field' id='search' placeholder='${searchParams.get('query')}' value='${searchParams.get('query')}' required='required'>
         </div>
         </div>
-          <div class="form-submit-wrapper form-primary field-wrapper">
-          <button class="button primary search-button">
-            <img alt="search" src="/icons/search-inverse.svg" />
+          <div class='form-submit-wrapper form-primary field-wrapper'>
+          <button class='button primary search-button'>
+            <img alt='search' src='/icons/search-inverse.svg' />
             Search
           </button>
         </div>
@@ -55,11 +55,9 @@ export default async function decorate(block) {
       searchForm.addEventListener('submit', (e) => {
         e.preventDefault();
         window.location = `/search?query=${searchInput.value.trim()}`;
-        //updateResults(searchInput.value.trim());
       });
     }
   }
-
 
   // setup back button card
   let backUrl = '/';
@@ -72,28 +70,28 @@ export default async function decorate(block) {
 
   const noResultsHMTL = `
     <li>
-      <div class="cards-card-body">
+      <div class='cards-card-body'>
         <h3>${noResultsText}</h3>
       </div>
     </li>
     <li>
-      <div class="cards-card-body">
-        <h3><strong><a href="${backUrl}" title="Go Back">Go Back</a></strong></h3>
+      <div class='cards-card-body'>
+        <h3><strong><a href='${backUrl}' title='Go Back'>Go Back</a></strong></h3>
         <p>Sometimes to go forward, we've gotta go back<p>
-        <p class="button-container">
+        <p class='button-container'>
           <strong>
-            <a href="${backUrl}" class="button primary">Go Back</a>
+            <a href='${backUrl}' class='button primary'>Go Back</a>
           </strong>
         </p>
       </div>
     </li>
     <li>
-      <div class="cards-card-body">
-        <h3><strong><a href="/" title="Go Home">Go Home</a></strong></h3>
+      <div class='cards-card-body'>
+        <h3><strong><a href='/' title='Go Home'>Go Home</a></strong></h3>
         <p>Home is where the beer is<p>
-        <p class="button-container">
+        <p class='button-container'>
           <strong>
-            <a href="/" title="Beervana Home" class="button primary">Go Home</a>
+            <a href='/' title='Beervana Home' class='button primary'>Go Home</a>
           </strong>
         </p>
       </div>
@@ -122,15 +120,15 @@ export default async function decorate(block) {
 
       return `
       <li>
-        <div class="cards-card-image image-content">
-          <a href="/breweries/migration-brewing" title="">${resultImage}</a>
+        <div class='cards-card-image image-content'>
+          <a href='/breweries/migration-brewing' title=''>${resultImage}</a>
         </div>
-        <div class="cards-card-body">
-          <h3><strong><a href="${resultItem.url}" title="${resultItem.title}">${resultItem.title}</a></strong></h3>
+        <div class='cards-card-body'>
+          <h3><strong><a href='${resultItem.url}' title='${resultItem.title}'>${resultItem.title}</a></strong></h3>
           <p>${snippet || resultItem.intro || resultItem.metaDescription}<p>
-          <p class="button-container">
+          <p class='button-container'>
             <strong>
-              <a href="${resultItem.url}" title="${resultItem.title}" class="button primary">Continue</a>
+              <a href='${resultItem.url}' title='${resultItem.title}' class='button primary'>Continue</a>
             </strong>
           </p>
         </div>

@@ -1,8 +1,6 @@
-import { getMetadata, decorateIcons, readBlockConfig } from "./aem.js";
+import { getMetadata } from './aem.js';
 
 export async function fetchJSON(opts) {
-  //const meta = getMetadata(opts.path);
-  //const path = meta ? new URL(meta).pathname : `/${opts.path}`;
   const options = opts.fetchOptions || {};
   const resp = await fetch(opts.path, options);
 
@@ -44,7 +42,8 @@ export function runDecorator(props, decorator) {
 }
 
 export function runDecorators(props, decorators) {
-  let { input, opts } = props;
+  const { opts } = props;
+  let { input } = props;
   decorators.forEach((decorator) => {
     input = runDecorator({ input, opts }, decorator);
   });
@@ -53,20 +52,11 @@ export function runDecorators(props, decorators) {
 export function decorateSectionsWithClasses({ input, opts }) {
   if (input) {
     input
-      .querySelectorAll(":scope > div")
-      .forEach((section, index) =>
-        section.classList.add(opts.sectionClasses[index]),
-      );
+      .querySelectorAll(':scope > div')
+      .forEach((section, index) => section.classList.add(opts.sectionClasses[index]));
     return input;
   }
-}
-
-export function runLoop(input, callback) {
-  if (input.length > 0) {
-    for (let i = 0; i < input.length; i++) {
-      callback(input[i], index);
-    }
-  }
+  return false;
 }
 
 export function decorateByMediaQuery(
@@ -79,18 +69,18 @@ export function decorateByMediaQuery(
 }
 
 export function setupButton({ opts }) {
-  const button = document.createElement("button");
+  const button = document.createElement('button');
   if (opts?.buttonClasses) {
     button.classList.add(...opts.buttonClasses);
   }
   if (opts?.buttonIcon) {
-    const icon = document.createElement("span");
-    icon.classList.add(...["icon", ...opts.buttonIcon]);
+    const icon = document.createElement('span');
+    icon.classList.add(...['icon', ...opts.buttonIcon]);
     button.appendChild(icon);
   }
   if (opts?.buttonText) {
-    const text = document.createElement("span");
-    text.classList.add("text");
+    const text = document.createElement('span');
+    text.classList.add('text');
     text.innerHTML = opts.buttonText;
     button.appendChild(text);
   }

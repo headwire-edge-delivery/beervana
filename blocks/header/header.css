@@ -49,7 +49,7 @@ body > header {
 
   .header.block {
     display: grid;
-    grid-template-areas: "brand nav tools";
+    grid-template-areas: 'brand nav tools';
     grid-template-columns: var(--spacing-40) 1fr var(--spacing-96);
     grid-template-rows: auto;
     gap: var(--spacing-8);
@@ -88,11 +88,11 @@ body > header {
               padding-inline-end: 0;
 
               &::after {
-                content: "";
+                content: '';
                 display: block;
                 padding: var(--spacing-2) var(--spacing-3);
-                -webkit-mask: url("/icons/toggle.svg") no-repeat center center;
-                mask: url("/icons/toggle.svg") no-repeat center center;
+                -webkit-mask: url('/icons/toggle.svg') no-repeat center center;
+                mask: url('/icons/toggle.svg') no-repeat center center;
                 transition: all .2s ease-in-out;
                 background-color: var(--colors-component-buttons-secondary-color-button-secondary-color-fg);
               }
@@ -193,7 +193,7 @@ body > header {
 
   & .header-nav-nested-item {
     display: grid;
-    grid-template-areas: "icon title" "icon description";
+    grid-template-areas: 'icon title' 'icon description';
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     gap: var(--spacing-2) var(--spacing-4);
@@ -321,7 +321,7 @@ body > header {
   .header.block {
     padding: var(--spacing-4);
     display: grid;
-    grid-template-areas: "brand button" "dropdown dropdown";
+    grid-template-areas: 'brand button' 'dropdown dropdown';
     grid-template-columns: 1fr var(--spacing-12);
     grid-template-rows: var(--spacing-12) auto;
     align-items: center;
@@ -384,7 +384,7 @@ body > header {
   .header-dialog-dropdown[open] {
     padding: var(--spacing-4);
     display: grid;
-    grid-template-areas: "brand button" "dropdown dropdown";
+    grid-template-areas: 'brand button' 'dropdown dropdown';
     grid-template-columns: 1fr var(--spacing-12);
     grid-template-rows:  var(--spacing-12) auto;
     width: 100%;
@@ -484,11 +484,11 @@ body > header {
             padding-inline-end: 0;
 
             &::after {
-              content: "";
+              content: '';
               display: block;
               padding: var(--spacing-2) var(--spacing-3);
-              -webkit-mask: url("/icons/toggle.svg") no-repeat center center;
-              mask: url("/icons/toggle.svg") no-repeat center center;
+              -webkit-mask: url('/icons/toggle.svg') no-repeat center center;
+              mask: url('/icons/toggle.svg') no-repeat center center;
               transition: all .2s ease-in-out;
               background-color: var(--colors-component-buttons-secondary-color-button-secondary-color-fg);
             }
@@ -527,7 +527,7 @@ body > header {
 
     & .header-nav-nested-item {
       display: grid;
-      grid-template-areas: "icon title" "icon description";
+      grid-template-areas: 'icon title' 'icon description';
       grid-template-columns: auto 1fr;
       grid-template-rows: auto 1fr;
       gap: var(--spacing-2) var(--spacing-4);

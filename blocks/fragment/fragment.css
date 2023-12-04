@@ -7,7 +7,7 @@
   & .default-content-wrapper {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: "title text button primary-button";
+    grid-template-rows: 'title text button primary-button';
     row-gap: var(--spacing-4);
 
     & .button-container {
@@ -28,7 +28,7 @@
   .section.fragment-container.team-container {
     & .default-content-wrapper {
       gap: var(--spacing-6) var(--spacing-4);
-      grid-template-areas: "title button primary-button" "description button primary-button";
+      grid-template-areas: 'title button primary-button' 'description button primary-button';
       grid-template-columns: 1fr auto auto;
       grid-template-rows: auto auto;
     
@@ -60,7 +60,7 @@
 
   &:not(.section) {
     display: grid;
-    grid-template-areas: "full-bleed" "column";
+    grid-template-areas: 'full-bleed' 'column';
     grid-template-rows: auto auto;
     overflow: hidden;
 
@@ -143,7 +143,7 @@
       gap: var(--spacing-10) 0;
 
       & .fragment-wrapper:nth-child(even) .fragment.full-bleed.block {
-        grid-template-areas: "full-bleed column";
+        grid-template-areas: 'full-bleed column';
 
         & .default-content-wrapper:not(.image-content) {
           padding-inline: var(--spacing-10);
@@ -156,7 +156,7 @@
       }
 
       & .fragment-wrapper:nth-child(odd) .fragment.full-bleed.block {
-        grid-template-areas: "column full-bleed";
+        grid-template-areas: 'column full-bleed';
 
         & .form-wrapper,
         & .default-content-wrapper:not(.image-content) {
@@ -201,7 +201,7 @@
       gap: var(--spacing-20) 0;
 
       & .fragment-wrapper:nth-child(even) .fragment.full-bleed.block {
-        grid-template-areas: "full-bleed full-bleed column sidebar";
+        grid-template-areas: 'full-bleed full-bleed column sidebar';
 
         & .form-wrapper,
         & .default-content-wrapper:not(.image-content) {
@@ -210,7 +210,7 @@
       }
 
       & .fragment-wrapper:nth-child(odd) .fragment.full-bleed.block {
-        grid-template-areas: "sidebar column full-bleed full-bleed";
+        grid-template-areas: 'sidebar column full-bleed full-bleed';
 
         & .form-wrapper,
         & .default-content-wrapper:not(.image-content) {

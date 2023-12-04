@@ -1,11 +1,11 @@
 /*
  * Copyright 2023 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * This file is licensed to you under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * the License is distributed on an 'AS IS' BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
@@ -241,7 +241,7 @@ function readBlockConfig(block) {
  */
 async function loadCSS(href) {
   return new Promise((resolve, reject) => {
-    if (!document.querySelector(`head > link[href="${href}"]`)) {
+    if (!document.querySelector(`head > link[href='${href}']`)) {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
       link.href = href;
@@ -261,7 +261,7 @@ async function loadCSS(href) {
  */
 async function loadScript(src, attrs) {
   return new Promise((resolve, reject) => {
-    if (!document.querySelector(`head > script[src="${src}"]`)) {
+    if (!document.querySelector(`head > script[src='${src}']`)) {
       const script = document.createElement('script');
       script.src = src;
       if (attrs) {
@@ -287,7 +287,7 @@ async function loadScript(src, attrs) {
  */
 function getMetadata(name, doc = document) {
   const attr = name && name.includes(':') ? 'property' : 'name';
-  const meta = [...doc.head.querySelectorAll(`meta[${attr}="${name}"]`)]
+  const meta = [...doc.head.querySelectorAll(`meta[${attr}='${name}']`)]
     .map((m) => m.content)
     .join(', ');
   return meta || '';
@@ -406,9 +406,9 @@ function decorateIcon(span, prefix = '') {
   img.dataset.iconName = iconName;
   img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
   img.loading = 'lazy';
-  img.setAttribute("alt", iconName);
-  img.setAttribute("width", "16");
-  img.setAttribute("height", "16");
+  img.setAttribute('alt', iconName);
+  img.setAttribute('width', '16');
+  img.setAttribute('height', '16');
   span.append(img);
 }
 

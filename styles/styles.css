@@ -1,6 +1,6 @@
 :root {
-  --display-font-family: "Arvo", serif;
-  --body-font-family: "Roboto", sans-serif;
+  --display-font-family: 'Arvo', serif;
+  --body-font-family: 'Roboto', sans-serif;
   --colors-base-black: #000000;
   --colors-base-transparent: #ffffff;
   --colors-base-white: #ffffff;
@@ -1693,7 +1693,7 @@ button, a {
   @media (min-width: 65rem) {
     & {
       display: grid;
-      grid-template-areas: "content map" "form map";
+      grid-template-areas: 'content map' 'form map';
       grid-template-columns: 1fr 1fr;
       row-gap: var(--spacing-8);
       column-gap: var(--spacing-16);
@@ -1736,8 +1736,8 @@ button, a {
   @media (min-width: 80rem) {
     & {
       max-width: unset;
-      grid-template-areas: "sidebar content map map"
-                          "sidebar form map map";
+      grid-template-areas: 'sidebar content map map'
+                          'sidebar form map map';
       grid-template-columns: var(--layout-grid-template-columns-full-bleed-two-columns);
       gap: 0;
     

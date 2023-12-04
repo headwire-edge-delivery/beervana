@@ -96,7 +96,7 @@
     flex: 1;
     order: unset;
   
-    &[data-align="center"] {
+    &[data-align='center'] {
       text-align: center;
     }
   }
