@@ -1,5 +1,5 @@
 @font-face {
-  font-family: roboto;
+  font-family: roboto, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: roboto;
+  font-family: roboto, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -28,7 +28,7 @@
 */
 
 @font-face {
-  font-family: arvo;
+  font-family: arvo, serif;
   font-style: normal;
   font-weight: 700;
   font-display: swap;
