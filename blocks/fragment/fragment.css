@@ -28,9 +28,16 @@
   .section.fragment-container.team-container {
     & .default-content-wrapper {
       gap: var(--spacing-6) var(--spacing-4);
+      
+      /*
       grid-template-areas: 'title button primary-button' 'description button primary-button';
       grid-template-columns: 1fr auto auto;
       grid-template-rows: auto auto;
+      */
+      grid-template: 
+        'title button primary-button' auto
+        'description button primary-button' auto
+        / 1fr auto auto;
     
       & p:not(.button-container) {
         grid-area: description;
@@ -49,6 +56,7 @@
   }
 
 }
+
 .fragment.full-bleed.two-columns {
   &.section {
     max-width: unset;
@@ -99,6 +107,7 @@
           gap: var(--spacing-2);
           color: var(--colors-text-text-tertiary);
 
+          /* stylelint-disable-next-line no-descending-specificity */
           &:has(a) {
             padding-block: 0;
           }
@@ -222,6 +231,7 @@
         }
       }
     }
+
     &:not(.section) {
       display: grid;
       grid-template-columns: var(--layout-grid-template-columns-full-bleed-two-columns);
