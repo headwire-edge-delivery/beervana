@@ -116,7 +116,7 @@ export default async function decorate(block) {
 
     decorateHeaderSearch(block);
 
-    const mediaQueryListener = window.matchMedia('(min-width: 60rem)');
+    const mediaQueryListener = window.matchMedia('(min-width: 80rem)');
     handleMQChange(mediaQueryListener.matches);
     mediaQueryListener.onchange = (e) => handleMQChange(e.matches);
   }

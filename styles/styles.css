@@ -139,7 +139,7 @@
 	--text-size-text-xs: .75rem;
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 80rem) {
   :root {
     --header-min-height: 5rem;
   }

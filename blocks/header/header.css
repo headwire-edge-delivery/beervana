@@ -49,7 +49,7 @@ html:not(.dark-mode) body:not(.has-hero) {
   }
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 80rem) {
   helix-sidekick + .header-wrapper {
     top: 3rem;
   }
@@ -327,7 +327,7 @@ html:not(.dark-mode) body:not(.has-hero) {
 
 }
 
-@media (max-width: 60rem) {
+@media (max-width: 80rem) {
   .header-wrapper {
     width: 100%;
     background: var(--colors-background-bg-primary);
@@ -392,7 +392,7 @@ html:not(.dark-mode) body:not(.has-hero) {
 
       &[open] {
         grid-template-rows: var(--spacing-12) 1fr;
-        height: calc(100% - var(--spacing-4));
+        height: calc(100% + var(--spacing-4));
       }
     }
   }

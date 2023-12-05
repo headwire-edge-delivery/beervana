@@ -10,7 +10,7 @@
     grid-template-rows: 'title text button primary-button';
     row-gap: var(--spacing-4);
 
-    & .button-container {
+    & .button-container:not(:last-child) {
       margin: 0;
     }
 
