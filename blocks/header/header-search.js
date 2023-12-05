@@ -22,7 +22,7 @@ function setupSearchInput(searchButton) {
   searchInput.setAttribute('placeholder', 'Search');
   searchButton.after(searchInput);
   searchInput.addEventListener('keydown', (e) => {
-    if (e.key === 13) {
+    if (e.key === 'Enter') {
       e.preventDefault();
       searchButton.click();
     } else if (e.key === 'Tab') {
