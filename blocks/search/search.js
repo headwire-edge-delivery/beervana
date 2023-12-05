@@ -104,6 +104,7 @@ export default async function decorate(block) {
     if (!query) {
       return;
     }
+    document.title = `Search Results for "${query}"`;
     const response = await fetch(`https://search.jz-759.workers.dev/?search=${query}`);
     const data = await response.json();
 

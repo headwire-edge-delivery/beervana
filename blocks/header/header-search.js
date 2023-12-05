@@ -1,17 +1,24 @@
-function toggleSearch(e) {
-  e.preventDefault();
-  const searchParent = e.target.closest('.header-search');
+function toggleSearch() {
+  const header = document.querySelector('.header.block');
+  const searchParent = document.querySelector('.header-search');
   const searchInput = searchParent.querySelector('.search-input');
-  const searchValue = searchInput.value.trim();
-  const header = e.target.closest('.header.block');
 
   if (!header.classList.contains('search-open')) {
     header.classList.toggle('search-open');
     searchInput.focus();
-  } else if (searchValue === '') {
-    header.classList.toggle('search-open');
   } else {
+    header.classList.toggle('search-open');
+  }
+}
+
+function searchButtonClickHandler(e) {
+  e.preventDefault();
+  const searchButton = e.target;
+  const searchValue = document.querySelector('.header-search .search-input')?.value.trim();
+  if (searchValue !== '') {
     window.location.href = `/search?query=${searchValue}`;
+  } else {
+    searchButton.blur();
   }
 }
 
@@ -26,13 +33,14 @@ function setupSearchInput(searchButton) {
       e.preventDefault();
       searchButton.click();
     } else if (e.key === 'Tab') {
-      if (e.shiftKey) {
-        toggleSearch(e);
-        document.querySelector('.header-tools .color-mode-toggle')?.focus();
-      } else {
-        toggleSearch(e);
-        document.querySelector('.header-tools .button-container a')?.focus();
-      }
+      e.preventDefault();
+      toggleSearch(e);
+      document.querySelector(e.shiftKey ? '.header-tools .color-mode-toggle' : '.header-tools .button-container a')?.focus();
+    }
+  });
+  searchInput.addEventListener('blur', (e) => {
+    if (e.relatedTarget === null) {
+      toggleSearch(e);
     }
   });
 }
@@ -41,15 +49,7 @@ export default function decorateHeaderSearch(block) {
   const searchButton = block.querySelector('.button:has(.icon-search)');
   searchButton.classList.add('search-button');
   searchButton.classList.remove('button');
-  searchButton.addEventListener('click', (e) => {
-    const searchValue = e.target.closest('.header-search')?.querySelector('.search-input')?.value.trim();
-    if (searchValue !== '') {
-      window.location.href = `/search?query=${searchValue}`;
-    } else {
-      toggleSearch(e);
-    }
-  });
-
+  searchButton.addEventListener('click', searchButtonClickHandler);
   searchButton.addEventListener('focus', toggleSearch);
   const tempSearchButtonParent = searchButton.parentNode;
   const searchButtonParent = document.createElement('div');
