@@ -1,7 +1,3 @@
-body > header {
-  min-height: var(--header-min-height);
-}
-
 .header-wrapper {
   transition: background .3s ease-in-out;
   width: 100%;
@@ -29,7 +25,6 @@ body > header {
   }
 }
 
-
 .header-search {
   display: grid;
   grid-template-columns: subgrid;
@@ -43,7 +38,28 @@ body > header {
   }
 }
 
+.light-mode body:not(.has-hero), 
+html:not(.dark-mode) body:not(.has-hero) {
+  & .header-search .icon img {
+    filter: invert(0);
+  }
+
+  & .color-mode-toggle {
+    --color-text: var(--colors-component-buttons-secondary-color-button-secondary-color-fg);
+  }
+}
+
 @media (min-width: 60rem) {
+  helix-sidekick + .header-wrapper {
+    top: 3rem;
+  }
+
+  .header-wrapper {
+    position: sticky;
+    top: 0;
+    display: flex;
+  }
+
   .header.block {
     display: grid;
     grid-template:
@@ -272,6 +288,10 @@ body > header {
 
       & span {
         color: var(--colors-text-text-tertiary-on-brand);
+
+        & br {
+          display: none;
+        }
       }
 
       & .icon img {
@@ -374,6 +394,14 @@ body > header {
         grid-template-rows: var(--spacing-12) 1fr;
         height: calc(100% - var(--spacing-4));
       }
+    }
+  }
+
+  html.light-mode body:not(.has-hero),
+  html:not(.dark-mode) body:not(.has-hero)  {
+    & .button.open img,
+    & .button.close img {
+      filter: invert(0);
     }
   }
 
@@ -513,10 +541,6 @@ body > header {
         padding: var(--spacing-2) var(--spacing-3);
         font-weight: 700;
         color: var(--colors-component-buttons-secondary-color-button-secondary-color-fg);
-
-        &:hover {
-          color: var(--colors-component-buttons-secondary-color-button-secondary-color-fg-hover);
-        }
       }
     }
 
@@ -559,39 +583,15 @@ body > header {
     }
   }
 
-  body.has-hero {
-    & .header-wrapper,
-    & .header-dialog-content {
-      background-color: var(--colors-background-bg-brand-section);
-
-      & li:has(.header-nav-nested) {
-        & span {
-          color: var(--colors-text-text-tertiary-on-brand);
-        }
-
-        & a::after {
-          background-color: var(--colors-text-text-primary-on-brand);
-        }
-      }
-
-      & a {
-        color: var(--colors-text-text-primary-on-brand);
-      }
-    }
-
-    & .icon-hamburger img, 
-    & .icon-close img {
+  html.light-mode body.has-hero,
+  html:not(.dark-mode) body.has-hero {
+    & .header-nav-nested-item .icon img {
       filter: invert(1);
     }
+  }
 
-    & .button:not(.primary, .secondary) {
-      color: var(--colors-text-text-tertiary-on-brand);
-
-      &:hover {
-        color: var(--colors-background-bg-brand-section);
-        background-color: var(--colors-text-text-primary-on-brand);
-      }
-    }
+  helix-sidekick + .header-wrapper {
+    top: 3rem;
   }
 
   helix-sidekick + .header-wrapper .header-dialog-dropdown[open] {

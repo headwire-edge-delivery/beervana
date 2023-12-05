@@ -240,7 +240,7 @@ html.light-mode {
   --colors-text-text-success-primary: var(--colors-success-600, #079455);
   --colors-text-text-tertiary: var(--colors-gray-600, #475467);
   --colors-text-text-tertiary-hover: var(--colors-gray-700, #344054);
-  --colors-text-text-tertiary-on-brand: var(--colors-brand-200, #ee9781);
+  --colors-text-text-tertiary-on-brand: var(--colors-brand-100, #ee9781);
   --colors-text-text-warning-primary: var(--colors-warning-600, #dc6803);
   --colors-text-text-white: var(--colors-base-white, #fff);
   --colors-text-text-display: var(--colors-gray-900);
@@ -1046,7 +1046,8 @@ main > div:first-child:not(.hero-container) {
   padding-block: var(--header-min-height);
 }
 
-@media (prefers-color-scheme: dark) {
+/* stylelint-disable-next-line no-duplicate-selectors */
+html.dark-mode {
   .icon:not(.icon-logo-inverse, .icon-logo) img {
     filter: invert(1);
   }
@@ -1199,6 +1200,41 @@ body.has-hero {
         color: var(--colors-background-bg-brand-section);
         background-color: var(--colors-text-text-primary-on-brand);
       }
+    }
+  }
+
+  & header,
+  & .header-wrapper,
+  & .header-dialog-content {
+    background-color: var(--colors-background-bg-brand-section);
+
+    & li:has(.header-nav-nested) {
+      & span {
+        color: var(--colors-text-text-tertiary-on-brand);
+      }
+
+      & a::after {
+        background-color: var(--colors-text-text-primary-on-brand);
+      }
+    }
+
+    & a {
+      color: var(--colors-text-text-primary-on-brand);
+    }
+  }
+
+  & .icon-search img,
+  & .icon-hamburger img, 
+  & .icon-close img {
+    filter: invert(1);
+  }
+
+  & .button:not(.primary, .secondary) {
+    color: var(--colors-text-text-tertiary-on-brand);
+
+    &:hover {
+      color: var(--colors-background-bg-brand-section);
+      background-color: var(--colors-text-text-primary-on-brand);
     }
   }
 }
