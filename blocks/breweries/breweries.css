@@ -1,0 +1,5 @@
+.breweries {
+  .brewery-list-title {
+    text-transform: capitalize;
+  }
+}
