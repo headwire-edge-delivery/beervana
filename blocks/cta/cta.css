@@ -1,7 +1,7 @@
-.cta-container {
+.cta-wrapper {
   background: var(--colors-background-bg-secondary);
   padding-block: var(--spacing-16);
-  max-width: unset;
+  grid-column: full-width;
 }
 
 .cta {

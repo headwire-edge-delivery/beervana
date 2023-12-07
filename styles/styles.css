@@ -1027,10 +1027,32 @@ img {
 }
 
 .section {
-  padding: var(--spacing-16) var(--spacing-4);
-  width: 100%;
-  max-width: var(--layout-max-width);
-  margin: 0 auto;
+  --section-layout-gap: clamp(var(--spacing-2), 6vw, var(--spacing-4));
+  --section-layout-full: minmax(var(--section-layout-gap), 1fr);
+  --section-layout-content-left: min(var(--layout-max-width) / 2, 50% - var(--section-layout-gap));
+  --section-layout-content-right: min(var(--layout-max-width) / 2, 50% - var(--section-layout-gap));
+  --section-layout-content: min(var(--layout-max-width), 100% - var(--section-layout-gap) * 2);
+  --section-layout-popout: minmax(0, 2rem);
+  --section-layout-feature: minmax(0, 5rem);
+
+  padding: var(--spacing-16) 0;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 
+    [full-width-start breakout-left-start] var(--section-layout-full)
+    [content-start breakout-right-start content-left-start] var(--section-layout-content-left) [content-left-end content-right-start] var(--section-layout-content-right) [content-right-end content-end breakout-left-end]
+    var(--section-layout-full) [breakout-right-end full-width-end];
+
+  /*
+  grid-template-columns: 
+    [full-width-start breakout-left-start] minmax(var(--spacing-2), auto)
+    [breakout-right-start content-start] minmax(100%, var(--layout-max-width)) [content-end breakout-left-end]
+      minmax(var(--spacing-2), auto) [breakout-right-end full-width-end];
+      */
+
+  .default-content-wrapper {
+    grid-column: content;
+  }
 }
 
 .no-scroll {
@@ -1137,14 +1159,11 @@ body.brewery .default-content-wrapper,
 }
 
 .hero-container {
-  display: flex;
   padding: 0;
-  max-width: unset;
-  justify-content: center;
 }
 
 .hero-wrapper {
-  flex: 1;
+  grid-column: full-width;
 }
 
 .hero {
