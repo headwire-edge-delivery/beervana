@@ -22,12 +22,16 @@
       grid-column: content;
       grid-row: content;
       padding: var(--spacing-6);
-      padding-block-end: 0;
 
       &.image-content {
         grid-column: full-width;
         grid-row: image;
         padding: 0;
+      }
+
+      & :last-child {
+        padding-block-end: 0;
+        margin-block-end: 0;
       }
     }
 

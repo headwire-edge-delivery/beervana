@@ -1029,18 +1029,14 @@ img {
 .section {
   --section-layout-gap: clamp(var(--spacing-2), 6vw, var(--spacing-4));
   --section-layout-full: minmax(var(--section-layout-gap), 1fr);
-  --section-layout-content-left: min(var(--layout-max-width) / 2, 50% - var(--section-layout-gap));
-  --section-layout-content-right: min(var(--layout-max-width) / 2, 50% - var(--section-layout-gap));
-  --section-layout-content: min(var(--layout-max-width), 100% - var(--section-layout-gap) * 2);
-  --section-layout-popout: minmax(0, 2rem);
-  --section-layout-feature: minmax(0, 5rem);
+  --section-layout-content: min((var(--layout-max-width) - var(--section-layout-gap) * 2) / 2, 50% - var(--section-layout-gap));
 
   padding: var(--spacing-16) 0;
   display: grid;
   grid-auto-flow: row;
   grid-template-columns: 
     [full-width-start breakout-left-start] var(--section-layout-full)
-    [content-start breakout-right-start content-left-start] var(--section-layout-content-left) [content-left-end content-right-start] var(--section-layout-content-right) [content-right-end content-end breakout-left-end]
+    [content-start breakout-right-start content-left-start] var(--section-layout-content) [content-left-end content-right-start] var(--section-layout-content) [content-right-end content-end breakout-left-end]
     var(--section-layout-full) [breakout-right-end full-width-end];
 
   /*
