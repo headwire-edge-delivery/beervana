@@ -16,8 +16,8 @@ function templateCard({
       </h3>
       <p>${description}</p>
       <p class="button-container">
-        <strong>
-          <a href="${path}" title="${title}" class="button primary">More ${title.split(' ')[0]}</a></strong></p>
+        <a href="${path}" title="${title}" class="button primary">More ${title.split(' ')[0]}</a>
+      </p>
     </div>
   </div>`;
 }
