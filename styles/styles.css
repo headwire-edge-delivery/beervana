@@ -1049,6 +1049,10 @@ img {
   .default-content-wrapper {
     grid-column: content;
   }
+
+  & > *:not(.full-width, .hero-wrapper) {
+    grid-column: content;
+  }
 }
 
 .no-scroll {
