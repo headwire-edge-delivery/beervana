@@ -1,3 +1,5 @@
+import { createOptimizedPicture } from '../../scripts/aem.js';
+
 function templateCard({ path, title, description }) {
   return `<div class="card">
     <div class="cards-card-image image-content">
@@ -20,12 +22,18 @@ function templateCard({ path, title, description }) {
   </div>`;
 }
 
-/* eslint-disable no-unused-vars */
-function templateBreakout({ path, title, description }, index) {
+function templateBreakout({
+  path,
+  title,
+  description,
+  image,
+}, index) {
   return `<div class="breakout-${index % 2 === 0 ? 'left' : 'right'} two-columns block">
     <div class="default-content-wrapper">
-      <h2 id="portland-art-museum">Portland Art Museum</h2>
-      <p>The Portland Art Museum has 240,000 square feet, with more than 112,000 square feet of gallery space. The museum’s permanent collection has over 42,000 works of art</p>
+      <h2 id="portland-art-museum">
+        <a href="${path} title="${title}">${title}</a>
+      </h2>
+      <p>${description}</p>
       <ul>
         <li><span class="icon icon-map-pin"><img data-icon-name="map-pin" src="/icons/map-pin.svg" loading="lazy" alt="map-pin" width="16" height="16"></span>1219 SW Park Avenue<br>Portland, OR 97205</li>
         <li><span class="icon icon-phone"><img data-icon-name="phone" src="/icons/phone.svg" loading="lazy" alt="phone" width="16" height="16"></span>General info: 503-226-2811</li>
@@ -33,14 +41,7 @@ function templateBreakout({ path, title, description }, index) {
         <li><span class="icon icon-link"><img data-icon-name="link" src="/icons/link.svg" loading="lazy" alt="link" width="16" height="16"></span><a href="http://localhost:3000/external-link-interstitial?redirect=https://portlandartmuseum.org/&amp;back=http://localhost:3000/activities" title="https://portlandartmuseum.org/">https://portlandartmuseum.org/</a></li>
       </ul>
     </div>
-    <div class="default-content-wrapper image-content">
-      <picture>
-        <source type="image/webp" srcset="./media_1ddaedc26276f9520db5a059733923dcbdb8cff5e.png?width=2000&amp;format=webply&amp;optimize=medium" media="(min-width: 600px)">
-        <source type="image/webp" srcset="./media_1ddaedc26276f9520db5a059733923dcbdb8cff5e.png?width=750&amp;format=webply&amp;optimize=medium">
-        <source type="image/png" srcset="./media_1ddaedc26276f9520db5a059733923dcbdb8cff5e.png?width=2000&amp;format=png&amp;optimize=medium" media="(min-width: 600px)">
-        <img loading="lazy" alt="" src="./media_1ddaedc26276f9520db5a059733923dcbdb8cff5e.png?width=750&amp;format=png&amp;optimize=medium" width="1133" height="934">
-      </picture>
-    </div>
+    <div class="default-content-wrapper image-content">{${createOptimizedPicture(image).outerHTML}</div>
   </div>`;
 }
 
