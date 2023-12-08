@@ -58,3 +58,9 @@ indices:
       hours:
         select: head > meta[name="hours"]
         value: attribute(el, "content")
+      previous:
+        select: head > meta[name="previous-link"]
+        value: attribute(el, "content")
+      nextLink:
+        select: head > meta[name="next-link"]
+        value: attribute(el, "content")
