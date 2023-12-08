@@ -23,25 +23,32 @@ function templateCard({ path, title, description }) {
 }
 
 function templateBreakout({
-  path,
-  title,
+  address,
   description,
+  email,
+  hours,
   image,
+  path,
+  telephone,
+  title,
+  website,
+  websiteTitle,
 }, index) {
   return `<div class="breakout-${index % 2 === 0 ? 'left' : 'right'} two-columns block">
     <div class="default-content-wrapper">
       <h2 id="portland-art-museum">
-        <a href="${path} title="${title}">${title}</a>
+        <a href="${path}" title="${title}">${title}</a>
       </h2>
       <p>${description}</p>
       <ul>
-        <li><span class="icon icon-map-pin"><img data-icon-name="map-pin" src="/icons/map-pin.svg" loading="lazy" alt="map-pin" width="16" height="16"></span>1219 SW Park Avenue<br>Portland, OR 97205</li>
-        <li><span class="icon icon-phone"><img data-icon-name="phone" src="/icons/phone.svg" loading="lazy" alt="phone" width="16" height="16"></span>General info: 503-226-2811</li>
-        <li><span class="icon icon-phone"><img data-icon-name="phone" src="/icons/phone.svg" loading="lazy" alt="phone" width="16" height="16"></span>Membership: 503-276-4249</li>
-        <li><span class="icon icon-link"><img data-icon-name="link" src="/icons/link.svg" loading="lazy" alt="link" width="16" height="16"></span><a href="http://localhost:3000/external-link-interstitial?redirect=https://portlandartmuseum.org/&amp;back=http://localhost:3000/activities" title="https://portlandartmuseum.org/">https://portlandartmuseum.org/</a></li>
+        ${address && `<li><span class="icon icon-map-pin"><img data-icon-name="map-pin" src="/icons/map-pin.svg" loading="lazy" alt="map-pin" width="16" height="16"></span>${address}</li>`}
+        ${telephone && `<li><span class="icon icon-phone"><img data-icon-name="phone" src="/icons/phone.svg" loading="lazy" alt="phone" width="16" height="16"></span>${telephone}</li>`}
+        ${email && `<li><span class="icon icon-mail"><img data-icon-name="mail" src="/icons/mail.svg" loading="lazy" alt="mail" width="16" height="16"></span><a href="mailto:${email}" title="${email}">${email}</a></li>`}
+        ${hours && `<li><span class="icon icon-clock"><img data-icon-name="clock" src="/icons/clock.svg" loading="lazy" alt="clock" width="16" height="16"></span>${hours}</li>`}
+        ${website && `<li><span class="icon icon-link"><img data-icon-name="link" src="/icons/link.svg" loading="lazy" alt="link" width="16" height="16"></span><a href="${website}" title="${websiteTitle || ''}">${websiteTitle || website}</a></li>`}
       </ul>
     </div>
-    <div class="default-content-wrapper image-content">{${createOptimizedPicture(image).outerHTML}</div>
+    <div class="default-content-wrapper image-content">${createOptimizedPicture(image).outerHTML}</div>
   </div>`;
 }
 
