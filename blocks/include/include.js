@@ -1,5 +1,5 @@
 function templateCard({ path, title, description }) {
-  return `<li>
+  return `<div class="card">
     <div class="cards-card-image image-content">
       <a href="${path}" title="${title}">
         <picture>
@@ -17,11 +17,11 @@ function templateCard({ path, title, description }) {
         <strong>
           <a href="${path}" title="${title}" class="button primary">More ${title.split(' ')[0]}</a></strong></p>
     </div>
-  </li>`;
+  </div>`;
 }
 
 /* eslint-disable no-unused-vars */
-function templateBreakoutElements({ path, title, description }, index) {
+function templateBreakout({ path, title, description }, index) {
   return `<div class="breakout-${index % 2 === 0 ? 'left' : 'right'} two-columns block">
     <div class="default-content-wrapper">
       <h2 id="portland-art-museum">Portland Art Museum</h2>
@@ -44,37 +44,16 @@ function templateBreakoutElements({ path, title, description }, index) {
   </div>`;
 }
 
-function templateCards(block, data) {
-  const cards = document.createElement('div');
-  cards.classList.add('cards');
-  cards.innerHTML = `<ul>${data.map(templateCard).join('')}</ul>`;
-  block.appendChild(cards);
-}
-
-function templateDefault(block, data) {
-  const container = document.createElement('div');
-  container.classList.add('include-container');
-  container.innerHTML = `<ul>${data.map(templateCard).join('')}</ul>`;
-  block.appendChild(container);
-}
-
-function templateBreakout(block, data) {
-  const container = document.createElement('div');
-  container.classList.add('breakout-wrapper');
-  container.innerHTML = data.map(templateBreakoutElements).join('');
-  block.appendChild(container);
-}
-
 const templateConfig = {
-  cards: templateCards,
+  cards: templateCard,
   breakout: templateBreakout,
-  default: templateDefault,
+  default: templateCard,
 };
 
 export default async function decorate(block) {
   const queryA = block.querySelector('a[href*="query-index.json"]');
   if (queryA) {
-    const style = Array.from(block.classList).filter((c) => c.toLowerCase() !== 'include' && c.toLowerCase() !== 'block')[0];
+    const styles = Array.from(block.classList).filter((c) => c.toLowerCase() !== 'include' && c.toLowerCase() !== 'block');
     const params = new URLSearchParams(queryA.href);
     block.querySelector(':scope > div:first-child').remove();
     const response = await fetch(queryA.href);
@@ -87,11 +66,11 @@ export default async function decorate(block) {
         }
       }
 
-      if (templateConfig[style]) {
-        templateConfig[style](block, data);
-      } else {
-        templateConfig.default(block, data);
-      }
+      const template = templateConfig[styles[0]] || templateConfig.default;
+      const container = document.createElement('div');
+      container.className = `${styles.join(' ')} wrapper`;
+      container.innerHTML = data.map(template).join('');
+      block.appendChild(container);
     }
   }
 }
