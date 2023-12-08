@@ -5,14 +5,10 @@ indices:
     include:
       - /**
     exclude:
-      - '/activities/**'
       - '/admin/**'
       - '/blog-entries/**'
       - '/drafts/**'
-      - '/eats/**'
-      - '/events/**'
       - '/fragments/**'
-      - '/stays/**'
       - '/thanks/**'
       - '/footer'
       - '/header'
