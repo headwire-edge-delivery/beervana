@@ -52,6 +52,9 @@ indices:
       website:
         select: head > meta[name="website"]
         value: attribute(el, "content")
+      onTop:
+        select: head > meta[name="on-tap"]
+        value: attribute(el, "content")
       websiteTitle:
         select: head > meta[name="website-title"]
         value: attribute(el, "content")
