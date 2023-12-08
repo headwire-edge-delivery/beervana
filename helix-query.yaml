@@ -53,7 +53,7 @@ indices:
         select: head > meta[name="website"]
         value: attribute(el, "content")
       websiteTitle:
-        select: head > meta[name="websiteTitle"]
+        select: head > meta[name="website-title"]
         value: attribute(el, "content")
       hours:
         select: head > meta[name="hours"]
