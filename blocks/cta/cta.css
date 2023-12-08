@@ -2,6 +2,8 @@
   background: var(--colors-background-bg-secondary);
   padding-block: var(--spacing-16);
   grid-column: full-width;
+  display: grid;
+  grid-template-columns: subgrid;
 }
 
 .cta {
@@ -9,7 +11,7 @@
   padding: var(--spacing-8);
   border-radius: var(--border-radius-xl);
   max-width: var(--layout-max-width);
-  margin: 0 auto;
+  grid-column: content;
 }
 
 .cta-content {

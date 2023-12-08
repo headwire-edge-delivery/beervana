@@ -1050,7 +1050,7 @@ img {
     grid-column: content;
   }
 
-  & > *:not(.full-width, .hero-wrapper) {
+  & > *:not(.full-width, .hero-wrapper, .cta-wrapper) {
     grid-column: content;
   }
 }

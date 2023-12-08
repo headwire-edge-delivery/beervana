@@ -1,14 +1,14 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
-function templateCard({ path, title, description }) {
+function templateCard({
+  description,
+  image,
+  path,
+  title,
+}) {
   return `<div class="card">
     <div class="cards-card-image image-content">
-      <a href="${path}" title="${title}">
-        <picture>
-          <source type="image/webp" srcset="/media_12d37a59a0671d5f5dba24f7f51319ab0d16d9666.jpeg?width=750&amp;format=webply&amp;optimize=medium">
-          <img loading="lazy" alt="Migration Brewing" src="/media_12d37a59a0671d5f5dba24f7f51319ab0d16d9666.jpeg?width=750&amp;format=jpeg&amp;optimize=medium">
-        </picture>
-      </a>
+      <a href="${path}" title="${title}">${createOptimizedPicture(image).outerHTML}</a>
     </div>
     <div class="cards-card-body">
       <h3>
