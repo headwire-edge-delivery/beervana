@@ -20,8 +20,8 @@ function templateCard({ path, title, description }) {
   </li>`;
 }
 
+/* eslint-disable no-unused-vars */
 function templateBreakoutElements({ path, title, description }, index) {
-  console.log('templateBreakoutElements', path, title, description, index);
   return `<div class="breakout-${index % 2 === 0 ? 'left' : 'right'} two-columns block">
     <div class="default-content-wrapper">
       <h2 id="portland-art-museum">Portland Art Museum</h2>
