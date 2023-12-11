@@ -145,6 +145,7 @@
 
         &.image-content {
           grid-column: breakout-left / content-left;
+          margin-inline-end: calc((var(--section-layout-gap) / 2) * -1);
         }
       }
     }
@@ -157,6 +158,7 @@
 
         &.image-content {
           grid-column: content-right / breakout-right;
+          margin-inline-start: calc((var(--section-layout-gap) / 2) * -1);
         }
       }
     }

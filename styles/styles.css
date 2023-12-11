@@ -1038,7 +1038,7 @@ img {
     [full-width-start breakout-left-start] var(--section-layout-full)
     [content-start breakout-right-start content-left-start sidebar-left-start] var(--section-layout-content) [sidebar-left-end content-middle-start] var(--section-layout-content) [content-left-end content-right-start] var(--section-layout-content) [content-middle-end sidebar-right-start] var(--section-layout-content) [content-right-end content-end breakout-left-end]
     var(--section-layout-full) [breakout-right-end full-width-end];
-  gap: var(--section-layout-gap);
+  gap: 0 var(--section-layout-gap);
 
   .default-content-wrapper {
     grid-column: content;
