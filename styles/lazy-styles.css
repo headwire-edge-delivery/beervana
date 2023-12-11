@@ -11,6 +11,19 @@ helix-sidekick {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-4);
+  order: 2;
+  
+  @media (max-width: 60rem) {
+    &.sidebar-left {
+      grid-column: content;
+    }
+  }
+
+  @media (min-width: 60rem) {
+    & {
+      order: unset;
+    }
+  }
 
   :is(h1, h2, h3, h4, h5, h6) {
     font-size: var(--text-size-display-sm);

@@ -1480,12 +1480,27 @@ body > header {
   grid-template-columns: subgrid;
 
   &.columns-2 > * {
-    grid-column: span 2;
+    grid-column: content;
+  }
+
+  @media (min-width: 60rem) {
+    &.columns-2 > * {
+      grid-column: span 2;
+    }
   }
 }
 
 .pagination { 
   margin-block: var(--spacing-8);
+  order: 100;
+  grid-auto-flow: row;
+  row-gap: var(--section-layout-gap);
+
+  @media (min-width: 60rem) {
+    & {
+      row-gap: unset;
+    }
+  }
 
   & > * {
     background: var(--colors-background-bg-quaternary);
@@ -1493,6 +1508,7 @@ body > header {
     border-radius: var(--border-radius-md);
     display: flex;
     flex-direction: column;
+    grid-column: content;
 
     &:first-child {
       align-items: flex-start;
