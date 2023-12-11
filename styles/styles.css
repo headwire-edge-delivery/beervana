@@ -1066,10 +1066,18 @@ img {
 
   .breakout-left {
     grid-column: breakout-left;
+
+    .default-content-wrapper :first-child:is(h1, h2, h3, h4, h5, h6) {
+      margin-block-start: 0;
+    }
   }
 
   .breakout-right {
     grid-column: breakout-right;
+
+    .default-content-wrapper :first-child:is(h1, h2, h3, h4, h5, h6) {
+      margin-block-start: 0;
+    }
   }
 
   .sidebar-left {
