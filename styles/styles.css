@@ -711,7 +711,6 @@ h1, .h1, .display-xxl {
   font-size: var(--text-size-display-xxl);
   font-style: normal;
   font-weight: 400;
-  line-height: 5.625rem;
   letter-spacing: -0.09rem;
   margin-block: var(--spacing-2);
 }
@@ -720,7 +719,6 @@ h2, .h2, .display-xl {
   font-size: var(--text-size-display-xl);
   font-style: normal;
   font-weight: 400;
-  line-height: 4.5rem;
   letter-spacing: -0.075rem;
   margin-block: var(--spacing-2);
 }
@@ -729,7 +727,6 @@ h3, .h3, .display-lg {
   font-size: var(--text-size-display-lg);
   font-style: normal;
   font-weight: 400;
-  line-height: 3.75rem;
   letter-spacing: -0.06rem;
   margin-block: var(--spacing-2);
 }
@@ -738,7 +735,6 @@ h4, .h4, .diplay-md {
   font-size: var(--text-size-display-md);
   font-style: normal;
   font-weight: 400;
-  line-height: 2.75rem;
   letter-spacing: -0.045rem;
   margin-block: var(--spacing-2);
 }
@@ -747,7 +743,6 @@ h5, .h5, .diplay-sm {
   font-size: var(--text-size-display-sm);
   font-style: normal;
   font-weight: 400;
-  line-height: 2.375rem;
   margin-block: var(--spacing-2);
 }
 
@@ -755,7 +750,6 @@ h6, .h6, .display-xs {
   font-size: var(--text-size-display-xs);
   font-style: normal;
   font-weight: 400;
-  line-height: 2rem;
   margin-block: var(--spacing-2);
 }
 
@@ -1038,15 +1032,21 @@ img {
   --section-layout-gap: clamp(var(--spacing-2), 6vw, var(--spacing-4));
   --section-layout-full: minmax(var(--section-layout-gap), 1fr);
   --section-layout-content: min((var(--layout-max-width) - var(--section-layout-gap) * 5) / 4, 25% - var(--section-layout-gap));
+  --section-template-columns: 
+    [full-width-start breakout-left-start] var(--section-layout-full)
+    [content-start breakout-right-start content-left-start sidebar-left-start] var(--section-layout-content) [sidebar-left-end content-middle-start] var(--section-layout-content) [content-left-end content-right-start] var(--section-layout-content) [content-middle-end sidebar-right-start] var(--section-layout-content) [content-right-end content-end breakout-left-end]
+    var(--section-layout-full) [breakout-right-end full-width-end];
 
   padding: var(--spacing-16) 0;
   display: grid;
   grid-auto-flow: row;
-  grid-template-columns: 
-    [full-width-start breakout-left-start] var(--section-layout-full)
-    [content-start breakout-right-start content-left-start sidebar-left-start] var(--section-layout-content) [sidebar-left-end content-middle-start] var(--section-layout-content) [content-left-end content-right-start] var(--section-layout-content) [content-middle-end sidebar-right-start] var(--section-layout-content) [content-right-end content-end breakout-left-end]
-    var(--section-layout-full) [breakout-right-end full-width-end];
-  gap: 0 var(--section-layout-gap);
+  grid-template-columns: var(--section-template-columns);
+  
+  @media (min-width: 65rem) {
+    & {
+      gap: 0 var(--section-layout-gap);
+    }
+  }
 
   .default-content-wrapper {
     grid-column: content;
@@ -1094,8 +1094,10 @@ img {
 }
 
 body.content-middle {
-  .section > .default-content-wrapper {
-    grid-column: content-middle;
+  @media (min-width: 60rem) {
+    .section > .default-content-wrapper {
+      grid-column: content-middle;
+    }
   }
 }
 
@@ -1126,9 +1128,12 @@ body.brewery,
   }
 
   .default-content-wrapper {
-    grid-column: content-middle / content-right;
     max-width: 90ch;
     margin: var(--spacing-8) auto;
+
+    @media (min-width: 60rem) {
+      grid-column: content-middle / content-right;
+    }
 
     & h2,
     & h3,
@@ -1154,9 +1159,32 @@ body.brewery,
 }
 
 .hero.centered-with-pretitle {
+  --hero-block-padding-divider: 2;
+
   text-align: center;
-  padding-block: var(--header-min-height);
   background: var(--colors-background-bg-primary);
+  padding-block: calc(var(--header-min-height) / var(--hero-block-padding-divider));
+
+  @media (min-width: 60rem) {
+    & {
+      --hero-block-padding-divider: 1;
+    }
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: var(--section-template-columns);
+
+    & > * {
+      grid-column: content;
+
+      @media (min-width: 60rem) {
+        & {
+          grid-column: content-middle;
+        }
+      }
+    }
+  }
 
   & h1 {
     font-weight: bold;
@@ -1215,12 +1243,19 @@ body.brewery,
 
 .hero-wrapper {
   grid-column: full-width;
+
+  &:not(:has(.centered-with-pretitle)) {
+    background-color: var(--colors-background-bg-brand-section);
+  }
 }
 
 .hero {
-  background: var(--colors-background-bg-brand-section);
   width: 100%;
   padding-block: var(--header-min-height); 
+
+  @media (max-width: 60rem) {
+    padding-block-start: 0;
+  }
 
   & .hero-content {
     max-width: var(--layout-max-width);
