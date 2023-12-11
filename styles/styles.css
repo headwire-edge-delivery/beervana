@@ -820,10 +820,10 @@ button, a {
 }
 
 .default-content-wrapper p:not(.button-container, :has(picture)) {
-    max-width: 90ch;
-    color: var(--colors-text-text-tertiary);
-    font-size: var(--text-size-text-lg);
-    line-height: 1.4rem;
+  max-width: 90ch;
+  color: var(--colors-text-text-tertiary);
+  font-size: var(--text-size-text-lg);
+  line-height: 1.4rem;
 }
 
 .section.fragment-container.full-bleed.two-columns.contact-main-page.form-container {
@@ -914,6 +914,14 @@ button, a {
         padding-right: var(--spacing-20);
       }
     }
+  }
+}
+
+.button-container {
+  display: inline-flex;
+
+  & + .button-container {
+    margin-inline-start: var(--section-layout-gap);
   }
 }
 
@@ -1042,6 +1050,14 @@ img {
 
   .default-content-wrapper {
     grid-column: content;
+
+    & :first-child:is(h1, h2, h3, h4, h5, h6) {
+      margin-block-start: var(--spacing-12);
+    }
+
+    .button-container .button {
+      width: auto;
+    }
   }
 
   & > *:not(.full-width, .hero-wrapper, .cta-wrapper, .brewery-metadata) {
@@ -1074,6 +1090,12 @@ img {
 
   .content-right {
     grid-column: content-right;
+  }
+}
+
+body.content-middle {
+  .section > .default-content-wrapper {
+    grid-column: content-middle;
   }
 }
 

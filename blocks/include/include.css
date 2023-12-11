@@ -100,10 +100,6 @@
       &:has(a) {
         padding-block: 0;
       }
-
-      & a {
-        padding-block: var(--spacing-2);
-      }
     }
 
     & .icon {

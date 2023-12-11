@@ -2,6 +2,7 @@
   transition: background .3s ease-in-out;
   width: 100%;
   background: var(--colors-background-bg-primary);
+  z-index: 1;
 }
 
 .header-tools {

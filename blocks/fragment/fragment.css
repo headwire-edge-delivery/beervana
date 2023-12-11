@@ -241,32 +241,6 @@
   */
 }
 
-.section.fragment-container.team-container {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--spacing-12);
-  padding-block: var(--spacing-12);
-
-  & .default-content-wrapper {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 'title text button primary-button';
-    row-gap: var(--spacing-4);
-
-    & .button-container:not(:last-child) {
-      margin: 0;
-    }
-
-    & .button:not(.primary) {
-      grid-area: button;
-    }
-
-    & .button.primary {
-      grid-area: primary-button;
-    }
-  }
-}
-
 /*
 
 @media (min-width: 768px) {
