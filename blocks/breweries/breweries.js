@@ -5,7 +5,8 @@ export default async function decorate(block) {
     const { data: breweries } = await response.json();
     if (breweries?.length > 0) {
       const title = tags[0];
-      const breweriesList = breweries.filter((brewery) => JSON.parse(brewery.tags).includes(title));
+      /* eslint-disable max-len */
+      const breweriesList = breweries.filter((brewery) => JSON.parse(brewery.tags.toLowerCase()).includes(title));
       const breweriesListHtml = breweriesList.map((brewery) => `
             <li>
               <div class="cards-card-image image-content">

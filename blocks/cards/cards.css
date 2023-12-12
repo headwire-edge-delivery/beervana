@@ -1,3 +1,9 @@
+.cards-wrapper {
+  grid-column: content;
+  padding-block: var(--spacing-12);
+}
+
+.cards.wrapper,
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -7,6 +13,7 @@
   gap: var(--spacing-8) var(--spacing-4);
 }
 
+.card,
 .cards > ul > li {
   border: 1px solid var(--highlight-background-color);
   background-color: var(--colors-background-bg-brand-section);
