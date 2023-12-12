@@ -1130,6 +1130,7 @@ html.dark-mode {
 }
 
 body.brewery,
+body.metadata,
 .long-form-content {
   .columns-wrapper {
     grid-column: sidebar-left;
@@ -1374,7 +1375,8 @@ body > header {
 }
 
 @media (min-width: 50rem) {
-  body.brewery {
+  body.brewery,
+  body.metadata {
     & .hero-container + .columns-container {
       display: flex;
       gap: var(--spacing-16);
