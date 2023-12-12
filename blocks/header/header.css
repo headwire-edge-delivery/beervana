@@ -12,6 +12,7 @@
   & .button-container {
     margin-block: 0;
     align-self: center;
+    display: block;
   }
 
   & .search-button {
