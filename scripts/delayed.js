@@ -51,18 +51,17 @@ function decorateBreweryTemplate() {
     document.querySelector('main .section:last-child').appendChild(pagination);
   }
 
-  const hours = document.querySelector('meta[name="hours"]')?.getAttribute('content');
-  const address = document.querySelector('meta[name="address"]')?.getAttribute('content');
-  const telephone = document.querySelector('meta[name="telephone"]')?.getAttribute('content');
-  const website = document.querySelector('meta[name="website"]')?.getAttribute('content');
-  const websiteTitle = document.querySelector('meta[name="website-title"]')?.getAttribute('content');
-  const email = document.querySelector('meta[name="email"]')?.getAttribute('content');
-  const onTap = document.querySelector('meta[name="on-tap"]')?.getAttribute('content');
+  const hours = document.querySelector('meta[name="hours"]')?.getAttribute('content') || '';
+  const address = document.querySelector('meta[name="address"]')?.getAttribute('content') || '';
+  const telephone = document.querySelector('meta[name="telephone"]')?.getAttribute('content') || '';
+  const website = document.querySelector('meta[name="website"]')?.getAttribute('content') || '';
+  const websiteTitle = document.querySelector('meta[name="website-title"]')?.getAttribute('content') || '';
+  const email = document.querySelector('meta[name="email"]')?.getAttribute('content') || '';
+  const onTap = document.querySelector('meta[name="on-tap"]')?.getAttribute('content') || '';
 
   if (hours || address || telephone || website || websiteTitle || email || onTap) {
     const contact = document.createElement('div');
     contact.classList.add('sidebar-left', 'metadata-wrapper');
-
     contact.innerHTML = `<div class="contact-info">
       <h4>Contact</h4>
       <ul class="icon-list">
