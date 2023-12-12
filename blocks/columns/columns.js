@@ -18,16 +18,19 @@ export default async function decorate(block) {
 
       const formLink = col.querySelector('.button-container:has(a[href$=".json"])');
       if (formLink) {
+        const formWrapper = document.createElement('div');
         const formContainer = document.createElement('div');
         formContainer.classList.add('form', 'block');
         formContainer.dataset.blockName = 'form';
         formContainer.append(...formLink.childNodes);
-        formLink.before(formContainer);
+        formWrapper.classList.add('form-wrapper');
+        formWrapper.append(formContainer);
+        formLink.before(formWrapper);
+        await loadBlocks(formWrapper);
         formLink.remove();
-        await loadBlocks(formContainer.parentElement);
-        const section = formContainer.closest('.section');
-        section.removeAttribute('data-section-status');
-        section.removeAttribute('style');
+        const section = formWrapper.closest('.section');
+        section?.removeAttribute('data-section-status');
+        section?.removeAttribute('style');
       }
     });
   });
