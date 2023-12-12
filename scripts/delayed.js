@@ -77,10 +77,10 @@ function decorateMetadaTemplate() {
       <li><span class="icon icon-clock"><img data-icon-name="clock" src="/icons/clock.svg" loading="lazy" alt="clock" width="16" height="16"></span>${hours.replaceAll('<br/>,', '<br/>')}</li>
       </ul>
     </div>`}
-    <div class="on-tap-info">
+    ${onTap && `<div class="on-tap-info">
       <h4 id="on-tap">On Tap</h4>
       <ul>${onTap.split(',').map((beer) => `<li>${beer}</li>`).join('')}</ul>
-    </div>`;
+    </div>`}`;
 
     document.querySelector('main .hero-wrapper').after(contact);
   }
