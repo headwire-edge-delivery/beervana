@@ -13,7 +13,7 @@ function handleExternalLinks() {
   });
 }
 
-function decorateBreweryTemplate() {
+function decorateMetadaTemplate() {
   // get brewery metadata and make the selling points
   // get previous and next metadata and make the previous/next links
   const previousLink = document.querySelector('meta[name="previous-link"]')?.getAttribute('content');
@@ -87,7 +87,8 @@ function decorateBreweryTemplate() {
 }
 
 const templateConfig = {
-  brewery: decorateBreweryTemplate,
+  brewery: decorateMetadaTemplate,
+  metadata: decorateMetadaTemplate,
 };
 
 function decorateTemplate() {
