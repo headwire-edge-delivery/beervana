@@ -31,4 +31,5 @@
   --spacing-360: 90rem;
   --spacing-400: 100rem;
   --spacing-480: 120rem;
+  --layout-max-width: var(--spacing-320);
 }

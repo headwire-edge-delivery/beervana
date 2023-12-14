@@ -4,12 +4,12 @@ footer {
 }
 
 .hero-wrapper {
+  grid-column: full-width;
   display: grid;
   grid-template-columns: subgrid;
-  grid-column: full-width;
   background: red;
 
   .block {
-    grid-column: breakout-left;
+    grid-column: content;
   }
 }

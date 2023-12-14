@@ -1,8 +1,3 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
 .section {
   --section-layout-gap: clamp(var(--spacing-2), 6vw, var(--spacing-4));
   --section-layout-full: minmax(var(--section-layout-gap), 1fr);
@@ -12,7 +7,7 @@ html, body {
     [content-start breakout-right-start content-left-start sidebar-left-start] var(--section-layout-content) [sidebar-left-end content-middle-start] var(--section-layout-content) [content-left-end content-right-start] var(--section-layout-content) [content-middle-end sidebar-right-start] var(--section-layout-content) [content-right-end content-end breakout-left-end]
     var(--section-layout-full) [breakout-right-end full-width-end];
 
-  padding: var(--spacing-16) 0;
+  width: 100%;
   display: grid;
   grid-auto-flow: row;
   grid-template-columns: var(--section-template-columns);
@@ -23,6 +18,10 @@ html, body {
 
   & > * {
     grid-column: content;
+  }
+
+  .full-width {
+    grid-column: full-width;
   }
 
   .breakout-left {
