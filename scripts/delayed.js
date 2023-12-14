@@ -23,9 +23,9 @@ function decorateMetadaTemplate() {
 
   if (previousLink || previousLinkText || nextLink || nextLinkText) {
     const pagination = document.createElement('div');
-    pagination.classList.add('columns', 'pagination', 'columns-2');
+    pagination.classList.add('subgrid', 'pagination');
 
-    pagination.innerHTML = `<div class="previous-link">
+    pagination.innerHTML = `<div class="previous-link content-left">
       <h4 id="to-the-back">To the back</h4>
       <p class="button-container">
         <a href="${previousLink}" title="${previousLinkText}" class="button primary">
@@ -36,7 +36,7 @@ function decorateMetadaTemplate() {
         </a>
       </p>
     </div>
-    <div class="next-link">
+    <div class="next-link content-right">
       <h4 id="to-the-back">On Tap</h4>
       <p class="button-container">
         <a href="${nextLink}" title="${nextLinkText}" class="button primary">

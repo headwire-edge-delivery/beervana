@@ -13,7 +13,7 @@
   grid-template-columns: var(--section-template-columns);
 
   .default-content-wrapper {
-    grid-column: content;
+    grid-column: content-middle / content-right;
   }
 
   & > * {
@@ -62,5 +62,11 @@
 
   .content-right {
     grid-column: content-right;
+  }
+
+  .subgrid {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full-width;
   }
 }
