@@ -1,0 +1,15 @@
+header,
+footer {
+  display: none;
+}
+
+.hero-wrapper {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: full-width;
+  background: red;
+
+  .block {
+    grid-column: breakout-left;
+  }
+}

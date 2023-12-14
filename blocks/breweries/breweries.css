@@ -1,12 +1,2 @@
-.breweries-wrapper {
-  grid-column: content;
-  padding-block: var(--spacing-12);
-
-  .brewery-list-title {
-    text-transform: capitalize;
-  }
-
-  & p {
-    max-width: 80ch;
-  }
-}
+/* stylelint-disable-next-line block-no-empty */
+.breweries {}

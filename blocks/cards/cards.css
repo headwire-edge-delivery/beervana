@@ -1,3 +1,4 @@
+/*
 .cards-wrapper {
   grid-column: content;
   padding-block: var(--spacing-12);
@@ -74,3 +75,4 @@
     grid-template-columns: repeat(auto-fill, minmax(var(--spacing-96), 1fr)); 
   }
 }
+*/

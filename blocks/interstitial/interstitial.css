@@ -1,15 +1,2 @@
-.interstitial {
-  & h1 + h2 {
-    color: var(--colors-text-text-tertiary);
-    font-size: var(--text-size-display-md);
-    line-height: 110%;
-  }
-
-  & .button-container {
-    display: inline-flex;
-
-    & + .button-container {
-      margin-inline-start: 1rem;
-    }
-  }
-}
+/* stylelint-disable-next-line block-no-empty */
+.interstitial {}
