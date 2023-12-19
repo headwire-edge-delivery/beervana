@@ -2,4 +2,5 @@
 @import url('./fcp/variables.css');
 @import url('./fcp/fonts.css');
 @import url('./fcp/layout.css');
+@import url('./fcp/global.css');
 @import url('./fcp/components.css');

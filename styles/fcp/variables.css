@@ -32,4 +32,26 @@
   --spacing-400: 100rem;
   --spacing-480: 120rem;
   --layout-max-width: var(--spacing-320);
+  --color-brand-1: #606C38;
+  --color-brand-2: #283618;
+  --color-brand-3: #FEFAE0;
+  --color-brand-4: #DDA15E;
+  --color-brand-4-85: #DDA15E85;
+  --color-brand-5: #BC6C25;
+  --color-brand: var(--color-brand-1);
+  --color-background: var(--color-brand-3);
+  --color-foreground: var(--color-brand-4);
+  --color-foreground-semi-transparent: var(--color-brand-4-85);
+  --color-primary: var(--color-brand-1);
+  --color-secondary: var(--color-brand-5);
+  --color-text: var(--color-brand-2);
+  --color-text-on-secondary: var(--color-brand-3);
+  --font-display: 'Caprasimo', serif;
+  --font-copy: system-ui, sans-serif;
+  --font-xl: 2.5rem;
+  --font-lg: 1.9882rem;
+  --font-md: 1.5811rem;
+  --font-sm: 1.2574rem;
+  --font-size: clamp(1rem, .4167vw + .8875rem, 1.125rem);
+  --font-xs: 0.7953rem;
 }

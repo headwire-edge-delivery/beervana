@@ -1,4 +1,5 @@
-.section {
+.section,
+.header-wrapper {
   --section-layout-gap: clamp(var(--spacing-2), 6vw, var(--spacing-4));
   --section-layout-full: minmax(var(--section-layout-gap), 1fr);
   --section-layout-content: min((var(--layout-max-width) - var(--section-layout-gap) * 5) / 4, 25% - var(--section-layout-gap));
