@@ -3,8 +3,8 @@ footer {
 }
 
 .hero-wrapper {
-  --hero-spacing: var(--spacing-6);
-  --hero-mask: url(/icons/hero-mask.svg);
+  --hero-spacing: var(--spacing-4);
+  --hero-mask: url(/icons/hero-mask.svg) no-repeat bottom center / cover;
   --hero-image-aspect-ratio: 4 / 3;
 
   position: relative;
@@ -14,6 +14,7 @@ footer {
   background: url(/icons/forest-background.webp) no-repeat bottom center / cover;
   border-bottom: 4px double var(--color-text);
   padding-block: var(--hero-spacing);
+  transition: all .2s ease-in-out;
 
   &::after {
     content: "";
@@ -29,6 +30,22 @@ footer {
     grid-column: content;
 
 
+    .hero-picture {
+      position: relative;
+
+      &::after {
+        display: block;
+        content: "";
+        background-color: var(--color-foreground);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0;
+        mask: var(--hero-mask);
+        z-index: -1;
+      }
+    }
+
     & picture {
       display: block;
       mix-blend-mode: luminosity;
@@ -37,7 +54,7 @@ footer {
       & img {
         aspect-ratio: var(--hero-image-aspect-ratio);
         object-fit: cover;
-        mask: var(--hero-mask) no-repeat bottom center / cover;
+        mask: var(--hero-mask);
         width: 100%;
       }
     }
