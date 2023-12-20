@@ -55,3 +55,11 @@
   --font-size: clamp(1rem, .4167vw + .8875rem, 1.125rem);
   --font-xs: 0.7953rem;
 }
+
+html.dark-mode {
+  --color-background: var(--color-brand-2);
+  --color-foreground: var(--color-brand-4);
+  --color-foreground-semi-transparent: var(--color-brand-4-85);
+  --color-text: var(--color-brand-3);
+  --color-text-on-secondary: var(--color-brand-2);
+}
